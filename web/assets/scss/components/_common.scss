@@ -1,0 +1,15 @@
+// Common
+// components/blocks
+
+figure.single-image {
+  margin: 0;
+  padding: 0;
+
+  figcaption {
+    padding: $beat 0;
+    p {
+      margin: 0;
+      font-size: 12px;
+    }
+  }
+}

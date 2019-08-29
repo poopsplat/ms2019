@@ -1,0 +1,43 @@
+// Photography
+
+.horizontal-gallery {
+  padding: 1px 0; // needed for weird y overflow issue
+  overflow-x: auto;
+  position: relative;
+
+  > .-inner {
+    white-space: nowrap;
+  }
+
+  figure {
+    margin: 0;
+    vertical-align: top;
+    display: inline-block;
+    padding: $padding-sm 0;
+
+    + figure {
+      padding-left: 100px;
+    }
+
+    a {
+      display: block;
+    }
+
+    img {
+      display: block;
+      max-height: 75vh;
+    }
+
+    figcaption {
+      padding-top: $beat;
+      p {
+        margin: 0;
+        font-size: 12px;
+      }
+    }
+
+    @include media-md {
+      padding: $padding-lg 0;
+    }
+  }
+}

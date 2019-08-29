@@ -1,0 +1,61 @@
+<!doctype html>
+<!-- 💩 Hey code nerd! While you're here drop me a line and let me know how I did it wrong: matt.m.soria@gmail.com -->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <title>{% if seoTitle is defined %}{{ seoTitle }}{% elseif title is defined %}{{ title }} | Matt Soria{% else %}Matt Soria{% endif %}</title>
+    {% if seoDescription is defined %}
+    <meta name="description" content="{{ seoDescription }}">
+    {% endif %}
+    <meta property="og:title" content="{% if seoTitle is defined %}{{ seoTitle }}{% elseif title is defined %}{{ title }} | {{ siteName }}{% else %}{{ siteName }}{% endif %}">
+    <meta name="google-site-verification" content="clcwIm8zAwhSWBVXOhz9UBllB3mZpdOAXeoL2AaCZQc">
+    <meta name="p:domain_verify" content="54d124bc9c4618cfe38edde207b08e55">
+
+    <link rel="stylesheet" href="{{ rev('css/main.css') }}">
+    <link rel="shortcut icon" type="image/ico" href="{{ rev('images/favicon.png') }}">
+
+    <link href="https://fonts.googleapis.com/css?family=Space+Mono:400,400i,700,700i&display=swap" rel="stylesheet">
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    {% if mainImage is defined %}
+      {% set transformedImage = craft.imager.transformImage(mainImage, { width: 1800 }) %}
+      <meta property="og:image" content="{{ transformedImage.getUrl() }}"/>
+    {% else %}
+      <meta property="og:image" content=""/>
+    {% endif %}
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-20365223-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+  </head>
+
+  <body class="{% if bodyClass is defined %}{{ bodyClass }}{% else %}index{% endif %}" id="{% if bodyId is defined %}{{ bodyId }}{% else %}{{ craft.app.request.getSegment(1)}}-page{% endif %}">
+    <div id="breakpoint-indicator"></div>
+
+    <header class="site-header" role="banner">
+      <div class="sitewrapper">
+        <h1 class="site-title"><a href="{{ siteUrl }}">Matt Soria</a></h1>
+        {% include '/partials/_nav' %}
+      </div>
+    </header>
+
+    <main class="main" role="main">
+      <div class="sitewrapper">
+        {% block content %}{% endblock %}
+      </div>
+    </main> <!-- END .main -->
+
+    {% include "/partials/_footer" %}
+
+    <script src="{{ rev('js/main.js') }}"></script>
+  </body>
+</html>

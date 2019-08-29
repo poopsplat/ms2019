@@ -1,0 +1,22 @@
+{% extends (craft.app.request.isAjax and not craft.app.request.isLivePreview) ? "_ajax-layout" : "_layout" %}
+
+{% block content %}
+  <div class="grid spaced">
+    {% if entry.image %}
+      <figure class="single-image col-md-1-2">
+        <img src="{{ entry.image.one().url }}" alt="{{ entry.image.one().title }}">
+        {% if entry.image.one().caption %}
+          <figcaption>
+            <p>{{ entry.image.one().caption }}</p>
+          </figcaption>
+        {% endif %}
+      </figure>
+    {% endif %}
+
+    {% if entry.textArea %}
+      <div class="col-md-1-2">
+        {{ entry.textArea }}
+      </div>
+    {% endif %}
+  </div>
+{% endblock %}

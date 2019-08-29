@@ -1,0 +1,8 @@
+{% extends (craft.app.request.isAjax and not craft.app.request.isLivePreview) ? "_ajax-layout" : "_layout" %}
+
+{% block content %}
+  <h2>This is the homepage!</h2>
+  {% if entry.textArea %}
+    {{ entry.textArea }}
+  {% endif %}
+{% endblock %}
