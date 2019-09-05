@@ -26,5 +26,6 @@ web/assets/dist/js/main.js
 # Licensed fonts
 web/assets/fonts
 
-# Treated images
+# Uploads
 web/imager
+web/uploads

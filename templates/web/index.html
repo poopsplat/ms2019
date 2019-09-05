@@ -1,0 +1,25 @@
+{% extends (craft.app.request.isAjax and not craft.app.request.isLivePreview) ? "_ajax-layout" : "_layout" %}
+
+{% block content %}
+  {% set projects = craft.entries({section: 'web'}) %}
+  {% if projects|length %}
+    <div class="grid spaced">
+      {% for project in projects.all() %}
+        <article class="project col-md-1-2">
+          <div class="-inner">
+            {% if project.projectImage|length %}
+              <img src="{{ project.projectImage.one().url }}" alt="{{ project.projectImage.one().title }}">
+            {% endif %}
+            <h1 class="project-title">{{ project.title }}</h1>
+            {% if project.projectDescription %}
+              <div class="project-description">
+                {{ project.projectDescription}}
+              </div>
+            {% endif %}
+            <p class="project-link"><a href="{{ project.projectUrl }}">View Project</a></p>
+          </div>
+        </article>
+      {% endfor %}
+    </div>
+  {% endif %}
+{% endblock %}

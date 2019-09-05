@@ -3,7 +3,7 @@
 {% block content %}
   <div class="grid spaced">
     {% if entry.image %}
-      <figure class="single-image col-md-1-2">
+      <figure class="single-image col-md-1-2 md-order-1">
         <img src="{{ entry.image.one().url }}" alt="{{ entry.image.one().title }}">
         {% if entry.image.one().caption %}
           <figcaption>
@@ -14,7 +14,7 @@
     {% endif %}
 
     {% if entry.textArea %}
-      <div class="col-md-1-2">
+      <div class="col-md-1-2 md-order-0">
         {{ entry.textArea }}
       </div>
     {% endif %}

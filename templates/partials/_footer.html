@@ -1,11 +1,11 @@
+{% set socialLinks = craft.entries.section('socialLinks').all() %}
+
 <footer class="site-footer" role="contentinfo">
   <div class="sitewrapper">
     <ul class="social">
-      <li><a href="http://instagram.com/poop.splat" rel="noopener">instagram</a></li>
-      <li><a href="https://flickr.com/photos/matt-soria" rel="noopener">flickr</a></li>
-      <li><a href="http://codepen.io/poopsplat" rel="noopener">codepen</a></li>
-      <li><a href="http://github.com/poopsplat" rel="noopener">github</a></li>
-      <li><a href="http://twitter.com/poopsplat" rel="noopener">twitter</a></li>
+      {% for link in socialLinks %}
+        <li><a href="{{ link.socialUrl }}" rel="noopener" target="_blank">{{ link.title }}</a></li>
+      {% endfor %}
     </ul>
     <p class="copyright">©{{ "now"|date("Y") }} Matt Soria</p>
   </div>

@@ -38,12 +38,13 @@
   li {
     &.-current {
       a {
-        border-bottom-color: color(black);
+        background-size: 100% 100%;
       }
     }
   }
 
   a {
+    @include underline;
     @include font-display;
     text-decoration: none;
     border-bottom: 1px solid transparent;
