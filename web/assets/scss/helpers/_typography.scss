@@ -12,7 +12,7 @@
 @mixin font-display {
   -webkit-font-smoothing: antialiased;
   font-weight: 700;
-  font-family: "Heldane Display Test", Georgia, serif;
+  font-family: 'freight-display-pro', Georgia, serif;
 }
 @mixin font-copy {
   font-family: 'Space Mono', monospace;
