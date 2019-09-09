@@ -10,6 +10,7 @@
 
   .site-title {
     margin: 0;
+    @include h1;
     text-transform: capitalize;
     a {
       text-decoration: none;
@@ -45,8 +46,8 @@
 
   a {
     @include underline;
-    @include font-display;
     text-decoration: none;
+    @include font-headline;
     border-bottom: 1px solid transparent;
   }
 

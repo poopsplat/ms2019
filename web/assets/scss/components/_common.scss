@@ -13,3 +13,48 @@ figure.single-image {
     }
   }
 }
+
+// Image Overlay
+.image-overlay {
+  display: block;
+  position: relative;
+
+  .overlay {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    display: flex;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    transition: opacity .2s ease-out;
+    background-color: rgba(color(offwhite),.75);
+
+    .overlay-text {
+      overflow: hidden;
+      display: inline-block;
+    }
+
+    span {
+      @include h1;
+      @include underline();
+      color: color(black);
+      display: inline-block;
+      transform: translateY(100%);
+      transition: background-size .35s .2s linear, transform .3s ease-out;
+    }
+  }
+
+  &:hover,
+  &:focus {
+    .overlay {
+      opacity: 1;
+      span {
+        transform: none;
+        background-size: 100% 100%;
+      }
+    }
+  }
+}

@@ -1,31 +1,14 @@
 // Photography
 
 .horizontal-gallery {
-  padding: 1px 0; // needed for weird y overflow issue
-  overflow-x: auto;
-  position: relative;
-
-  > .-inner {
-    white-space: nowrap;
-  }
-
   figure {
     margin: 0;
     vertical-align: top;
     display: inline-block;
     padding: $padding-sm 0;
 
-    + figure {
-      padding-left: 100px;
-    }
-
     a {
       display: block;
-    }
-
-    img {
-      display: block;
-      max-height: 75vh;
     }
 
     figcaption {
@@ -35,9 +18,27 @@
         font-size: 12px;
       }
     }
+  }
 
-    @include media-md {
+  @include media-md {
+    padding: 1px 0; // needed for weird y overflow issue
+    overflow-x: auto;
+    position: relative;
+
+    > .-inner {
+      white-space: nowrap;
+    }
+
+    figure {
       padding: $padding-lg 0;
+      + figure {
+        padding-left: 100px;
+      }
+
+      img {
+        display: block;
+        max-height: 75vh;
+      }
     }
   }
 }
@@ -50,44 +51,6 @@
     margin: 0;
     position: relative;
 
-    a {
-      display: block;
-      position: relative;
-
-      .portfolio-overlay {
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        opacity: 0;
-        display: flex;
-        position: absolute;
-        align-items: center;
-        justify-content: center;
-        transition: opacity .2s ease-out;
-        background-color: rgba(color(offwhite),.5);
-
-        span {
-          @include font-display;
-          @include underline(.5s);
-          font-size: 24px;
-          color: color(black);
-          display: inline-block;
-          transition-delay: .2s;
-        }
-      }
-
-      &:hover,
-      &:focus {
-        .portfolio-overlay {
-          opacity: 1;
-          span {
-            background-size: 100% 100%;
-          }
-        }
-      }
-    }
-
     img {
       display: block;
     }
@@ -98,7 +61,6 @@
       color: color(white);
       position: absolute;
       mix-blend-mode: difference;
-
       p {
         margin: 0;
       }
@@ -123,8 +85,6 @@
         border-bottom: $beat solid color(offwhite);
       }
 
-      &.small {
-      }
       &.medium {
         grid-column: span 2;
       }

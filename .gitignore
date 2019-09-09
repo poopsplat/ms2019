@@ -24,7 +24,7 @@ web/assets/dist/css/main.css
 web/assets/dist/js/main.js
 
 # Licensed fonts
-web/assets/fonts
+web/assets/webfonts
 
 # Uploads
 web/imager

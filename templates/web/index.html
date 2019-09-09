@@ -1,16 +1,20 @@
 {% extends (craft.app.request.isAjax and not craft.app.request.isLivePreview) ? "_ajax-layout" : "_layout" %}
 
 {% block content %}
-  {% set projects = craft.entries({section: 'web'}) %}
+  {% set projects = craft.entries().section('webProjects') %}
   {% if projects|length %}
-    <div class="grid spaced">
+    <div class="web-projects grid spaced spaced-lg">
       {% for project in projects.all() %}
         <article class="project col-md-1-2">
           <div class="-inner">
             {% if project.projectImage|length %}
-              <img src="{{ project.projectImage.one().url }}" alt="{{ project.projectImage.one().title }}">
+              {% set transformedImage = craft.imager.transformImage(project.projectImage.one(), { width: 900 }, { ratio: 16/9 }) %}
+              <a href="{{ project.projectUrl }}" class="image-overlay">
+                <div class="overlay"><div class="overlay-text"><span>visit project</span></div></div>
+                <img src="{{ transformedImage.getUrl() }}" alt="{{ project.projectImage.one().title }}">
+              </a>
             {% endif %}
-            <h1 class="project-title">{{ project.title }}</h1>
+            <h1 class="project-title"><a href="{{ project.projectUrl }}">{{ project.title }}</a></h1>
             {% if project.projectDescription %}
               <div class="project-description">
                 {{ project.projectDescription}}

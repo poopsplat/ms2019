@@ -11,8 +11,13 @@
 /// }
 @mixin font-display {
   -webkit-font-smoothing: antialiased;
-  font-weight: 700;
-  font-family: 'freight-display-pro', Georgia, serif;
+  font-weight: normal;
+  font-family: 'Albra-bold', Georgia, serif;
+}
+@mixin font-headline {
+  -webkit-font-smoothing: antialiased;
+  font-weight: normal;
+  font-family: 'Albra-semi', Georgia, serif;
 }
 @mixin font-copy {
   font-family: 'Space Mono', monospace;
@@ -49,3 +54,11 @@
 /// .h1 {
 ///   @include h1;
 /// }
+
+@mixin h1 {
+  @include font-display;
+  @include paragraph-style(24,32);
+}
+.h1 {
+  @include h1;
+}

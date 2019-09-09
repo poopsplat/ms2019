@@ -21,8 +21,8 @@
         {% endif %}
         <figure class="{{ image.size }}">
           {% if image.portfolioPage %}
-          <a href="{{ image.portfolioPage.one().url }}">
-            <div class="portfolio-overlay"><span>{{ image.portfolioPage.one().title }}</span></div>
+          <a href="{{ image.portfolioPage.one().url }}" class="image-overlay">
+            <div class="overlay"><div class="overlay-text"><span>{{ image.portfolioPage.one().title|lower }}</span></div></div>
           {% endif %}
           <img src="{{ transformedImage.getUrl() }}" alt="{{ image.imageFile.one().title }}">
           {% if image.portfolioPage %}

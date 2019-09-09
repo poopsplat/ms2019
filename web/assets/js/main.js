@@ -1,6 +1,7 @@
 /*jshint latedef:false*/
 
-//=include "../bower_components/jquery/dist/jquery.js"
+// =include "webfonts.js"
+// =include "../bower_components/jquery/dist/jquery.js"
 
 var Main = (function($) {
 

@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="{{ rev('css/main.css') }}">
     <link rel="shortcut icon" type="image/ico" href="{{ rev('images/favicon.png') }}">
 
-    <link rel="stylesheet" href="https://use.typekit.net/orj1uio.css">
+    <script type="text/javascript">var customPath = "/assets";</script>
     <link href="https://fonts.googleapis.com/css?family=Space+Mono:400,400i,700,700i&display=swap" rel="preload" as="style" onload="this.rel='stylesheet'">
     <noscript><link href="https://fonts.googleapis.com/css?family=Space+Mono:400,400i,700,700i&display=swap" rel="stylesheet"></noscript>
 
@@ -33,7 +33,7 @@
     </script>
   </head>
 
-  <body class="{% if bodyClass is defined %}{{ bodyClass }}{% else %}index{% endif %}" id="{% if bodyId is defined %}{{ bodyId }}{% else %}{{ craft.app.request.getSegment(1)}}-page{% endif %}">
+  <body class="{% if bodyClass is defined %}{{ bodyClass }}{% else %}{{ craft.app.request.getSegment(1)}}-page{% endif %}" id="{% if bodyId is defined %}{{ bodyId }}{% else %}{{ craft.app.request.getSegment(1)}}-page{% endif %}">
     <div id="breakpoint-indicator"></div>
 
     <header class="site-header" role="banner">
