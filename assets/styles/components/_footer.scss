@@ -11,11 +11,11 @@
   }
 
   .social {
-    margin: 0;
     padding: 0;
+    margin: 0 0 $beat;
     li {
       list-style: none;
-      margin-right: 10px;
+      margin-right: $beat;
       display: inline-block;
       &:last-of-type {
         margin-right: 0;
@@ -23,30 +23,65 @@
     }
   }
 
+  #contact {
+    p {
+      margin: 0;
+      + p {
+        margin-top: $beat;
+      }
+    }
+  }
+
+  .smiley {
+    right: 0;
+    bottom: 0;
+    padding-top: 2px;
+    overflow: visible;
+    position: absolute;
+    text-align: center;
+    margin: 0 $padding-md;
+    svg {
+      width: 30px;
+      height: 26px;
+      cursor: help;
+      fill: color('black');
+      display: inline-block;
+      transition: transform 1s ease-out;
+      &:hover {
+        transform: rotate(540deg);
+      }
+    }
+  }
+
   @include media-md {
-    @include clearfix;
     padding: $padding-lg 0;
     margin-top: $padding-lg;
 
-    .social {
-      float: left;
+    > .sitewrapper {
+      display: flex;
+      justify-content: space-between;
+
+      > * {
+        flex-grow: 1;
+      }
     }
 
     #contact {
+      order: 2;
       margin: 0;
-      float: right;
       text-align: right;
       padding-left: $beat * 3;
-      p {
-        margin: 0;
-        + p {
-          margin-top: 0.5em;
-        }
-      }
     }
 
     .copyright {
       @include p2;
+    }
+
+    .smiley {
+      order: 1;
+      right: auto;
+      bottom: auto;
+      position: relative;
     }
   }
 }
