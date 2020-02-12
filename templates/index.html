@@ -1,35 +1,38 @@
 {% extends (craft.app.request.isAjax and not craft.app.request.isLivePreview) ? "_ajax-layout" : "_layout" %}
+{% set bodyClass = 'home' %}
+{% set bodyId = 'home' %}
 
 {% block content %}
-<!--   {% if entry.textArea %}
-    {{ entry.textArea }}
-  {% endif %} -->
 
-  {% if entry.featureGrid|length %}
-    <div class="image-grid">
-      {% for image in entry.featureGrid.all() %}
-        {% set imageFile = image.imageFile.one() %}
-        {% set transformedImage = '' %}
-        {% if image.size == 'small' %}
-          {% set transformedImage = craft.imager.transformImage(imageFile, { width: 900 }, { ratio: 4/5 }) %}
-        {% elseif image.size == 'tall-2-3' %}
-          {% set transformedImage = craft.imager.transformImage(imageFile, { width: 1600 }, { ratio: 4/5 }) %}
-        {% elseif image.size == 'medium' %}
-          {% set transformedImage = craft.imager.transformImage(imageFile, { width: 1600 }, { ratio: 8/5 }) %}
-        {% else %}
-          {% set transformedImage = craft.imager.transformImage(imageFile, { width: 1800 }) %}
+  {% set smallFeatures = craft.matrixBlocks.owner(entry).fieldId(10).type('image').size('small').orderBy('RAND()').all() %}
+  {% set medFeatures = craft.matrixBlocks.owner(entry).fieldId(10).type('image').size('medium').orderBy('RAND()').all() %}
+
+  <div class="project-grid{{ random(['', ' alt-layout']) }}">
+    {% for feature in 1..10 %}
+      {% if loop.index is not divisible by(2) %}
+        {% set feature = smallFeatures[loop.index] %}
+      {% elseif loop.index is divisible by(2) %}
+        {% set feature = medFeatures[loop.index] %}
+      {% endif %}
+
+      {% set imageFile = feature.imageFile.one() %}
+      {% set transformedImage = '' %}
+      {% if feature.size == 'small' %}
+        {% set transformedImage = craft.imager.transformImage(imageFile, { width: 900 }, { ratio: 4/5 }) %}
+      {% else %}
+        {% set transformedImage = craft.imager.transformImage(imageFile, { width: 1600 }, { ratio: 8/5}) %}
+      {% endif %}
+      <figure class="grid-item {{ feature.size }}">
+        {% if feature.portfolioPage %}
+        <a href="{{ feature.portfolioPage.one().url }}" class="image-overlay">
+          <div class="overlay"><div class="overlay-text"><span>{{ feature.portfolioPage.one().title|lower }}</span></div></div>
         {% endif %}
-        <figure class="{{ image.size }}">
-          {% if image.portfolioPage %}
-          <a href="{{ image.portfolioPage.one().url }}" class="image-overlay">
-            <div class="overlay"><div class="overlay-text"><span>{{ image.portfolioPage.one().title|lower }}</span></div></div>
-          {% endif %}
-          <img src="{{ transformedImage.getUrl() }}" alt="{{ image.imageFile.one().title }}">
-          {% if image.portfolioPage %}
-          </a>
-          {% endif %}
-        </figure>
-      {% endfor %}
-    </div>
-  {% endif %}
+        <img src="{{ transformedImage.getUrl() }}" alt="{{ feature.imageFile.one().title }}">
+        {% if feature.portfolioPage %}
+        </a>
+        {% endif %}
+      </figure>
+
+    {% endfor %}
+  </div>
 {% endblock %}

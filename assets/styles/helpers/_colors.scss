@@ -1,0 +1,21 @@
+// Color Classes and Themes
+
+@each $color, $value in $colors {
+  .color-#{$color} {
+    fill: $value;
+    color: $value;
+  }
+  .background-#{$color} {
+    background-color: $value;
+  }
+}
+
+// Dark Theme
+@mixin dark-theme {
+  color: color('white');
+  background-color: color('dark');
+}
+
+body.dark-theme {
+  @include dark-theme;
+}

@@ -1,0 +1,20 @@
+// About Page
+
+body.about-page {
+  .bio {
+    margin-top: $padding-sm;
+
+    p {
+      @include h2;
+      margin-top: 0;
+    }
+  }
+
+  .music {
+    margin-top: $padding-lg;
+
+    iframe {
+      max-width: 300px;
+    }
+  }
+}

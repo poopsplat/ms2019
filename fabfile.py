@@ -28,6 +28,11 @@ def devsetup():
   local('cp .env-example .env')
   print "OK DONE! Hello? Are you still awake?\nEdit your .env file with local credentials\nRun `npx gulp watch` to run local gulp to compile & watch assets"
 
+# def syncstaging():
+#   with cd(env.remotepath):
+#     run('/usr/bin/mysqldump --defaults-extra-file=/home/soriamatt/etc/.my.cnf -u ms2019 ms2019 | /usr/bin/mysql --defaults-extra-file=/home/soriamatt/etc/.my.cnf -u ms2019 ms2019')
+#     run('/usr/bin/rsync -av --delete /home/soriamatt/webapps/ms2019/web/uploads/ /home/soriamatt/apps/ms2019/web/uploads/')
+
 def deploy(composer='y'):
   update()
   if composer == 'y':

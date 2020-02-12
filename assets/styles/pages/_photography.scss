@@ -1,0 +1,173 @@
+// Photography
+
+.horizontal-gallery {
+  figure {
+    margin: 0;
+    vertical-align: top;
+    display: inline-block;
+    padding: $padding-sm 0;
+
+    a {
+      display: block;
+    }
+
+    figcaption {
+      padding-top: $beat;
+      p {
+        margin: 0;
+        font-size: 12px;
+      }
+    }
+  }
+
+  @include media-md {
+    padding: 1px 0; // needed for weird y overflow issue
+    overflow-x: auto;
+    position: relative;
+
+    > .-inner {
+      white-space: nowrap;
+    }
+
+    figure {
+      padding: $padding-lg 0;
+      + figure {
+        padding-left: 100px;
+      }
+
+      img {
+        display: block;
+        max-height: 75vh;
+      }
+    }
+  }
+}
+
+.project-grid {
+  position: relative;
+
+  .grid-sizer {
+    width: 100%;
+  }
+
+  .grid-item {
+    padding: 0;
+    margin: 0 0 #{$beat * 2};
+
+    a {
+      display: block;
+      cursor: zoom-in;
+
+      img {
+        width: 100%;
+        vertical-align: top;
+      }
+    }
+
+    figcaption {
+      p {
+        @include p2;
+        margin: $beat 0 0;
+      }
+    }
+
+    // Text Item
+    &.text {
+      // margin: #{$beat * 2} 0 #{$beat * 4};
+      p {
+        margin-top: 0;
+      }
+    }
+  }
+
+  @include media-md {
+    @include clearfix;
+    margin-left: -#{$beat * 2};
+    width: calc(100% + #{$beat * 4});
+
+    .grid-sizer {
+      width: columns(1,3);
+    }
+
+    .grid-item {
+      width: 100%;
+      float: left;
+      padding: 0 #{$beat * 2};
+      margin-bottom: $beat * 4;
+
+      &.small {
+        width: columns(1,3);
+      }
+      &.medium {
+        width: columns(2,3);
+      }
+
+      // Spacing
+      &.spacing {
+        &-top {
+          margin-top: $beat * 6;
+        }
+        &-bottom {
+          margin-bottom: $beat * 6;
+        }
+        &-left {
+          margin-left: columns(1,3);
+        }
+        &-right {
+          margin-right: columns(1,3);
+        }
+      }
+
+      // Exceptions for Full
+      &.large {
+        &.spacing-left {
+          margin-left: 0;
+        }
+        &.spacing-right {
+          margin-right: 0;
+        }
+      }
+
+      figcaption {
+        position: absolute;
+      }
+    }
+  }
+
+  @include media-lg {
+    margin-left: -#{$beat * 3};
+    width: calc(100% + #{$beat * 6});
+
+    .grid-item {
+      padding: 0 #{$beat * 3};
+      margin-bottom: $beat * 6;
+
+      // Spacing
+      &.spacing {
+        &-top {
+          margin-top: $beat * 12;
+        }
+        &-bottom {
+          margin-bottom: $beat * 12;
+        }
+      }
+    }
+  }
+}
+
+.image-carousel {
+  figure {
+    margin: 0 #{$beat / 2};
+
+    a {
+      display: block;
+    }
+
+    img {
+      width: auto;
+      height: 80vh;
+      display: block;
+      max-width: none;
+    }
+  }
+}

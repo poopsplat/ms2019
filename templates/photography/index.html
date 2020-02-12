@@ -1,22 +1,12 @@
 {% extends (craft.app.request.isAjax and not craft.app.request.isLivePreview) ? "_ajax-layout" : "_layout" %}
 
 {% block content %}
-  {% if entry.horizontalGallery %}
-    {% set images = entry.horizontalGallery.all() %}
 
-    <div class="horizontal-gallery">
-      <div class="-inner">
-        {% for image in images %}
-          <figure>
-            <a href="{{ image.url }}" target="_blank">
-              <img src="{{ image.url }}" alt="{{ image.title }}">
-            </a>
-            {% if image.caption %}
-              <figcaption><p>{{ image.caption }}</p></figcaption>
-            {% endif %}
-          </figure>
-        {% endfor %}
-      </div>
-    </div>
-  {% endif %}
+  {% include 'partials/_page-blocks' %}
+
+  <div class="align-center">
+    <button id="to-top" class="to-top">back to top ↑</button>
+  </div>
+
 {% endblock %}
+

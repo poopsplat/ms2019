@@ -1,0 +1,131 @@
+// Mixins
+
+// Ye olde clearfix
+@mixin clearfix {
+  &:after {
+    content: '';
+    clear: both;
+    display: table;
+  }
+}
+
+// Underline Style
+@mixin underline($color: 'highlight', $thickness: 1px, $speed: .2s) {
+  background-size: 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size $speed ease-out;
+  background-image: linear-gradient(to top,color($color) $thickness, transparent $thickness, transparent 100%);
+
+  &:hover {
+    background-size: 100% 100%;
+  }
+}
+
+// Highlight
+@mixin highlight($highlight: 'highlight', $speed: .2s) {
+  position: relative;
+  &::before {
+    left: 0;
+    right: 0;
+    z-index: -1;
+    content: '';
+    height: 0.3em;
+    bottom: -0.05em;
+    border-radius: 2px;
+    position: absolute;
+    transform: scaleX(0);
+    transform-origin: left;
+    background-color: color($highlight);
+    transition: transform 0.15s ease-out;
+  }
+
+  &:hover,
+  &:focus {
+    &::before {
+      transform: scaleX(1);
+    }
+  }
+}
+
+// Inline Links
+@mixin inline-link($highlight: 'highlight', $speed: .2s) {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  transition: color 0.15s ease-out;
+  &::before {
+    z-index: -1;
+    content: '';
+    height: 0.3em;
+    left: -0.05em;
+    right: -0.05em;
+    bottom: 0.05em;
+    border-radius: 2px;
+    position: absolute;
+    transition: height 0.15s ease-out;
+    background-color: color($highlight);
+  }
+
+  &:hover,
+  &:focus {
+    color: color('white');
+    &::before {
+      height: 1.2em;
+    }
+  }
+}
+
+// Smooth text
+@mixin smooth {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// Responsive mixins by Andy Richardson (@andimal): https://github.com/andimal/sass-responsive-mixin-madness
+@mixin media-xs() {
+  @media screen and (max-width: $breakpoint-sm - 1) {
+    @content;
+  }
+}
+@mixin media-sm() {
+  @media screen and (min-width: $breakpoint-sm) {
+    @content;
+  }
+}
+@mixin media-md() {
+  @media screen and (min-width: $breakpoint-md) {
+    @content;
+  }
+}
+@mixin media-lg() {
+  @media screen and (min-width: $breakpoint-lg) {
+    @content;
+  }
+}
+@mixin media-nav() {
+  @media screen and (min-width: $breakpoint-nav) {
+    @content;
+  }
+}
+@mixin media-xl() {
+  @media screen and (min-width: $breakpoint-xl) {
+    @content;
+  }
+}
+
+// On-the fly media-queries
+@mixin screen($res-min, $res-max) {
+  @media screen and (min-width: $res-min) and (max-width: $res-max) {
+    @content;
+  }
+}
+@mixin max-screen($res) {
+  @media screen and (max-width: $res - 1px) {
+    @content;
+  }
+}
+@mixin min-screen($res) {
+  @media screen and (min-width: $res) {
+    @content;
+  }
+}

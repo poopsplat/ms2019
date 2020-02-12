@@ -1,0 +1,80 @@
+{% for gridSection in entry.pageBlocks.all() %}
+  <div class="project-grid masonry-grid">
+    <div class="grid-sizer"></div>
+    {% for item in gridSection.gridSection.all() %}
+      {% switch item.type %}
+        {% case "image" %}
+          {% if item.spacing is defined %}
+            {% set spacingClasses = item.spacing | join(' ') %}
+          {% endif %}
+          {% if item.imageFile | length %}
+            {% set imageFile = item.imageFile.one() %}
+            {% set imageW = '' %}
+            {% if item.size == 'small' %}
+              {% set imageW = 900 %}
+            {% elseif item.size == 'medium' %}
+              {% set imageW = 1600 %}
+            {% else %}
+              {% set imageW = 1800 %}
+            {% endif %}
+            {% set transformedImage = craft.imager.transformImage(imageFile, { width: imageW }) %}
+          {% endif %}
+          <figure class="grid-item grid-image {{ item.size }}{{ spacingClasses is defined ? ' ' ~ spacingClasses : '' }}">
+            <a href="{{ item.imageFile.one().getUrl() }}" target="_blank">
+              <img class="lazyload" data-src="{{ transformedImage.getUrl() }}" alt="{{ item.imageFile.one().title }}">
+            </a>
+            {% if imageFile.caption %}
+              <figcaption class="field-text"><p>{{ imageFile.caption }}</p></figcaption>
+            {% endif %}
+          </figure>
+
+          {% case "text" %}
+            {% if item.spacing is defined %}
+              {% set spacingClasses = item.spacing | join(' ') %}
+            {% endif %}
+            <div class="grid-item text field-text {{ item.size }}{{ spacingClasses is defined ? ' ' ~ spacingClasses : '' }}">
+              {{ item.text }}
+            </div>
+
+          {% case "blockquote" %}
+            <blockquote class="grid-item {{ item.size|length ? item.size : '' }}{{ item.alignment == 'right' ? ' align-right' }}{{ item.spacing != 'none' ? ' ' ~ item.spacing : '' }}{{ item.colored == 1 ? ' colored' : '' }}">
+              <p><span>{{ item.quote }}</span></p>
+              {% if item.citation %}
+                <cite>— {{ item.citation }}</cite>
+              {% endif %}
+            </blockquote>
+
+            {% case "imageCarousel" %}
+              <div class="image-carousel">
+                {% for image in item.images.all() %}
+                  <figure>
+                    <a href="{{ image.url }}" target="_blank">
+                      <img src="{{ image.url }}" alt="{{ image.title }}">
+                    </a>
+                    {% if image.caption %}
+                      <figcaption><p>{{ image.caption }}</p></figcaption>
+                    {% endif %}
+                  </figure>
+                {% endfor %}
+              </div>
+
+            {% case "horizontalGallery" %}
+              <div class="horizontal-gallery">
+                <div class="-inner">
+                  {% for image in item.images.all() %}
+                    <figure>
+                      <a href="{{ image.url }}" target="_blank">
+                        <img src="{{ image.url }}" alt="{{ image.title }}">
+                      </a>
+                      {% if image.caption %}
+                        <figcaption><p>{{ image.caption }}</p></figcaption>
+                      {% endif %}
+                    </figure>
+                  {% endfor %}
+                </div>
+              </div>
+
+      {% endswitch %}
+    {% endfor %}
+  </div>
+{% endfor %}

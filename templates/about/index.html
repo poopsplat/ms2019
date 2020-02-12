@@ -3,7 +3,7 @@
 {% block content %}
   <div class="grid spaced">
     {% if entry.image %}
-      <figure class="single-image col-md-1-2 md-order-1">
+      <figure class="about-image single-image col-md-1-2 md-order-1">
         <img src="{{ entry.image.one().url }}" alt="{{ entry.image.one().title }}">
         {% if entry.image.one().caption %}
           <figcaption>
@@ -15,7 +15,16 @@
 
     {% if entry.textArea %}
       <div class="col-md-1-2 md-order-0">
-        {{ entry.textArea }}
+        <div class="bio field-text">
+          {{ entry.textArea }}
+        </div>
+
+        {% if entry.spotifyPlaylist %}
+          <div class="music">
+            <h3 class="h2">what I've been listening to lately:</h3>
+            <iframe src="https://open.spotify.com/embed/playlist/{{ entry.spotifyPlaylist }}" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+          </div>
+        {% endif %}
       </div>
     {% endif %}
   </div>

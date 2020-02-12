@@ -1,0 +1,52 @@
+// Footer
+
+.site-footer {
+  padding: $padding-md 0;
+  margin-top: $padding-md;
+
+  a {
+    @include highlight;
+    text-decoration: none;
+    text-transform: lowercase;
+  }
+
+  .social {
+    margin: 0;
+    padding: 0;
+    li {
+      list-style: none;
+      margin-right: 10px;
+      display: inline-block;
+      &:last-of-type {
+        margin-right: 0;
+      }
+    }
+  }
+
+  @include media-md {
+    @include clearfix;
+    padding: $padding-lg 0;
+    margin-top: $padding-lg;
+
+    .social {
+      float: left;
+    }
+
+    #contact {
+      margin: 0;
+      float: right;
+      text-align: right;
+      padding-left: $beat * 3;
+      p {
+        margin: 0;
+        + p {
+          margin-top: 0.5em;
+        }
+      }
+    }
+
+    .copyright {
+      @include p2;
+    }
+  }
+}

@@ -1,0 +1,26 @@
+// Web Page
+
+body.web-page {
+  .web-projects {
+    .project {
+      margin-bottom: $padding-md;
+
+      .project-title {
+        a {
+          @include underline();
+          text-decoration: none;
+        }
+      }
+
+      .project-link {
+        margin-top: $padding-md;
+      }
+    }
+
+    @include media-md {
+      .project {
+        margin-bottom: $padding-lg;
+      }
+    }
+  }
+}

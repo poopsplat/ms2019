@@ -1,0 +1,85 @@
+// Common
+// components/blocks
+
+// Lazyloaded Images
+.grid-image {
+  opacity: 0;
+  &.-loaded {
+    opacity: 1;
+    transition: opacity .35s ease-out;
+  }
+}
+
+// Image reveals
+.-reveal {
+  opacity: 0;
+  transform: translate3d(0, 40px, 0);
+  transition: opacity 1s ease-out, transform 0.5s ease-out;
+
+  @include media-md {
+    transform: translate3d(0, 60px, 0);
+  }
+
+  &.-active {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+figure.single-image {
+  margin: 0;
+  padding: 0;
+
+  figcaption {
+    padding: $beat 0;
+    p {
+      margin: 0;
+      font-size: 12px;
+    }
+  }
+}
+
+// Image Overlay
+.image-overlay {
+  display: block;
+  position: relative;
+
+  .overlay {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    display: flex;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    transition: opacity .5s ease-out;
+    background-color: rgba(color('highlight'),.75);
+
+    .overlay-text {
+      overflow: hidden;
+      display: inline-block;
+    }
+
+    span {
+      @include h1;
+      @include underline(black, 4px);
+      color: color('white');
+      display: inline-block;
+      transform: translateY(100%);
+      transition: background-size .2s .2s linear, transform .35s ease-out;
+    }
+  }
+
+  &:hover,
+  &:focus {
+    .overlay {
+      opacity: 1;
+      span {
+        transform: none;
+        background-size: 100% 100%;
+      }
+    }
+  }
+}

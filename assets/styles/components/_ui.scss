@@ -1,0 +1,28 @@
+// UI Elements
+
+.button {
+  @extend .button-reset;
+  @include p1;
+  cursor: pointer;
+  border-radius: 4px;
+  display: inline-block;
+  text-decoration: none;
+  color: color('white');
+  padding: $beat $padding-sm;
+  background-color: color('black');
+  transition: background-color 0.15s ease-out, color 0.15s ease-out;
+
+  &:hover,
+  &:focus {
+    color: color('white');
+    background-color: color('highlight');
+  }
+}
+
+button.to-top {
+  @include h2;
+  @extend .button-reset;
+  @include inline-link;
+  padding: 0;
+  margin-top: $padding-md;
+}
