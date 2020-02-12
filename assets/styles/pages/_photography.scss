@@ -68,6 +68,11 @@
       p {
         @include p2;
         margin: $beat 0 0;
+
+        a {
+          cursor: pointer;
+          display: inline-block;
+        }
       }
     }
 

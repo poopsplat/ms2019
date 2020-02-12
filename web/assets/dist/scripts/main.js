@@ -56,20 +56,14 @@ $(document).ready(function () {
 __webpack_require__.r(__webpack_exports__);
 /* WEBPACK VAR INJECTION */(function($) {/* harmony import */ var jquery_bridget__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery-bridget */ "./node_modules/jquery-bridget/jquery-bridget.js");
 /* harmony import */ var jquery_bridget__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery_bridget__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var flickity_dist_flickity_pkgd_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! flickity/dist/flickity.pkgd.js */ "./node_modules/flickity/dist/flickity.pkgd.js");
-/* harmony import */ var flickity_dist_flickity_pkgd_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(flickity_dist_flickity_pkgd_js__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var waypoints_lib_jquery_waypoints_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! waypoints/lib/jquery.waypoints.js */ "./node_modules/waypoints/lib/jquery.waypoints.js");
-/* harmony import */ var waypoints_lib_jquery_waypoints_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(waypoints_lib_jquery_waypoints_js__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var masonry_layout__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! masonry-layout */ "./node_modules/masonry-layout/masonry.js");
-/* harmony import */ var masonry_layout__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(masonry_layout__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var imagesloaded__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! imagesloaded */ "./node_modules/imagesloaded/imagesloaded.js");
-/* harmony import */ var imagesloaded__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(imagesloaded__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var lazysizes__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! lazysizes */ "./node_modules/lazysizes/lazysizes.js");
-/* harmony import */ var lazysizes__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(lazysizes__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _util_appState__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../util/appState */ "./assets/scripts/util/appState.js");
+/* harmony import */ var masonry_layout__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! masonry-layout */ "./node_modules/masonry-layout/masonry.js");
+/* harmony import */ var masonry_layout__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(masonry_layout__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var imagesloaded__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! imagesloaded */ "./node_modules/imagesloaded/imagesloaded.js");
+/* harmony import */ var imagesloaded__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(imagesloaded__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var lazysizes__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! lazysizes */ "./node_modules/lazysizes/lazysizes.js");
+/* harmony import */ var lazysizes__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(lazysizes__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _util_appState__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../util/appState */ "./assets/scripts/util/appState.js");
 // Common js
-
-
 
 
 
@@ -96,42 +90,25 @@ document.addEventListener('lazyloaded', function (e) {
   // JavaScript to be fired on all pages
   init: function init() {
     // Set up libraries to be used with jQuery
-    jquery_bridget__WEBPACK_IMPORTED_MODULE_0___default()('flickity', flickity_dist_flickity_pkgd_js__WEBPACK_IMPORTED_MODULE_1___default.a, $);
-    jquery_bridget__WEBPACK_IMPORTED_MODULE_0___default()('masonry', masonry_layout__WEBPACK_IMPORTED_MODULE_3___default.a, $);
-    imagesloaded__WEBPACK_IMPORTED_MODULE_4___default.a.makeJQueryPlugin($); // Init Functions
-
-    _initCarousels();
+    jquery_bridget__WEBPACK_IMPORTED_MODULE_0___default()('masonry', masonry_layout__WEBPACK_IMPORTED_MODULE_1___default.a, $);
+    imagesloaded__WEBPACK_IMPORTED_MODULE_2___default.a.makeJQueryPlugin($); // Init Functions
 
     _initMasonry();
 
     _initToTopButton();
-
-    function _initCarousels() {
-      $('.image-carousel').flickity({
-        prevNextButtons: false,
-        lazyLoad: 4,
-        imagesLoaded: true,
-        pageDots: false,
-        adaptiveHeight: true
-      });
-    }
 
     function _initMasonry() {
       if (!$('.masonry-grid').length) {
         return;
       }
 
-      if (!_util_appState__WEBPACK_IMPORTED_MODULE_6__["default"].breakpoints['md'] && $('.masonry-grid').data('masonry')) {
-        $('.masonry-grid').masonry('destroy');
-      } else if (_util_appState__WEBPACK_IMPORTED_MODULE_6__["default"].breakpoints['md']) {
-        var $imageGrid = $('.masonry-grid').masonry(gridOptions);
-        $imageGrid.imagesLoaded().progress(function () {
-          $imageGrid.masonry('layout');
-        });
-        document.addEventListener('lazyloaded', function (e) {
-          $imageGrid.masonry('layout');
-        });
-      }
+      var $imageGrid = $('.masonry-grid').masonry(gridOptions);
+      $imageGrid.imagesLoaded().progress(function () {
+        $imageGrid.masonry('layout');
+      });
+      document.addEventListener('lazyloaded', function (e) {
+        $imageGrid.masonry('layout');
+      });
     }
 
     function _initToTopButton() {
@@ -141,9 +118,7 @@ document.addEventListener('lazyloaded', function (e) {
       });
     }
 
-    function _resize() {
-      _initMasonry();
-    }
+    function _resize() {}
 
     $(window).resize(_resize);
   },

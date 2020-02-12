@@ -10,14 +10,28 @@
 
   .site-headline {
     .site-title {
-      margin: 0;
       @include h1;
+      margin: 0;
+
       a {
         text-decoration: none;
         transition: color .2s ease-out;
         &:hover,
         &:focus {
           color: color('highlight');
+
+          svg {
+            fill: color('highlight');
+            transform: rotate(20deg);
+          }
+        }
+
+        svg {
+          width: 22px;
+          height: 20px;
+          fill: color('black');
+          display: inline-block;
+          transition: transform .2s ease-out, fill .2s ease-out;
         }
       }
     }

@@ -22,6 +22,18 @@
     <meta name="MobileOptimized" content="320">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <!-- Inject SVGs Defs for SVG icon use -->
+    <script>
+      var ajax = new XMLHttpRequest();
+      ajax.open("GET", "{{ rev('/svgs-defs.svg') }}", true);
+      ajax.send();
+      ajax.onload = function(e) {
+        var div = document.createElement("div");
+        div.className += "svg-defs hidden";
+        div.innerHTML = ajax.responseText;
+        document.body.insertBefore(div, document.body.childNodes[0]);
+      }
+    </script>
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -39,7 +51,7 @@
     <header class="site-header" role="banner">
       <div class="sitewrapper">
         <div class="site-headline">
-          <h1 class="site-title"><a href="{{ siteUrl }}">matt soria</a></h1>
+          <h1 class="site-title"><a href="{{ siteUrl }}">matt soria <svg class="icon smiley" aria-hidden="true" role="presentation"><use xlink:href="#smiley"/></svg></a></h1>
           {% if tagline.textField %}
             <p class="tagline">{{ tagline.textField }}</p>
           {% endif %}

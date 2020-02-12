@@ -1,8 +1,6 @@
 // Common js
 
 import jQueryBridget from 'jquery-bridget';
-import Flickity from 'flickity/dist/flickity.pkgd.js';
-import Waypoints from 'waypoints/lib/jquery.waypoints.js';
 import Masonry from 'masonry-layout';
 import ImagesLoaded from 'imagesloaded';
 import Lazysizes from 'lazysizes';
@@ -34,43 +32,27 @@ export default {
   // JavaScript to be fired on all pages
   init() {
     // Set up libraries to be used with jQuery
-    jQueryBridget('flickity', Flickity, $);
     jQueryBridget( 'masonry', Masonry, $ );
     ImagesLoaded.makeJQueryPlugin( $ );
 
     // Init Functions
-    _initCarousels();
     _initMasonry();
     _initToTopButton();
-
-    function _initCarousels() {
-      $('.image-carousel').flickity({
-        prevNextButtons: false,
-        lazyLoad: 4,
-        imagesLoaded: true,
-        pageDots: false,
-        adaptiveHeight: true
-      });
-    }
 
     function _initMasonry() {
       if (!$('.masonry-grid').length) {
         return;
       }
 
-      if (!appState.breakpoints['md'] && $('.masonry-grid').data('masonry')) {
-        $('.masonry-grid').masonry('destroy');
-      } else if (appState.breakpoints['md']) {
-        var $imageGrid = $('.masonry-grid').masonry(gridOptions);
+      var $imageGrid = $('.masonry-grid').masonry(gridOptions);
 
-        $imageGrid.imagesLoaded().progress( function() {
-          $imageGrid.masonry('layout');
-        });
+      $imageGrid.imagesLoaded().progress( function() {
+        $imageGrid.masonry('layout');
+      });
 
-        document.addEventListener('lazyloaded', function(e) {
-          $imageGrid.masonry('layout');
-        });
-      }
+      document.addEventListener('lazyloaded', function(e) {
+        $imageGrid.masonry('layout');
+      });
     }
 
     function _initToTopButton() {
@@ -81,7 +63,6 @@ export default {
     }
 
     function _resize() {
-      _initMasonry();
     }
 
     $(window).resize(_resize);

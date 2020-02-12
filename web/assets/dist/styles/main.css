@@ -1194,8 +1194,8 @@ a {
 .inline-link::before {
   z-index: -1;
   content: "";
-  height: 0.3em;
   left: -0.05em;
+  height: 0.25em;
   right: -0.05em;
   bottom: 0.05em;
   border-radius: 2px;
@@ -1291,8 +1291,8 @@ button.to-top {
 button.to-top::before {
   z-index: -1;
   content: "";
-  height: 0.3em;
   left: -0.05em;
+  height: 0.25em;
   right: -0.05em;
   bottom: 0.05em;
   border-radius: 2px;
@@ -1315,7 +1315,6 @@ button.to-top:hover::before, button.to-top:focus::before {
   justify-content: space-between;
 }
 .site-header .site-headline .site-title {
-  margin: 0;
   -webkit-font-smoothing: antialiased;
   font-weight: normal;
   text-rendering: optimizeLegibility;
@@ -1325,6 +1324,7 @@ button.to-top:hover::before, button.to-top:focus::before {
   letter-spacing: 0em;
   text-transform: none;
   font-weight: normal;
+  margin: 0;
 }
 .site-header .site-headline .site-title a {
   text-decoration: none;
@@ -1332,6 +1332,17 @@ button.to-top:hover::before, button.to-top:focus::before {
 }
 .site-header .site-headline .site-title a:hover, .site-header .site-headline .site-title a:focus {
   color: #597F57;
+}
+.site-header .site-headline .site-title a:hover svg, .site-header .site-headline .site-title a:focus svg {
+  fill: #597F57;
+  transform: rotate(20deg);
+}
+.site-header .site-headline .site-title a svg {
+  width: 22px;
+  height: 20px;
+  fill: #34302d;
+  display: inline-block;
+  transition: transform 0.2s ease-out, fill 0.2s ease-out;
 }
 .site-header .site-headline .tagline {
   margin: 0;
@@ -1512,7 +1523,12 @@ figure.single-image figcaption p {
 
 .image-overlay {
   display: block;
+  overflow: hidden;
   position: relative;
+}
+.image-overlay img {
+  transform: scale(1);
+  transition: transform 12s ease-out;
 }
 .image-overlay .overlay {
   top: 0;
@@ -1520,6 +1536,7 @@ figure.single-image figcaption p {
   right: 0;
   bottom: 0;
   opacity: 0;
+  z-index: 1;
   display: flex;
   position: absolute;
   align-items: center;
@@ -1552,6 +1569,9 @@ figure.single-image figcaption p {
 }
 .image-overlay .overlay span:hover {
   background-size: 100% 100%;
+}
+.image-overlay:hover img, .image-overlay:focus img {
+  transform: scale(1.1);
 }
 .image-overlay:hover .overlay, .image-overlay:focus .overlay {
   opacity: 1;
@@ -1628,7 +1648,7 @@ body.home .project-grid .grid-item a {
   body.home .project-grid .grid-item::before, body.home .project-grid .grid-item::after {
     top: 0;
     bottom: 0;
-    z-index: 1;
+    z-index: 2;
     content: "";
     width: 20px;
     position: absolute;
@@ -1725,6 +1745,10 @@ body.home .project-grid .grid-item a {
   text-transform: none;
   font-weight: normal;
   margin: 10px 0 0;
+}
+.project-grid .grid-item figcaption p a {
+  cursor: pointer;
+  display: inline-block;
 }
 .project-grid .grid-item.text p {
   margin-top: 0;

@@ -28,51 +28,21 @@
             {% endif %}
           </figure>
 
-          {% case "text" %}
-            {% if item.spacing is defined %}
-              {% set spacingClasses = item.spacing | join(' ') %}
+        {% case "text" %}
+          {% if item.spacing is defined %}
+            {% set spacingClasses = item.spacing | join(' ') %}
+          {% endif %}
+          <div class="grid-item text field-text {{ item.size }}{{ spacingClasses is defined ? ' ' ~ spacingClasses : '' }}">
+            {{ item.text }}
+          </div>
+
+        {% case "blockquote" %}
+          <blockquote class="grid-item {{ item.size|length ? item.size : '' }}{{ item.alignment == 'right' ? ' align-right' }}{{ item.spacing != 'none' ? ' ' ~ item.spacing : '' }}{{ item.colored == 1 ? ' colored' : '' }}">
+            <p><span>{{ item.quote }}</span></p>
+            {% if item.citation %}
+              <cite>— {{ item.citation }}</cite>
             {% endif %}
-            <div class="grid-item text field-text {{ item.size }}{{ spacingClasses is defined ? ' ' ~ spacingClasses : '' }}">
-              {{ item.text }}
-            </div>
-
-          {% case "blockquote" %}
-            <blockquote class="grid-item {{ item.size|length ? item.size : '' }}{{ item.alignment == 'right' ? ' align-right' }}{{ item.spacing != 'none' ? ' ' ~ item.spacing : '' }}{{ item.colored == 1 ? ' colored' : '' }}">
-              <p><span>{{ item.quote }}</span></p>
-              {% if item.citation %}
-                <cite>— {{ item.citation }}</cite>
-              {% endif %}
-            </blockquote>
-
-            {% case "imageCarousel" %}
-              <div class="image-carousel">
-                {% for image in item.images.all() %}
-                  <figure>
-                    <a href="{{ image.url }}" target="_blank">
-                      <img src="{{ image.url }}" alt="{{ image.title }}">
-                    </a>
-                    {% if image.caption %}
-                      <figcaption><p>{{ image.caption }}</p></figcaption>
-                    {% endif %}
-                  </figure>
-                {% endfor %}
-              </div>
-
-            {% case "horizontalGallery" %}
-              <div class="horizontal-gallery">
-                <div class="-inner">
-                  {% for image in item.images.all() %}
-                    <figure>
-                      <a href="{{ image.url }}" target="_blank">
-                        <img src="{{ image.url }}" alt="{{ image.title }}">
-                      </a>
-                      {% if image.caption %}
-                        <figcaption><p>{{ image.caption }}</p></figcaption>
-                      {% endif %}
-                    </figure>
-                  {% endfor %}
-                </div>
-              </div>
+          </blockquote>
 
       {% endswitch %}
     {% endfor %}
