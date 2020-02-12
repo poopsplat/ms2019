@@ -399,7 +399,7 @@ body.dark-theme {
   -webkit-font-smoothing: antialiased;
   font-weight: normal;
   text-rendering: optimizeLegibility;
-  font-family: "GT Pressura Pro", Georgia, serif;
+  font-family: "GT-Pressura-Regular", Georgia, serif;
   font-size: 32px;
   line-height: 1.25;
   letter-spacing: 0em;
@@ -411,7 +411,7 @@ body.dark-theme {
   -webkit-font-smoothing: antialiased;
   font-weight: normal;
   text-rendering: optimizeLegibility;
-  font-family: "GT Pressura Pro", Georgia, serif;
+  font-family: "GT-Pressura-Regular", Georgia, serif;
   font-size: 18px;
   line-height: 1.3333333333;
   letter-spacing: 0em;
@@ -423,7 +423,7 @@ body.dark-theme {
   -webkit-font-smoothing: antialiased;
   font-weight: normal;
   text-rendering: optimizeLegibility;
-  font-family: "GT Pressura Pro", Georgia, serif;
+  font-family: "GT-Pressura-Regular", Georgia, serif;
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0em;
@@ -435,7 +435,7 @@ body.dark-theme {
   -webkit-font-smoothing: antialiased;
   font-weight: normal;
   text-rendering: optimizeLegibility;
-  font-family: "GT Pressura Pro", Georgia, serif;
+  font-family: "GT-Pressura-Regular", Georgia, serif;
   font-size: 12px;
   line-height: 1.3333333333;
   letter-spacing: 0em;
@@ -1168,7 +1168,7 @@ body {
   -webkit-font-smoothing: antialiased;
   font-weight: normal;
   text-rendering: optimizeLegibility;
-  font-family: "GT Pressura Pro", Georgia, serif;
+  font-family: "GT-Pressura-Regular", Georgia, serif;
   font-size: 16px;
   color: #34302d;
   background: #fff;
@@ -1251,7 +1251,7 @@ img {
   -webkit-font-smoothing: antialiased;
   font-weight: normal;
   text-rendering: optimizeLegibility;
-  font-family: "GT Pressura Pro", Georgia, serif;
+  font-family: "GT-Pressura-Regular", Georgia, serif;
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0em;
@@ -1275,7 +1275,7 @@ button.to-top {
   -webkit-font-smoothing: antialiased;
   font-weight: normal;
   text-rendering: optimizeLegibility;
-  font-family: "GT Pressura Pro", Georgia, serif;
+  font-family: "GT-Pressura-Regular", Georgia, serif;
   font-size: 18px;
   line-height: 1.3333333333;
   letter-spacing: 0em;
@@ -1319,7 +1319,7 @@ button.to-top:hover::before, button.to-top:focus::before {
   -webkit-font-smoothing: antialiased;
   font-weight: normal;
   text-rendering: optimizeLegibility;
-  font-family: "GT Pressura Pro", Georgia, serif;
+  font-family: "GT-Pressura-Regular", Georgia, serif;
   font-size: 32px;
   line-height: 1.25;
   letter-spacing: 0em;
@@ -1338,7 +1338,7 @@ button.to-top:hover::before, button.to-top:focus::before {
   -webkit-font-smoothing: antialiased;
   font-weight: normal;
   text-rendering: optimizeLegibility;
-  font-family: "GT Pressura Pro", Georgia, serif;
+  font-family: "GT-Pressura-Regular", Georgia, serif;
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0em;
@@ -1466,7 +1466,7 @@ button.to-top:hover::before, button.to-top:focus::before {
     -webkit-font-smoothing: antialiased;
     font-weight: normal;
     text-rendering: optimizeLegibility;
-    font-family: "GT Pressura Pro", Georgia, serif;
+    font-family: "GT-Pressura-Regular", Georgia, serif;
     font-size: 12px;
     line-height: 1.3333333333;
     letter-spacing: 0em;
@@ -1535,7 +1535,7 @@ figure.single-image figcaption p {
   -webkit-font-smoothing: antialiased;
   font-weight: normal;
   text-rendering: optimizeLegibility;
-  font-family: "GT Pressura Pro", Georgia, serif;
+  font-family: "GT-Pressura-Regular", Georgia, serif;
   font-size: 32px;
   line-height: 1.25;
   letter-spacing: 0em;
@@ -1718,7 +1718,7 @@ body.home .project-grid .grid-item a {
   -webkit-font-smoothing: antialiased;
   font-weight: normal;
   text-rendering: optimizeLegibility;
-  font-family: "GT Pressura Pro", Georgia, serif;
+  font-family: "GT-Pressura-Regular", Georgia, serif;
   font-size: 12px;
   line-height: 1.3333333333;
   letter-spacing: 0em;
@@ -1835,7 +1835,7 @@ body.about-page .bio p {
   -webkit-font-smoothing: antialiased;
   font-weight: normal;
   text-rendering: optimizeLegibility;
-  font-family: "GT Pressura Pro", Georgia, serif;
+  font-family: "GT-Pressura-Regular", Georgia, serif;
   font-size: 18px;
   line-height: 1.3333333333;
   letter-spacing: 0em;
