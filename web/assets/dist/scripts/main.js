@@ -132,6 +132,12 @@ document.addEventListener('lazyloaded', function (e) {
       });
 
       function newSmiley() {
+        // Quit after too many
+        if (smileyCount == 100) {
+          killSmiley();
+          return;
+        }
+
         if (smileyCount == 0) {
           $body.append(smileyMarkup);
           $newSmiley = $('.new-smiley');
@@ -141,15 +147,16 @@ document.addEventListener('lazyloaded', function (e) {
 
         var newX = randomPercentage();
         var newY = randomPercentage();
-        var newScale = Math.random() * 10;
+        var newW = (Math.random() * (10 - 1) + 1) * 30;
+        var newH = (Math.random() * (10 - 1) + 1) * 28;
         var newAngle = Math.floor(Math.random() * (360 - 1) + 1);
-
-        var newColor = _getRandomColor();
-
+        var newColor = getRandomColor();
         $newSmiley.css({
           'top': newY,
           'left': newX,
-          'transform': 'scale(' + newScale + ') translate(-50%, -50%) rotate(' + newAngle + 'deg)'
+          'width': newW + 'px',
+          'height': newH + 'px',
+          'transform': 'translate(-50%, -50%) rotate(' + newAngle + 'deg)'
         }).find('.smiley-background').css('fill', newColor);
         smileyCount++;
       }
@@ -159,7 +166,7 @@ document.addEventListener('lazyloaded', function (e) {
         return percentage + '%';
       }
 
-      function _getRandomColor() {
+      function getRandomColor() {
         var letters = '0123456789ABCDEF';
         var color = '#';
 
@@ -170,7 +177,7 @@ document.addEventListener('lazyloaded', function (e) {
         return color;
       }
 
-      $document.on('click', '.new-smiley', function () {
+      function killSmiley() {
         clearInterval(smileyDump);
         var smileys = $('.new-smiley');
 
@@ -179,13 +186,15 @@ document.addEventListener('lazyloaded', function (e) {
           setTimeout(function () {
             $this.remove();
             smileyCount--;
-          }, i * 10);
+          }, i * 20);
         };
 
         for (var i = 0; i < smileys.length; i++) {
           _loop();
         }
-      });
+      }
+
+      $document.on('click', '.new-smiley', killSmiley);
     }
   },
   finalize: function finalize() {// JavaScript to be fired on all pages, after page specific JS is fired

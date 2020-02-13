@@ -77,6 +77,12 @@ export default {
       });
 
       function newSmiley() {
+        // Quit after too many
+        if (smileyCount == 100) {
+          killSmiley();
+          return;
+        }
+
         if (smileyCount == 0) {
           $body.append(smileyMarkup);
           $newSmiley = $('.new-smiley');
@@ -86,14 +92,17 @@ export default {
 
         let newX = randomPercentage();
         let newY = randomPercentage();
-        let newScale = Math.random() * 10;
+        let newW = (Math.random() * (10 - 1) + 1) * 30;
+        let newH = (Math.random() * (10 - 1) + 1) * 28;
         let newAngle = Math.floor(Math.random() * (360 - 1) + 1);
-        let newColor = _getRandomColor();
+        let newColor = getRandomColor();
 
         $newSmiley.css({
           'top': newY,
           'left': newX,
-          'transform': 'scale('+ newScale +') translate(-50%, -50%) rotate('+ newAngle +'deg)'
+          'width': newW + 'px',
+          'height': newH + 'px',
+          'transform': 'translate(-50%, -50%) rotate('+ newAngle +'deg)'
         }).find('.smiley-background').css('fill', newColor);
 
         smileyCount++;
@@ -104,7 +113,7 @@ export default {
         return percentage + '%';
       }
 
-      function _getRandomColor() {
+      function getRandomColor() {
         var letters = '0123456789ABCDEF';
         var color = '#';
         for (var i = 0; i < 6; i++) {
@@ -113,7 +122,7 @@ export default {
         return color;
       }
 
-      $document.on('click', '.new-smiley', function() {
+      function killSmiley() {
         clearInterval(smileyDump);
         let smileys = $('.new-smiley');
         for (var i = 0; i < smileys.length; i++) {
@@ -121,9 +130,11 @@ export default {
           setTimeout(function() {
             $this.remove();
             smileyCount--;
-          }, i * 10);
+          }, i * 20);
         }
-      })
+      }
+
+      $document.on('click', '.new-smiley', killSmiley);
     }
   },
   finalize() {

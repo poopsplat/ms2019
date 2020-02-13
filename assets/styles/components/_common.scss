@@ -106,7 +106,18 @@ figure.single-image {
   height: 26px;
   position: fixed;
   cursor: not-allowed;
+  animation: fadeIn .25s both;
   .smiley-face {
     mix-blend-mode: hard-light;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
   }
 }
