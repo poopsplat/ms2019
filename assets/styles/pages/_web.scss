@@ -7,7 +7,7 @@ body.web-page {
 
       .project-title {
         a {
-          @include underline();
+          @include highlight();
           text-decoration: none;
         }
       }

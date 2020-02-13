@@ -71,11 +71,10 @@ figure.single-image {
 
     span {
       @include h1;
-      @include underline(black, 4px);
       color: color('white');
       display: inline-block;
       transform: translateY(100%);
-      transition: background-size .2s .2s linear, transform .35s ease-out;
+      transition: transform .35s ease-out;
     }
   }
 
@@ -91,5 +90,23 @@ figure.single-image {
         background-size: 100% 100%;
       }
     }
+  }
+}
+
+.smiley-background {
+  fill: color('white');
+}
+.smiley-face {
+  fill: color('black');
+}
+// Smileys
+.new-smiley {
+  z-index: 10;
+  width: 30px;
+  height: 26px;
+  position: fixed;
+  cursor: not-allowed;
+  .smiley-face {
+    mix-blend-mode: hard-light;
   }
 }

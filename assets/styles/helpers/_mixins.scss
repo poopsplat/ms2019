@@ -9,18 +9,6 @@
   }
 }
 
-// Underline Style
-@mixin underline($color: 'highlight', $thickness: 1px, $speed: .2s) {
-  background-size: 0 100%;
-  background-repeat: no-repeat;
-  transition: background-size $speed ease-out;
-  background-image: linear-gradient(to top,color($color) $thickness, transparent $thickness, transparent 100%);
-
-  &:hover {
-    background-size: 100% 100%;
-  }
-}
-
 // Highlight
 @mixin highlight($highlight: 'highlight', $speed: .2s) {
   position: relative;
@@ -29,7 +17,7 @@
     right: 0;
     z-index: -1;
     content: '';
-    height: 0.3em;
+    height: 0.25em;
     bottom: -0.05em;
     border-radius: 2px;
     position: absolute;
