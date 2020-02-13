@@ -128,7 +128,7 @@ document.addEventListener('lazyloaded', function (e) {
     function _initSmileys() {
       smileyCount = 0;
       $smiley.on('click', function () {
-        smileyDump = setInterval(newSmiley, 500);
+        smileyDump = setInterval(newSmiley, 250);
       });
 
       function newSmiley() {
