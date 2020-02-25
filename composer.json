@@ -3,12 +3,13 @@
     "aelvan/imager": "v2.4.0",
     "angellco/spoon": "3.5.2",
     "clubstudioltd/craft-asset-rev": "6.0.2",
-    "craftcms/cms": "3.4.5",
-    "craftcms/redactor": "2.5.0",
-    "mmikkel/cp-field-inspect": "1.1.0.1",
+    "craftcms/cms": "3.4.8",
+    "craftcms/redactor": "2.6.0.1",
+    "dolphiq/sitemap": "1.2.0",
+    "mmikkel/cp-field-inspect": "1.1.2",
     "monachilada/craft-matrixtoolbar": "1.0.6",
     "verbb/smith": "1.1.1",
-    "verbb/super-table": "2.4.4",
+    "verbb/super-table": "2.4.5",
     "vlucas/phpdotenv": "^3.4.0"
   },
   "autoload": {
