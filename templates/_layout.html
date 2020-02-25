@@ -3,10 +3,10 @@
 <html lang="en" class="no-js">
   <head>
     <meta charset="utf-8">
-    <title>{% if seoTitle is defined %}{{ seoTitle }}{% elseif title is defined %}{{ title }} | Matt Soria{% else %}Matt Soria{% endif %}</title>
-    {% if seoDescription is defined %}
-    <meta name="description" content="{{ seoDescription }}">
-    {% endif %}
+    <title>{% if seoTitle is defined %}{{ seoTitle }}{% elseif title is defined %}{{ title }} | Matt Soria{% else %}Matt Soria | {{ tagline.textField }}{% endif %}</title>
+{% if seo.seoDescription is defined %}
+    <meta name="description" content="{{ seo.seoDescription }}">
+{% endif %}
     <meta property="og:title" content="{% if seoTitle is defined %}{{ seoTitle }}{% elseif title is defined %}{{ title }} | {{ siteName }}{% else %}{{ siteName }}{% endif %}">
     <meta name="google-site-verification" content="clcwIm8zAwhSWBVXOhz9UBllB3mZpdOAXeoL2AaCZQc">
     <meta name="p:domain_verify" content="54d124bc9c4618cfe38edde207b08e55">
