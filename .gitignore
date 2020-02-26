@@ -7,8 +7,6 @@
 
 # Build
 node_modules
-*.js.map
-*.css.map
 
 # Letsencrypt
 .well-known
