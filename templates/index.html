@@ -27,7 +27,7 @@
         <a href="{{ feature.portfolioPage.one().url }}" class="image-overlay">
           <div class="overlay"><div class="overlay-text"><span>{{ feature.portfolioPage.one().title|lower }}</span></div></div>
         {% endif %}
-        <img src="{{ transformedImage.getUrl() }}" alt="{{ feature.imageFile.one().title }}">
+        <img class="lazyload" data-src="{{ transformedImage.getUrl() }}" alt="{{ feature.imageFile.one().title }}">
         {% if feature.portfolioPage %}
         </a>
         {% endif %}
