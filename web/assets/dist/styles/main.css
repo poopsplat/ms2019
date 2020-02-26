@@ -1327,6 +1327,7 @@ button.to-top:hover::before, button.to-top:focus::before {
   transition: color 0.2s ease-out;
 }
 .site-header .site-headline .site-title a:hover, .site-header .site-headline .site-title a:focus {
+  outline: none;
   color: #597F57;
 }
 .site-header .site-headline .tagline {
@@ -1384,6 +1385,9 @@ button.to-top:hover::before, button.to-top:focus::before {
 }
 .site-nav a:hover::before, .site-nav a:focus::before {
   transform: scaleX(1);
+}
+.site-nav a:hover, .site-nav a:focus {
+  outline: none;
 }
 @media screen and (min-width: 768px) {
   .site-nav li {
@@ -1760,6 +1764,9 @@ body.home .project-grid .grid-item a {
 .project-grid .grid-item a {
   display: block;
   cursor: zoom-in;
+}
+.project-grid .grid-item a:focus {
+  outline: 3px solid #597F57;
 }
 .project-grid .grid-item a img {
   width: 100%;

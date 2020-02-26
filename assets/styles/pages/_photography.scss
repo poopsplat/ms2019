@@ -57,6 +57,9 @@
     a {
       display: block;
       cursor: zoom-in;
+      &:focus {
+        outline: 3px solid color('highlight');
+      }
 
       img {
         width: 100%;

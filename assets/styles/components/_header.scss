@@ -18,6 +18,7 @@
         transition: color .2s ease-out;
         &:hover,
         &:focus {
+          outline: none;
           color: color('highlight');
         }
       }
@@ -70,7 +71,7 @@
 
     &:hover,
     &:focus {
-      // color: color('white');
+      outline: none;
     }
   }
 
