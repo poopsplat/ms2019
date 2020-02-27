@@ -27,3 +27,6 @@ web/assets/webfonts
 # Uploads
 web/imager
 web/uploads
+
+# php settings
+.user.ini
