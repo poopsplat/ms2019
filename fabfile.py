@@ -16,9 +16,6 @@ def production():
   env.git_branch = 'master'
   env.remote_protocol = 'https'
 
-def assets():
-  local('npx gulp --production')
-
 def devsetup():
   print "Installing composer, node and bower assets...\n"
   local('composer install')
@@ -33,11 +30,16 @@ def devsetup():
 #     run('/usr/bin/mysqldump --defaults-extra-file=/home/soriamatt/etc/.my.cnf -u ms2019 ms2019 | /usr/bin/mysql --defaults-extra-file=/home/soriamatt/etc/.my.cnf -u ms2019 ms2019')
 #     run('/usr/bin/rsync -av --delete /home/soriamatt/webapps/ms2019/web/uploads/ /home/soriamatt/apps/ms2019/web/uploads/')
 
-def deploy(composer='y'):
+def deploy(composer='y', assets='y'):
   update()
   if composer == 'y':
     composer_install()
-  # clear_cache()
+  # build and sync production assets
+  if assets != 'n':
+    local('rm -rf web/assets/dist')
+    local('yarn build:production')
+    run('mkdir -p ' + env.remotepath + '/web/assets/dist')
+    put('web/assets/dist', env.remotepath + '/web/assets/')
 
 def update():
   with cd(env.remotepath):
