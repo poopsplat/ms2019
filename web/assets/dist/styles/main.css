@@ -1698,8 +1698,11 @@ body.home .project-grid .grid-item a {
   body.home .project-grid .grid-item:nth-of-type(4n + 3) {
     float: right;
   }
-  body.home .project-grid .grid-item img {
-    height: 39.9vw;
+  body.home .project-grid .grid-item.small {
+    width: 33.33%;
+  }
+  body.home .project-grid .grid-item.medium {
+    width: 66.6%;
   }
   body.home .project-grid.alt-layout .grid-item:nth-of-type(2n + 1) {
     float: right;

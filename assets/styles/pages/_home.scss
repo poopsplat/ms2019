@@ -34,8 +34,11 @@ body.home {
           float: right;
         }
 
-        img {
-          height: 39.9vw;
+        &.small {
+          width: 33.33%;
+        }
+        &.medium {
+          width: 66.6%;
         }
       }
 
