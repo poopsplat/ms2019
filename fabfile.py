@@ -9,13 +9,6 @@ env.git_branch = 'master'
 env.warn_only = True
 env.remote_protocol = 'http'
 
-def production():
-  env.hosts = ['mattsoria.com']
-  env.user = 'soriamatt'
-  env.remotepath = '/home/soriamatt/apps/ms2019'
-  env.git_branch = 'master'
-  env.remote_protocol = 'https'
-
 def devsetup():
   print "Installing composer, node and bower assets...\n"
   local('composer install')
@@ -48,6 +41,3 @@ def update():
 def composer_install():
   with cd(env.remotepath):
     run('~/bin/composer.phar install')
-
-# def clear_cache():
-#   run ('curl -vs -o /dev/null {0}://{1}/actions/cacheClear/clear?key=fbclear > /dev/null 2>&1'.format(env.remote_protocol, env.hosts[0]))

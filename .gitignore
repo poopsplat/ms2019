@@ -18,6 +18,7 @@ node_modules
 bower_components
 
 # Compiled Assets
+dist
 web/assets/dist/css/main.css
 web/assets/dist/js/main.js
 
