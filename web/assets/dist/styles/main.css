@@ -394,6 +394,7 @@ body.dark-theme {
   src: url("../fonts/GT-Pressura-Regular.eot?#iefix") format("embedded-opentype"), url("../fonts/GT-Pressura-Regular.woff2") format("woff2"), url("../fonts/GT-Pressura-Regular.woff") format("woff");
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 .h1 {
   -webkit-font-smoothing: antialiased;
