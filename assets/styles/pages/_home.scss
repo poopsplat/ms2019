@@ -5,6 +5,9 @@ body.home {
     .grid-item {
       a {
         cursor: pointer;
+        &:focus {
+          outline: none;
+        }
       }
     }
 
