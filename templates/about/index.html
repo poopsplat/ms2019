@@ -6,7 +6,7 @@
     {% if entry.images | length %}
       {% set images = entry.images.all() %}
       {% set image = random(images) %}
-      <figure class="about-image single-image col-md-1-2 md-order-1">
+      <figure class="about-image single-image col-md-1-2">
         <img src="{{ image.getUrl }}" alt="{{ image.title }}">
         {% if image.caption %}
           <figcaption>
@@ -17,15 +17,24 @@
     {% endif %}
 
     {% if entry.textArea %}
-      <div class="col-md-1-2 md-order-0">
+      <div class="col-md-1-2">
         <div class="bio field-text">
           {{ entry.textArea }}
         </div>
 
+        {#
         {% if entry.spotifyPlaylist %}
           <div class="music">
-            <h3 class="h2">what I've been listening to lately:</h3>
+            <h4 class="h2">What I've been listening to lately:</h3>
             <iframe src="https://open.spotify.com/embed/playlist/{{ entry.spotifyPlaylist }}" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+          </div>
+        {% endif %}
+        #}
+
+        {% if entry.colophon | length %}
+          <div class="colophon">
+            <h4>Colophon</h5>
+            {{ entry.colophon }}
           </div>
         {% endif %}
       </div>

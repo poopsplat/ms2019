@@ -8,8 +8,7 @@ html {
 }
 
 body {
-  @include font-main;
-  font-size: 16px;
+  @include p1;
   color: color('black');
 	background: color('offwhite');
 }

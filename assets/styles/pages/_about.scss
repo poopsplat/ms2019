@@ -8,6 +8,10 @@ body.about-page {
       @include h2;
       margin-top: 0;
     }
+
+    @include media-md {
+      margin-top: 0;
+    }
   }
 
   .music {
@@ -15,6 +19,25 @@ body.about-page {
 
     iframe {
       max-width: 300px;
+    }
+  }
+
+  .colophon {
+    border-radius: 4px;
+    padding: $padding-sm;
+    background-color: rgba(color('black'), .1);
+
+    h4 {
+      @include h2;
+      margin: 0;
+    }
+
+    p {
+      margin-bottom: 0;
+    }
+
+    a {
+      @include inline-link;
     }
   }
 }

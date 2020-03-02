@@ -68,7 +68,7 @@
 
 @mixin h2 {
   @include font-main;
-  @include paragraph-style(18, 24);
+  @include paragraph-style(18, 26);
 }
 .h2 {
   @include h2;

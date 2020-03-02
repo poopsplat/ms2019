@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "ed3690394e477205fcc6689c7df68b9e",
+    "content-hash": "efca10976efa98da413d41cffb4a5a05",
     "packages": [
         {
             "name": "aelvan/imager",
@@ -509,11 +509,11 @@
         },
         {
             "name": "craftcms/cms",
-            "version": "3.4.8",
+            "version": "3.4.9",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/cms/zipball/eca660ae7dde806bba54cc69d7a67d50e7745a76",
-                "reference": "eca660ae7dde806bba54cc69d7a67d50e7745a76",
+                "url": "https://api.github.com/repos/craftcms/cms/zipball/fa28541499591b458e11f61c21016365da7120f5",
+                "reference": "fa28541499591b458e11f61c21016365da7120f5",
                 "shasum": ""
             },
             "require": {
@@ -594,7 +594,7 @@
                 "docs": "https://docs.craftcms.com/v3/",
                 "rss": "https://github.com/craftcms/cms/releases.atom"
             },
-            "time": "2020-02-22T01:20:21+00:00"
+            "time": "2020-02-28T19:59:36+00:00"
         },
         {
             "name": "craftcms/oauth2-craftid",
@@ -2465,11 +2465,11 @@
         },
         {
             "name": "mmikkel/cp-field-inspect",
-            "version": "1.1.2",
+            "version": "1.1.3",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mmikkel/CpFieldInspect-Craft/zipball/81e70ed6e2945134cb76dc5c012ae8fa4ff06c82",
-                "reference": "81e70ed6e2945134cb76dc5c012ae8fa4ff06c82",
+                "url": "https://api.github.com/repos/mmikkel/CpFieldInspect-Craft/zipball/ab5eb5536f01609d5b8ed047a493e81afcef0226",
+                "reference": "ab5eb5536f01609d5b8ed047a493e81afcef0226",
                 "shasum": ""
             },
             "require": {
@@ -2511,7 +2511,7 @@
                 "docs": "https://github.com/mmikkel/CpFieldInspect-Craft/blob/master/README.md",
                 "issues": "https://github.com/mmikkel/CpFieldInspect-Craft/issues"
             },
-            "time": "2020-02-14T18:06:44+00:00"
+            "time": "2020-02-29T10:00:32+00:00"
         },
         {
             "name": "monachilada/craft-matrixtoolbar",
@@ -4814,11 +4814,11 @@
         },
         {
             "name": "verbb/super-table",
-            "version": "2.4.5",
+            "version": "2.4.6",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/verbb/super-table/zipball/580905f9385205a91e4d162d4a0da652bf5660cc",
-                "reference": "580905f9385205a91e4d162d4a0da652bf5660cc",
+                "url": "https://api.github.com/repos/verbb/super-table/zipball/29e4a2eea3653fa8822725d59032b4afb762ced1",
+                "reference": "29e4a2eea3653fa8822725d59032b4afb762ced1",
                 "shasum": ""
             },
             "require": {
@@ -4863,7 +4863,7 @@
                 "docs": "https://github.com/verbb/super-table",
                 "rss": "https://github.com/verbb/super-table/commits/v2.atom"
             },
-            "time": "2020-02-24T03:42:19+00:00"
+            "time": "2020-02-28T09:01:53+00:00"
         },
         {
             "name": "vlucas/phpdotenv",

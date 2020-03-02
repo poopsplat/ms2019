@@ -15,16 +15,16 @@
   &::before {
     left: 0;
     right: 0;
+    bottom: 0;
     z-index: -1;
     content: '';
-    height: 0.25em;
-    bottom: -0.05em;
+    height: 0.2em;
     border-radius: 2px;
     position: absolute;
     transform: scaleX(0);
     transform-origin: left;
     background-color: color($highlight);
-    transition: transform 0.15s ease-out;
+    transition: transform 0.25s ease-out;
   }
 
   &:hover,
@@ -45,10 +45,11 @@
     z-index: -1;
     content: '';
     left: -0.05em;
-    height: 0.25em;
+    height: 0.2em;
     right: -0.05em;
-    bottom: 0.05em;
-    border-radius: 2px;
+    bottom: 0.18em;
+    display: block;
+    border-radius: 4px;
     position: absolute;
     transition: height 0.15s ease-out;
     background-color: color($highlight);
@@ -56,10 +57,10 @@
 
   &:hover,
   &:focus {
-    color: color('white');
-    &::before {
-      height: 1.2em;
-    }
+    color: color('highlight');
+    // &::before {
+    //   height: 1.35em;
+    // }
   }
 }
 
