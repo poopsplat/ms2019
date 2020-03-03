@@ -1,4 +1,4 @@
-dateModified: 1583190562
+dateModified: 1583201662
 dolphiq_sitemap_entries:
   0869b513-a65b-4e37-a42e-39fb8668bff1:
     changefreq: weekly
@@ -627,6 +627,8 @@ matrixBlockTypes:
           removeEmptyTags: '1'
           removeInlineStyles: '1'
           removeNbsp: '1'
+          showUnpermittedFiles: false
+          showUnpermittedVolumes: true
         translationKeyFormat: null
         translationMethod: none
         type: craft\redactor\Field
@@ -854,6 +856,17 @@ matrixBlockTypes:
                 -
                   - value
                   - small
+                -
+                  - default
+                  - ''
+            -
+              __assoc__:
+                -
+                  - label
+                  - Half
+                -
+                  - value
+                  - half
                 -
                   - default
                   - ''
@@ -1426,10 +1439,10 @@ superTableBlockTypes:
           -
             fields:
               09d7205f-7433-426c-9841-55969fd31a37:
-                required: '0'
-                sortOrder: '1'
+                required: false
+                sortOrder: 1
             name: Content
-            sortOrder: '1'
+            sortOrder: 1
     fields:
       09d7205f-7433-426c-9841-55969fd31a37:
         contentColumnType: string
@@ -1437,7 +1450,7 @@ superTableBlockTypes:
         handle: gridSection
         instructions: ''
         name: 'Grid Section'
-        searchable: '0'
+        searchable: false
         settings:
           contentTable: '{{%matrixcontent_gridsection}}'
           maxBlocks: ''
