@@ -1,0 +1,24 @@
+{% extends (craft.app.request.isAjax and not craft.app.request.isLivePreview) ? "_ajax-layout" : "_layout" %}
+{% header "Cache-Control: no-cache" %}
+
+{% set title = '503: Page Not Found' %}
+{% set bodyClass = 'page-404' %}
+
+{% block content %}
+
+  <div class="page-content grid">
+    <div class="col-md-1-2">
+      <h2>Sorry, I'm doing some maintenance right now</h2>
+      <p>I should have this thing back and running soon 😅</p>
+    </div>
+    {% if fourOhFour.fourOhFourImages | length %}
+      {% set images = fourOhFour.fourOhFourImages.all() %}
+      {% set image = random(images) %}
+
+      <div class="col-md-1-2">
+        <img src="{{ image.getUrl }}" alt="{{ image.title }}">
+      </div>
+    {% endif %}
+  </div>
+
+{% endblock %}
