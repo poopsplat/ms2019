@@ -4,7 +4,9 @@
   <head>
     <meta charset="utf-8">
     <title>{% if seoTitle is defined %}{{ seoTitle }}{% elseif title is defined %}{{ title }} | Matt Soria{% else %}Matt Soria | {{ tagline.textField }}{% endif %}</title>
-{% if seo.seoDescription is defined %}
+{% if entry.seoDescription | length %}
+    <meta name="description" content="{{ entry.seoDescription }}">
+{% elseif seo.seoDescription | length %}
     <meta name="description" content="{{ seo.seoDescription }}">
 {% endif %}
     <meta property="og:title" content="{% if seoTitle is defined %}{{ seoTitle }}{% elseif title is defined %}{{ title }} | {{ siteName }}{% else %}{{ siteName }}{% endif %}">
