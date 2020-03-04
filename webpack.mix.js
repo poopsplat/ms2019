@@ -7,12 +7,7 @@ const publicPath = path => `${mix.config.publicPath}/${path}`;
 const src = path => `assets/${path}`;
 
 // Public Path
-mix
-  .setPublicPath('web/assets/dist')
-  // .setResourceRoot(`/app/themes/sage/${mix.config.publicPath}/`)
-  // .webpackConfig({
-  //   output: { publicPath: mix.config.resourceRoot }
-  // });
+mix.setPublicPath('web/assets/dist');
 
 // Browsersync
 mix.browserSync('ms2019.localhost');
@@ -62,5 +57,4 @@ mix.options({
 mix.sourceMaps(false, 'source-map');
 
 // Hash and version files in production.
-mix.version();
 mix.version([publicPath`images`]);
