@@ -1,4 +1,4 @@
-dateModified: 1583201662
+dateModified: 1583294796
 dolphiq_sitemap_entries:
   0869b513-a65b-4e37-a42e-39fb8668bff1:
     changefreq: weekly
@@ -1125,9 +1125,16 @@ sections:
                 fields:
                   943be30c-9a63-45f4-a450-9b102820f873:
                     required: false
-                    sortOrder: 2
+                    sortOrder: 1
                 name: 'Project Blocks'
                 sortOrder: 1
+              -
+                fields:
+                  4086522c-dac0-4ff2-9a55-5715fc1c01f4:
+                    required: false
+                    sortOrder: 1
+                name: SEO
+                sortOrder: 2
         handle: photography
         hasTitleField: true
         name: Photography
@@ -1174,6 +1181,13 @@ sections:
                     sortOrder: 4
                 name: Content
                 sortOrder: 1
+              -
+                fields:
+                  4086522c-dac0-4ff2-9a55-5715fc1c01f4:
+                    required: false
+                    sortOrder: 1
+                name: SEO
+                sortOrder: 2
         handle: about
         hasTitleField: false
         name: About
