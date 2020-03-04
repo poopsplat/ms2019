@@ -1,4 +1,4 @@
-dateModified: 1583295259
+dateModified: 1583295887
 dolphiq_sitemap_entries:
   0869b513-a65b-4e37-a42e-39fb8668bff1:
     changefreq: weekly
@@ -1219,12 +1219,22 @@ sections:
     enableVersioning: true
     entryTypes:
       235f9b7d-1ad8-4743-abba-5ee6a120f394:
+        fieldLayouts:
+          237888f2-d207-49f9-a8e4-f65b9cbca5ef:
+            tabs:
+              -
+                fields:
+                  4086522c-dac0-4ff2-9a55-5715fc1c01f4:
+                    required: false
+                    sortOrder: 1
+                name: SEO
+                sortOrder: 1
         handle: web
         hasTitleField: false
         name: Web
         sortOrder: 1
         titleFormat: '{section.name|raw}'
-        titleLabel: null
+        titleLabel: ''
     handle: web
     name: Web
     previewTargets:
