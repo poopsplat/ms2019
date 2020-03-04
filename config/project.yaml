@@ -1,4 +1,4 @@
-dateModified: 1583294796
+dateModified: 1583295259
 dolphiq_sitemap_entries:
   0869b513-a65b-4e37-a42e-39fb8668bff1:
     changefreq: weekly
@@ -1091,6 +1091,13 @@ sections:
                     sortOrder: 3
                 name: Content
                 sortOrder: 1
+              -
+                fields:
+                  4086522c-dac0-4ff2-9a55-5715fc1c01f4:
+                    required: false
+                    sortOrder: 1
+                name: SEO
+                sortOrder: 2
         handle: project
         hasTitleField: true
         name: Project
