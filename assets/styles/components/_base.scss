@@ -35,7 +35,6 @@ img {
 .sitewrapper {
   width: 100%;
   margin: 0 auto;
-  overflow: hidden;
   position: relative;
   @include clearfix();
   padding: 0 $padding-sm;
