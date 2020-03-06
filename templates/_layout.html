@@ -9,7 +9,7 @@
 {% elseif seo.seoDescription | length %}
     <meta name="description" content="{{ seo.seoDescription }}">
 {% endif %}
-    <meta property="og:title" content="{% if seoTitle is defined %}{{ seoTitle }}{% elseif title is defined %}{{ title }} | Matt Soria{% else %}Matt Soria | {{ tagline.textField }}{% endif %}">
+    <meta property="og:title" content="{% if entry.title != 'Homepage' %}{{ entry.title }}{{ entry.section.handle == 'photography' ? ' Photography' : '' }} | Matt Soria{% else %}Matt Soria | {{ tagline.textField }}{% endif %}">
     <meta property="og:url" content="{% if entry is defined %}{{ entry.url }}{% else %}{{ siteUrl }}{% endif %}">
     <link rel="canonical" href="{% if entry is defined %}{{ entry.url }}{% else %}{{ siteUrl }}{% endif %}">
     <meta name="google-site-verification" content="clcwIm8zAwhSWBVXOhz9UBllB3mZpdOAXeoL2AaCZQc">
