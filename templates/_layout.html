@@ -3,7 +3,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>{% if entry.title is defined %}{{ entry.title }}{{ entry.section.handle == 'photography' ? ' Photography' : '' }} | Matt Soria{% else %}Matt Soria | {{ tagline.textField }}{% endif %}</title>
+    <title>{% if entry.title != 'Homepage' %}{{ entry.title }}{{ entry.section.handle == 'photography' ? ' Photography' : '' }} | Matt Soria{% else %}Matt Soria | {{ tagline.textField }}{% endif %}</title>
 {% if entry.seoDescription | length %}
     <meta name="description" content="{{ entry.seoDescription }}">
 {% elseif seo.seoDescription | length %}
