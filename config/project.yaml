@@ -1,4 +1,4 @@
-dateModified: 1583295887
+dateModified: 1586739240
 dolphiq_sitemap_entries:
   0869b513-a65b-4e37-a42e-39fb8668bff1:
     changefreq: weekly
@@ -34,6 +34,8 @@ fieldGroups:
     name: Globals
   c7bb62fb-ea25-4155-a3c0-6449c7ef6446:
     name: Navigation
+  e6c2f5c4-186f-4fab-87bc-d11cbe3d0707:
+    name: Stories
   ee44e43d-0e99-4e21-8594-d1e34c71aab6:
     name: Homepage
 fields:
@@ -58,6 +60,117 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\redactor\Field
+  0522957f-ab0d-46b1-a6ab-4657a86b77b0:
+    contentColumnType: string
+    fieldGroup: e6c2f5c4-186f-4fab-87bc-d11cbe3d0707
+    handle: thumbnailSize
+    instructions: 'The size of the thumbnail that appears on the stories landing page'
+    name: 'Thumbnail Size'
+    searchable: true
+    settings:
+      optgroups: true
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - Small
+            -
+              - value
+              - small
+            -
+              - default
+              - '1'
+        -
+          __assoc__:
+            -
+              - label
+              - Medium
+            -
+              - value
+              - medium
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Large
+            -
+              - value
+              - large
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+  07328aa5-5eca-483f-a3d8-08281657e0e1:
+    contentColumnType: text
+    fieldGroup: e6c2f5c4-186f-4fab-87bc-d11cbe3d0707
+    handle: date
+    instructions: "The date around which the story occurred, or date of post —\_whichever is more relevant"
+    name: Date
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  1bd82085-9793-4d44-bb1b-ffcfdee3a9d6:
+    contentColumnType: string
+    fieldGroup: 7e139dfc-df60-4f6a-9017-245e9a410142
+    handle: seoImage
+    instructions: ''
+    name: 'SEO Image'
+    searchable: false
+    settings:
+      allowedKinds:
+        - image
+      defaultUploadLocationSource: 'volume:ed7a90f0-b4e5-4c4c-b15c-831c22754213'
+      defaultUploadLocationSubpath: '{owner.slug}'
+      limit: '1'
+      localizeRelations: false
+      restrictFiles: '1'
+      selectionLabel: 'Choose an image'
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      singleUploadLocationSource: 'volume:ed7a90f0-b4e5-4c4c-b15c-831c22754213'
+      singleUploadLocationSubpath: ''
+      source: null
+      sources: '*'
+      targetSiteId: null
+      useSingleFolder: false
+      validateRelatedElements: ''
+      viewMode: large
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Assets
+  272cbcd0-f0c5-4253-a0d7-f363f098d385:
+    contentColumnType: text
+    fieldGroup: e6c2f5c4-186f-4fab-87bc-d11cbe3d0707
+    handle: description
+    instructions: 'A short description displayed on the stories landing page'
+    name: Description
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
   2c484629-25c9-4f98-9bfe-9f9dfdef88ce:
     contentColumnType: string(255)
     fieldGroup: 47daa049-399a-46d9-913e-fc53ef6bb127
@@ -132,6 +245,35 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText
+  7ef221c2-43a8-491a-bae1-83b7e1606a6f:
+    contentColumnType: string
+    fieldGroup: e6c2f5c4-186f-4fab-87bc-d11cbe3d0707
+    handle: thumbnail
+    instructions: 'The image used on the stories landing page'
+    name: Thumbnail
+    searchable: true
+    settings:
+      allowedKinds:
+        - image
+      defaultUploadLocationSource: 'volume:ed7a90f0-b4e5-4c4c-b15c-831c22754213'
+      defaultUploadLocationSubpath: ''
+      limit: '1'
+      localizeRelations: false
+      restrictFiles: '1'
+      selectionLabel: 'Choose an image'
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      singleUploadLocationSource: 'volume:fd415322-fca4-4964-8aca-d081533481f1'
+      singleUploadLocationSubpath: '{owner.slug}'
+      source: null
+      sources: '*'
+      targetSiteId: null
+      useSingleFolder: true
+      validateRelatedElements: ''
+      viewMode: list
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Assets
   90718b83-05ea-4441-85eb-326ab6c384ae:
     contentColumnType: string
     fieldGroup: c7bb62fb-ea25-4155-a3c0-6449c7ef6446
@@ -366,6 +508,9 @@ globalSets:
         tabs:
           -
             fields:
+              1bd82085-9793-4d44-bb1b-ffcfdee3a9d6:
+                required: false
+                sortOrder: 2
               4086522c-dac0-4ff2-9a55-5715fc1c01f4:
                 required: false
                 sortOrder: 1
@@ -1137,6 +1282,9 @@ sections:
                 sortOrder: 1
               -
                 fields:
+                  1bd82085-9793-4d44-bb1b-ffcfdee3a9d6:
+                    required: false
+                    sortOrder: 2
                   4086522c-dac0-4ff2-9a55-5715fc1c01f4:
                     required: false
                     sortOrder: 1
@@ -1190,6 +1338,9 @@ sections:
                 sortOrder: 1
               -
                 fields:
+                  1bd82085-9793-4d44-bb1b-ffcfdee3a9d6:
+                    required: false
+                    sortOrder: 2
                   4086522c-dac0-4ff2-9a55-5715fc1c01f4:
                     required: false
                     sortOrder: 1
@@ -1215,6 +1366,62 @@ sections:
         template: about
         uriFormat: about
     type: single
+  483a75a4-8455-445d-b2d3-20198be9b8cf:
+    enableVersioning: true
+    entryTypes:
+      199c5ba2-87e2-4150-a52e-d9bd93393179:
+        fieldLayouts:
+          507941ba-422a-4a1d-8c94-096f39159430:
+            tabs:
+              -
+                fields:
+                  0522957f-ab0d-46b1-a6ab-4657a86b77b0:
+                    required: false
+                    sortOrder: 4
+                  07328aa5-5eca-483f-a3d8-08281657e0e1:
+                    required: false
+                    sortOrder: 1
+                  272cbcd0-f0c5-4253-a0d7-f363f098d385:
+                    required: false
+                    sortOrder: 2
+                  7ef221c2-43a8-491a-bae1-83b7e1606a6f:
+                    required: false
+                    sortOrder: 3
+                name: 'Story Settings'
+                sortOrder: 1
+              -
+                fields:
+                  943be30c-9a63-45f4-a450-9b102820f873:
+                    required: false
+                    sortOrder: 1
+                name: Content
+                sortOrder: 2
+              -
+                fields:
+                  1bd82085-9793-4d44-bb1b-ffcfdee3a9d6:
+                    required: false
+                    sortOrder: 2
+                  4086522c-dac0-4ff2-9a55-5715fc1c01f4:
+                    required: false
+                    sortOrder: 1
+                name: SEO
+                sortOrder: 3
+        handle: stories
+        hasTitleField: true
+        name: Stories
+        sortOrder: 1
+        titleFormat: ''
+        titleLabel: Title
+    handle: stories
+    name: Stories
+    propagationMethod: all
+    siteSettings:
+      35815072-acac-4452-9c5d-768772bc4940:
+        enabledByDefault: true
+        hasUrls: true
+        template: stories/story
+        uriFormat: 'stories/{slug}'
+    type: channel
   b93ae770-ff54-4654-ac15-99fb4bb646ae:
     enableVersioning: true
     entryTypes:
@@ -1263,6 +1470,16 @@ sections:
                     sortOrder: 1
                 name: Content
                 sortOrder: 1
+              -
+                fields:
+                  1bd82085-9793-4d44-bb1b-ffcfdee3a9d6:
+                    required: false
+                    sortOrder: 2
+                  4086522c-dac0-4ff2-9a55-5715fc1c01f4:
+                    required: false
+                    sortOrder: 1
+                name: SEO
+                sortOrder: 2
         handle: homepage
         hasTitleField: false
         name: Homepage
@@ -1282,6 +1499,39 @@ sections:
         hasUrls: true
         template: ''
         uriFormat: __home__
+    type: single
+  d4e43f82-5626-48d8-a443-05a60ee1b07d:
+    enableVersioning: true
+    entryTypes:
+      2ac50f68-2ee7-4b66-8b4e-d3327325636e:
+        fieldLayouts:
+          899843ce-ddc0-4caf-becf-be65d77ea34a:
+            tabs:
+              -
+                fields:
+                  1bd82085-9793-4d44-bb1b-ffcfdee3a9d6:
+                    required: false
+                    sortOrder: 2
+                  4086522c-dac0-4ff2-9a55-5715fc1c01f4:
+                    required: false
+                    sortOrder: 1
+                name: SEO
+                sortOrder: 1
+        handle: storiesLandingPage
+        hasTitleField: true
+        name: 'Stories Landing Page'
+        sortOrder: 1
+        titleFormat: '{section.name|raw}'
+        titleLabel: Title
+    handle: storiesLandingPage
+    name: 'Stories Landing Page'
+    propagationMethod: all
+    siteSettings:
+      35815072-acac-4452-9c5d-768772bc4940:
+        enabledByDefault: true
+        hasUrls: true
+        template: stories
+        uriFormat: stories
     type: single
   d982f6ca-62e5-4e33-8e32-4f153ee1c737:
     enableVersioning: true
@@ -1531,3 +1781,12 @@ volumes:
     sortOrder: 1
     type: craft\volumes\Local
     url: /uploads/pages/
+  fd415322-fca4-4964-8aca-d081533481f1:
+    handle: stories
+    hasUrls: true
+    name: Stories
+    settings:
+      path: uploads/stories/
+    sortOrder: 3
+    type: craft\volumes\Local
+    url: /uploads/stories/
