@@ -1,4 +1,4 @@
-dateModified: 1586739240
+dateModified: 1586740454
 dolphiq_sitemap_entries:
   0869b513-a65b-4e37-a42e-39fb8668bff1:
     changefreq: weekly
@@ -1216,56 +1216,6 @@ plugins:
     enabled: true
     schemaVersion: 2.2.1
 sections:
-  3b91219f-bd1a-4386-a558-ecf32810afbb:
-    enableVersioning: true
-    entryTypes:
-      e7a9e365-5c99-49aa-ade8-e69f8473ca3b:
-        fieldLayouts:
-          557cba95-7d1d-40d5-84b6-04acebb4e650:
-            tabs:
-              -
-                fields:
-                  2c484629-25c9-4f98-9bfe-9f9dfdef88ce:
-                    required: false
-                    sortOrder: 2
-                  ae339638-cd2d-4c0b-b62c-07f6e6a17c92:
-                    required: false
-                    sortOrder: 1
-                  c39f8f0e-12a4-4d64-9d39-3f9a8e67e9a0:
-                    required: false
-                    sortOrder: 3
-                name: Content
-                sortOrder: 1
-              -
-                fields:
-                  4086522c-dac0-4ff2-9a55-5715fc1c01f4:
-                    required: false
-                    sortOrder: 1
-                name: SEO
-                sortOrder: 2
-        handle: project
-        hasTitleField: true
-        name: Project
-        sortOrder: 1
-        titleFormat: ''
-        titleLabel: Title
-    handle: webProjects
-    name: 'Web Projects'
-    previewTargets:
-      -
-        label: 'Primary entry page'
-        urlFormat: '{url}'
-    propagationMethod: all
-    siteSettings:
-      35815072-acac-4452-9c5d-768772bc4940:
-        enabledByDefault: true
-        hasUrls: true
-        template: web/_entry
-        uriFormat: 'web/{slug}'
-    structure:
-      maxLevels: null
-      uid: dd8c4a52-dc49-4b5f-9dc6-467dd8a5a488
-    type: structure
   3c179024-6729-4830-9212-395ff84a3aad:
     enableVersioning: true
     entryTypes:
@@ -1422,40 +1372,6 @@ sections:
         template: stories/story
         uriFormat: 'stories/{slug}'
     type: channel
-  b93ae770-ff54-4654-ac15-99fb4bb646ae:
-    enableVersioning: true
-    entryTypes:
-      235f9b7d-1ad8-4743-abba-5ee6a120f394:
-        fieldLayouts:
-          237888f2-d207-49f9-a8e4-f65b9cbca5ef:
-            tabs:
-              -
-                fields:
-                  4086522c-dac0-4ff2-9a55-5715fc1c01f4:
-                    required: false
-                    sortOrder: 1
-                name: SEO
-                sortOrder: 1
-        handle: web
-        hasTitleField: false
-        name: Web
-        sortOrder: 1
-        titleFormat: '{section.name|raw}'
-        titleLabel: ''
-    handle: web
-    name: Web
-    previewTargets:
-      -
-        label: 'Primary entry page'
-        urlFormat: '{url}'
-    propagationMethod: all
-    siteSettings:
-      35815072-acac-4452-9c5d-768772bc4940:
-        enabledByDefault: true
-        hasUrls: true
-        template: web/index
-        uriFormat: web
-    type: single
   d3b54182-0e4a-489c-8bc6-6f4d53249c6a:
     enableVersioning: true
     entryTypes:
