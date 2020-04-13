@@ -3,7 +3,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>{% if entry.title != 'Homepage' %}{{ entry.title }}{{ entry.section.handle == 'photography' ? ' Photography' : '' }} | Matt Soria{% else %}Matt Soria | {{ tagline.textField }}{% endif %}</title>
+    <title>{% if entry is not defined %}404: Page Not Found{% else %}{% if entry.title != 'Homepage' %}{{ entry.title }}{{ entry.section.handle == 'photography' ? ' Photography' : '' }} | Matt Soria{% else %}Matt Soria | {{ tagline.textField }}{% endif %}{% endif %}</title>
 
     <link rel="canonical" href="{% if entry is defined %}{{ entry.url }}{% else %}{{ siteUrl }}{% endif %}">
     <meta name="google-site-verification" content="clcwIm8zAwhSWBVXOhz9UBllB3mZpdOAXeoL2AaCZQc">
@@ -17,12 +17,12 @@
     <meta name="MobileOptimized" content="320">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    {% if entry.seoDescription | length -%}
+    {% if entry is defined and entry.seoDescription | length -%}
     <meta name="description" content="{{ entry.seoDescription }}">
     {% elseif seo.seoDescription | length -%}
     <meta name="description" content="{{ seo.seoDescription }}">
     {% endif -%}
-    <meta property="og:title" content="{% if entry.title != 'Homepage' %}{{ entry.title }}{{ entry.section.handle == 'photography' ? ' Photography' : '' }} | Matt Soria{% else %}Matt Soria | {{ tagline.textField }}{% endif %}">
+    <meta property="og:title" content="{% if entry is not defined %}404: Page Not Found{% else %}{% if entry.title != 'Homepage' %}{{ entry.title }}{{ entry.section.handle == 'photography' ? ' Photography' : '' }} | Matt Soria{% else %}Matt Soria | {{ tagline.textField }}{% endif %}{% endif %}">
     <meta property="og:url" content="{% if entry is defined %}{{ entry.url }}{% else %}{{ siteUrl }}{% endif %}">
 
     {% if entry.seoImage is defined and entry.seoImage | length -%}
