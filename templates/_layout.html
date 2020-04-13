@@ -26,7 +26,7 @@
     <meta property="og:url" content="{% if entry is defined %}{{ entry.url }}{% else %}{{ siteUrl }}{% endif %}">
 
     {% if entry.seoImage is defined and entry.seoImage | length -%}
-    {% set transformedImage = craft.imager.transformImage(entry.seoImage, { width: 1200, height: 630, mode: 'crop' }) -%}
+    {% set transformedImage = craft.imager.transformImage(entry.seoImage.one(), { width: 1200, height: 630, mode: 'crop' }) -%}
     <meta property="og:image" content="{{ transformedImage.getUrl() }}">
     <meta property="og:image:type" content="image/jpeg">
     {% elseif seo.seoImage | length -%}
