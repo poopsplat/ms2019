@@ -65,6 +65,7 @@
 
   a {
     @include highlight;
+    @include font-display;
     font-size: 18px;
     text-decoration: none;
     // border-bottom: 1px solid transparent;

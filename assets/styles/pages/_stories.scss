@@ -1,0 +1,67 @@
+// Stories Styles
+
+// Landing Page
+body.stories {
+  .stories-list {
+    .story {
+      position: relative;
+      margin-bottom: $padding-md;
+
+      a {
+        cursor: pointer;
+      }
+
+      .story-info {
+        margin-top: $beat;
+      }
+
+      .story-title {
+        @include h1;
+        margin: 0 0 0 -0.15em;
+
+        a {
+          padding: 0 3px;
+          text-decoration: none;
+        }
+      }
+
+      .story-description {
+        @include p3;
+        margin: 0;
+        max-width: 600px;
+      }
+
+      .story-cta {
+        a {
+          @include h2;
+          @include highlight;
+          display: inline-block;
+          text-decoration: none;
+        }
+      }
+    }
+
+    @include media-md {
+      .story {
+        margin-bottom: $padding-lg;
+
+        .story-info {
+          // display: flex;
+          // align-items: flex-start;
+        }
+      }
+    }
+  }
+}
+
+// Single Story
+body.stories-page {
+  // Active Nav Style
+  #nav-stories {
+    a {
+      &::before {
+        transform: none;
+      }
+    }
+  }
+}

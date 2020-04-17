@@ -12,6 +12,58 @@
   font-display: swap;
 }
 
+// Degular Text
+@font-face {
+  font-family: 'Degular Text';
+  src: url('../fonts/Degular_Text-Regular.woff2') format('woff2'),
+       url('../fonts/Degular_Text-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Degular Text';
+  src: url('../fonts/Degular_Text-Italic.woff2') format('woff2'),
+       url('../fonts/Degular_Text-Italic.woff') format('woff');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Degular Text';
+  src: url('../fonts/Degular_Text-Semibold.woff2') format('woff2'),
+       url('../fonts/Degular_Text-Semibold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Degular Text';
+  src: url('../fonts/Degular_Text-Semibold_Italic.woff2') format('woff2'),
+       url('../fonts/Degular_Text-Semibold_Italic.woff') format('woff');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+// Degular Display
+@font-face {
+  font-family: 'Degular Display';
+  src: url('../fonts/Degular_Display-Medium.woff2') format('woff2'),
+       url('../fonts/Degular_Display-Medium.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Degular Display';
+  src: url('../fonts/Degular_Display-Semibold.woff2') format('woff2'),
+       url('../fonts/Degular_Display-Semibold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 // Font-family mixins
 /// example:
 /// @mixin font-display {
@@ -20,10 +72,15 @@
 ///   font-family: 'Custom Font Family';
 /// }
 @mixin font-main {
-  -webkit-font-smoothing: antialiased;
   font-weight: normal;
-  text-rendering: optimizeLegibility;
-  font-family: 'GT-Pressura-Regular', Georgia, serif;
+  font-family: 'Degular Text', Georgia, serif;
+  font-feature-settings: "pnum", "tnum" 0, "lnum", "onum" 0;
+}
+@mixin font-display {
+  font-weight: normal;
+  color: color('offblack');
+  font-family: 'Degular Display', Georgia, serif;
+  font-feature-settings: "pnum", "tnum" 0, "lnum", "onum" 0;
 }
 
 /// Mixin to allow us to concisely define all aspects of a paragraph style (except for family.)
@@ -59,8 +116,8 @@
 /// }
 
 @mixin h1 {
-  @include font-main;
-  @include paragraph-style(32, 40);
+  @include font-display;
+  @include paragraph-style(32, 40, 0, 700);
 }
 .h1 {
   @include h1;
@@ -68,10 +125,18 @@
 
 @mixin h2 {
   @include font-main;
-  @include paragraph-style(18, 26);
+  @include paragraph-style(18, 26, 0, 700);
 }
 .h2 {
   @include h2;
+}
+
+@mixin type-huge {
+  @include font-main;
+  @include paragraph-style(74, 74, 0, 700);
+}
+.type-huge {
+  @include type-huge;
 }
 
 @mixin p1 {
@@ -88,4 +153,9 @@
 }
 .p2 {
   @include p2;
+}
+
+@mixin p3 {
+  @include font-main;
+  @include paragraph-style(18, 24);
 }
