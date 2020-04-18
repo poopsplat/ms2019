@@ -58,3 +58,10 @@ blockquote {
     }
   }
 }
+
+// Text Block
+.field-text {
+  p {
+    @include p3;
+  }
+}

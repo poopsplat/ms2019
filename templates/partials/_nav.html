@@ -4,7 +4,7 @@
   <ul>
     {% for navItem in navItems %}
       {% set navItem = navItem.mappedEntry.one() %}
-      <li {{ entry is defined and entry.slug == navItem.slug or craft.app.request.getSegment(2) == navItem.slug ? ' class="-current"' : '' }}><a href="{{ navItem.url }}"><span>{{ navItem.title|lower }}</span></a></li>
+      <li id="nav-{{navItem.title|lower|replace({' ':'-'})}}" {{ entry is defined and entry.slug == navItem.slug or craft.app.request.getSegment(2) == navItem.slug ? ' class="-current"' : '' }}><a href="{{ navItem.url }}"><span>{{ navItem.title|lower }}</span></a></li>
     {% endfor %}
   </ul>
 </nav>

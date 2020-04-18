@@ -1,4 +1,4 @@
-dateModified: 1586740454
+dateModified: 1587183248
 dolphiq_sitemap_entries:
   0869b513-a65b-4e37-a42e-39fb8668bff1:
     changefreq: weekly
@@ -81,6 +81,17 @@ fields:
             -
               - default
               - '1'
+        -
+          __assoc__:
+            -
+              - label
+              - Half
+            -
+              - value
+              - half
+            -
+              - default
+              - ''
         -
           __assoc__:
             -

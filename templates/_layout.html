@@ -9,7 +9,9 @@
     <meta name="google-site-verification" content="clcwIm8zAwhSWBVXOhz9UBllB3mZpdOAXeoL2AaCZQc">
     <meta name="p:domain_verify" content="54d124bc9c4618cfe38edde207b08e55">
 
-    <link rel="preload" href="/assets/dist/fonts/GT-Pressura-Regular.woff2" as="font" crossorigin="anonymous">
+    <link rel="preload" href="/assets/dist/fonts/Degular_Display-Semibold.woff2" as="font" crossorigin="anonymous">
+    <link rel="preload" href="/assets/dist/fonts/Degular_Display-Medium.woff2" as="font" crossorigin="anonymous">
+    <link rel="preload" href="/assets/dist/fonts/Degular_Text-Regular.woff2" as="font" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ rev('/styles/main.css') }}">
     <link rel="shortcut icon" type="image/ico" href="{{ rev('/images/favicon.png') }}">
 
@@ -71,9 +73,7 @@
     </header>
 
     <main class="main" role="main">
-      <div class="sitewrapper">
-        {% block content %}{% endblock %}
-      </div>
+      {% block content %}{% endblock %}
     </main> <!-- END .main -->
 
     {% include "/partials/_footer" %}

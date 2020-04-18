@@ -1,0 +1,48 @@
+{% extends (craft.app.request.isAjax and not craft.app.request.isLivePreview) ? "_ajax-layout" : "_layout" %}
+
+{% set bodyClass = 'stories' %}
+{% set bodyId = 'stories' %}
+
+{% block content %}
+
+  {% set stories = craft.entries().section('stories').all() %}
+
+  <div class="sitewrapper">
+    <div class="stories-list project-grid">
+      {% for story in stories %}
+        {% if story.thumbnail | length %}
+          {% set imageFile = story.thumbnail.one() %}
+          {% set imageW = '' %}
+          {% if story.thumbnailSize == 'small' %}
+            {% set imageW = 900 %}
+            {% set transformedImage = craft.imager.transformImage(imageFile, { width: imageW }, { ratio: 4/5 }) %}
+          {% elseif story.thumbnailSize == 'half' %}
+            {% set imageW = 1200 %}
+            {% set transformedImage = craft.imager.transformImage(imageFile, { width: imageW }) %}
+          {% elseif story.thumbnailSize == 'medium' %}
+            {% set imageW = 1600 %}
+            {% set transformedImage = craft.imager.transformImage(imageFile, { width: imageW }) %}
+          {% else %}
+            {% set imageW = 1800 %}
+            {% set transformedImage = craft.imager.transformImage(imageFile, { width: imageW }, { ratio: 5/2 }) %}
+          {% endif %}
+        {% endif %}
+        <article class="story grid-item {{ story.thumbnailSize }}">
+          <a href="{{ story.url }}" class="image-overlay" data-hover-pair="story-{{ story.slug }}">
+            <div class="overlay"><div class="overlay-text"><span>view story</span></div></div>
+            <img class="lazyload" data-src="{{ transformedImage.getUrl() }}" alt="{{ story.thumbnail.one().title }}">
+          </a>
+          <div class="story-info">
+            <h2 class="story-title"><a href="{{ story.url }}" data-hover-pair="story-{{ story.slug }}">{{ story.title }}</a></h2>
+            <div>
+            {% if story.description | length %}
+              <p class="story-description"><span>{{ story.description }}</span></p>
+            {% endif %}
+            </div>
+          </div>
+        </article>
+      {% endfor %}
+    </div>
+  </div>
+
+{% endblock %}

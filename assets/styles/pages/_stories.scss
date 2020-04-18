@@ -22,6 +22,12 @@ body.stories {
         a {
           padding: 0 3px;
           text-decoration: none;
+          transition: color .2s ease-out;
+          &.-hover,
+          &:hover,
+          &:focus {
+            color: color('highlight');
+          }
         }
       }
 
@@ -61,6 +67,68 @@ body.stories-page {
     a {
       &::before {
         transform: none;
+      }
+    }
+  }
+
+  .page-header {
+    position: relative;
+    background-size: cover;
+    margin-bottom: $padding-md;
+    background-position: center center;
+    padding: #{$padding-lg * 2} 0 $padding-sm;
+    &::before {
+      top: 0;
+      left: 0;
+      content: '';
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      mix-blend-mode: multiply;
+      background-image: linear-gradient(to bottom, rgba(color('black'), 0), rgba(color('black'), 0.2) $padding-lg, rgba(color('black'), 0.5) #{$padding-lg * 2});
+    }
+
+    > .-inner {
+      display: flex;
+      color: color('white');
+      padding: $padding-sm 0;
+      flex-direction: column;
+      justify-content: flex-end;
+
+      > * {
+        z-index: 1;
+        position: relative;
+      }
+    }
+
+    h2 {
+      @include type-huge;
+      max-width: 800px;
+      color: color('white');
+      margin: 0 0 $padding-sm;
+    }
+
+    h3 {
+      @include p3;
+      margin: 0;
+      max-width: 600px;
+    }
+
+    @include media-md {
+      height: 0;
+      padding-bottom: 35%;
+      margin-bottom: $padding-lg;
+      &::before {
+        background-image: linear-gradient(to top, rgba(color('offblack'), 0.4), rgba(color('offblack'), 0.4) 35%, rgba(color('offblack'), 0) 60%);
+      }
+
+      > .-inner {
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        padding: $padding-lg 0;
       }
     }
   }

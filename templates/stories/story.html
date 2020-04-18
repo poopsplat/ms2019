@@ -1,0 +1,24 @@
+{% extends (craft.app.request.isAjax and not craft.app.request.isLivePreview) ? "_ajax-layout" : "_layout" %}
+
+{% block content %}
+
+  {% set transformedImage = craft.imager.transformImage(entry.thumbnail.one(), { width: 1800 }, { ratio: 5/2 }) %}
+  <header class="page-header" style="background-image:url('{{ transformedImage.getUrl() }}');">
+    <div class="-inner">
+      <div class="sitewrapper">
+        <h2>{{ entry.title }}</h2>
+        <h3>{{ entry.description }}</h3>
+      </div>
+    </div>
+  </header>
+
+  <div class="sitewrapper">
+    {% include 'partials/_page-blocks' %}
+
+    <div class="align-center">
+      <button id="to-top" class="to-top">back to top ↑</button>
+    </div>
+  </div>
+
+{% endblock %}
+

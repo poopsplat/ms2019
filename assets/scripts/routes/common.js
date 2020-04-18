@@ -42,9 +42,20 @@ export default {
     ImagesLoaded.makeJQueryPlugin( $ );
 
     // Init Functions
+    _initHoverPairs();
     _initMasonry();
     _initToTopButton();
     _initSmileys();
+
+    function _initHoverPairs() {
+      $(document).on('mouseenter', '[data-hover-pair]', function(e) {
+        var hoverPair = $(this).attr('data-hover-pair');
+        $('[data-hover-pair="'+hoverPair+'"]').addClass('-hover');
+      }).on('mouseleave', '[data-hover-pair]', function(e) {
+        var hoverPair = $(this).attr('data-hover-pair');
+        $('[data-hover-pair="'+hoverPair+'"]').removeClass('-hover');
+      });
+    }
 
     function _initMasonry() {
       if (!$('.masonry-grid').length) {
