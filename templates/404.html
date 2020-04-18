@@ -6,19 +6,21 @@
 
 {% block content %}
 
-  <div class="page-content grid">
-    <div class="col-md-1-2">
-      <h2>404: Page Not Found</h2>
-      <p>Sorry about that — not sure where that thing went...</p>
-    </div>
-    {% if fourOhFour.fourOhFourImages | length %}
-      {% set images = fourOhFour.fourOhFourImages.all() %}
-      {% set image = random(images) %}
-
+  <div class="sitewrapper">
+    <div class="page-content grid">
       <div class="col-md-1-2">
-        <a href="/404" class="four-oh-four-image"><img src="{{ image.getUrl }}" alt="{{ image.title }}"></a>
+        <h2>404: Page Not Found</h2>
+        <p>Sorry about that — not sure where that thing went...</p>
       </div>
-    {% endif %}
+      {% if fourOhFour.fourOhFourImages | length %}
+        {% set images = fourOhFour.fourOhFourImages.all() %}
+        {% set image = random(images) %}
+
+        <div class="col-md-1-2">
+          <a href="/404" class="four-oh-four-image"><img src="{{ image.getUrl }}" alt="{{ image.title }}"></a>
+        </div>
+      {% endif %}
+    </div>
   </div>
 
 {% endblock %}
