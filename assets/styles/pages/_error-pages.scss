@@ -1,0 +1,43 @@
+// Error Page Styles
+
+body.error-page {
+  .page-content {
+    h2 {
+      margin-bottom: 0;
+    }
+    p {
+      @include p3;
+    }
+
+    @include media-md {
+      > .col-md-1-2:first-of-type {
+        padding-right: $padding-lg;
+      }
+    }
+  }
+
+  .four-oh-four-image {
+    display: inline-block;
+
+    img {
+      vertical-align: top;
+    }
+  }
+
+  // 404 Page
+  &.page-404 {
+    .page-content {
+      h2 {
+        @include type-huge;
+      }
+    }
+  }
+  // 503 Page
+  &.page-503 {
+    .page-content {
+      h2 {
+        @include h1;
+      }
+    }
+  }
+}

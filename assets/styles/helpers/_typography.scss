@@ -133,9 +133,9 @@
 
 @mixin type-huge {
   @include font-main;
-  @include paragraph-style(48, 48, 0, 700);
+  @include paragraph-style(48, 48, -0.01em, 700);
   @include media-md {
-    @include paragraph-style(74, 74, 0, 700);
+    @include paragraph-style(74, 74, -0.01em, 700);
   }
 }
 .type-huge {
