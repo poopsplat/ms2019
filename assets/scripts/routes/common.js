@@ -13,6 +13,10 @@ let $window = $(window),
     $document = $(document),
     $imageGrid,
     $toTop = $('#to-top'),
+    $siteNav = $('.site-nav'),
+    $navToggle = $('#nav-toggle'),
+    transitionElements = [],
+    resizeTimer,
     $smiley = $('.smiley svg'),
     $newSmiley,
     smileyDump,
@@ -41,8 +45,12 @@ export default {
     jQueryBridget( 'masonry', Masonry, $ );
     ImagesLoaded.makeJQueryPlugin( $ );
 
+    // Transition elements to enable/disable on resize
+    transitionElements = [$siteNav];
+
     // Init Functions
     _initHoverPairs();
+    _initMobileNav();
     _initMasonry();
     _initToTopButton();
     _initSmileys();
@@ -55,6 +63,28 @@ export default {
         var hoverPair = $(this).attr('data-hover-pair');
         $('[data-hover-pair="'+hoverPair+'"]').removeClass('-hover');
       });
+    }
+
+    function _initMobileNav() {
+      $navToggle.on('click', function() {
+        if ($(this).is('.-active')) {
+          _closeNav();
+        } else {
+          _openNav();
+        }
+      });
+    }
+
+    function _openNav() {
+      $body.addClass('nav-open');
+      $siteNav.addClass('-active');
+      $navToggle.addClass('-active').html('close');
+    }
+
+    function _closeNav() {
+      $body.removeClass('nav-open');
+      $siteNav.removeClass('-active');
+      $navToggle.removeClass('-active').html('menu');
     }
 
     function _initMasonry() {
@@ -146,6 +176,33 @@ export default {
       }
 
       $document.on('click', '.new-smiley', killSmiley);
+
+      // Disabling transitions on certain elements on resize
+      function _disableTransitions() {
+        $.each(transitionElements, function() {
+          $(this).css('transition', 'none');
+        });
+      }
+
+      function _enableTransitions() {
+        $.each(transitionElements, function() {
+          $(this).attr('style', '');
+        });
+      }
+
+      function _resize() {
+        // Disable transitions when resizing
+        _disableTransitions();
+
+        // Functions to run on resize end
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(function() {
+          // Re-enable transitions
+          _enableTransitions();
+        }, 250);
+      }
+      $(window).resize(_resize);
+
     }
   },
   finalize() {
