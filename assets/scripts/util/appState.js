@@ -3,9 +3,6 @@
 const appState = {
   isAnimating: false,
   navOpen: false,
-  modalOpen: false,
-  navStuck: false,
-  requestInProgress: false,
   breakpoints: {},
 
   init() {
