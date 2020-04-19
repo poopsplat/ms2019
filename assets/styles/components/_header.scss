@@ -64,6 +64,7 @@
 #nav-toggle {
   @extend .button-reset;
   @include font-display;
+  padding: 0;
   z-index: 1;
   bottom: 12px;
   cursor: pointer;
