@@ -1,4 +1,4 @@
-dateModified: 1587183248
+dateModified: 1587387065
 dolphiq_sitemap_entries:
   0869b513-a65b-4e37-a42e-39fb8668bff1:
     changefreq: weekly
@@ -1259,17 +1259,13 @@ sections:
         titleLabel: Title
     handle: photography
     name: Photography
-    previewTargets:
-      -
-        label: 'Primary entry page'
-        urlFormat: '{url}'
     propagationMethod: all
     siteSettings:
       35815072-acac-4452-9c5d-768772bc4940:
         enabledByDefault: true
         hasUrls: true
         template: photography
-        uriFormat: 'photography/{slug}'
+        uriFormat: '{slug}'
     structure:
       maxLevels: null
       uid: ce1365bc-875c-499f-82fe-d9e32958f59c
