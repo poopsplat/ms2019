@@ -2,7 +2,7 @@
 // components/blocks
 
 // Lazyloaded Images
-.grid-image {
+.grid-image:not(.not-lazyloaded) {
   opacity: 0;
   &.-loaded {
     opacity: 1;
