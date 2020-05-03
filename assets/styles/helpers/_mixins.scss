@@ -16,7 +16,6 @@
     left: 0;
     right: 0;
     bottom: 0;
-    z-index: -1;
     content: '';
     height: 2px;
     position: absolute;
@@ -36,29 +35,24 @@
 
 // Inline Links
 @mixin inline-link($highlight: 'highlight', $speed: .2s) {
+  font-weight: 700;
   position: relative;
   display: inline-block;
   text-decoration: none;
   transition: color 0.15s ease-out;
   &::before {
-    z-index: -1;
+    left: 0;
+    right: 0;
+    bottom: 0;
     content: '';
-    left: -0.05em;
-    height: 0.2em;
-    right: -0.05em;
-    bottom: 0.18em;
+    height: 2px;
     display: block;
     position: absolute;
-    transition: height 0.15s ease-out;
     background-color: color($highlight);
   }
-
-  &:hover,
-  &:focus {
-    color: color('highlight');
-    // &::before {
-    //   height: 1.35em;
-    // }
+  &:hover {
+    // color: color('highlight');
+    background-color: lighten(color('offblack'), 75%);
   }
 }
 
