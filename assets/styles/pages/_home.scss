@@ -21,7 +21,7 @@ body.home {
           pointer-events: none;
           transition: opacity 0.5s ease-out;
           background: lighten(color('black'), 95%);
-          @include media-md {
+          @include media-lg {
             left: $padding-md;
             right: $padding-md;
           }
