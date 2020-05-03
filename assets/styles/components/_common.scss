@@ -2,11 +2,31 @@
 // components/blocks
 
 // Lazyloaded Images
+.grid-image {
+  position: relative;
+}
 .grid-image:not(.not-lazyloaded) {
-  opacity: 0;
-  &.-loaded {
+  &::before {
+    top: 0;
+    bottom: 0;
     opacity: 1;
-    transition: opacity .35s ease-out;
+    z-index: 2;
+    content: '';
+    left: $padding-sm;
+    right: $padding-sm;
+    position: absolute;
+    pointer-events: none;
+    transition: opacity 0.5s ease-out;
+    background: lighten(color('black'), 95%);
+    @include media-md {
+      left: $padding-md;
+      right: $padding-md;
+    }
+  }
+  &.-loaded {
+    &::before {
+      opacity: 0;
+    }
   }
 }
 

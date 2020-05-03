@@ -10,7 +10,7 @@ html {
 body {
   @include p1;
   color: color('black');
-	background: color('offwhite');
+	background: color('white');
 }
 
 ::selection {

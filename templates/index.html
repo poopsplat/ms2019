@@ -19,22 +19,24 @@
         {% endif %}
 
         {% set imageFile = feature.imageFile.one() %}
+        {% set imageW = '' %}
+        {% set ratio = '' %}
         {% set transformedImage = '' %}
         {% if feature.size == 'small' %}
-          {% set transformedImage = craft.imager.transformImage(imageFile, { width: 900 }, { ratio: 4/5 }) %}
+          {% set imageW = 900 %}
+          {% set ratio = 4/5 %}
         {% else %}
-          {% set transformedImage = craft.imager.transformImage(imageFile, { width: 1600 }, { ratio: 8/5}) %}
+          {% set imageW = 1600 %}
+          {% set ratio = 8/5 %}
         {% endif %}
+        {% set transformedImage = craft.imager.transformImage(imageFile, { width: imageW }, { ratio: ratio }) %}
+        {% set lqip = craft.imager.transformImage(imageFile, { width: imageW, jpegQuality: 01 }) %}
         <figure class="grid-item {{ feature.size }}">
           {% if feature.portfolioPage %}
           <a href="{{ feature.portfolioPage.one().url }}" class="image-overlay">
             <div class="overlay"><div class="overlay-text"><span>{{ feature.portfolioPage.one().title|lower }}</span></div></div>
           {% endif %}
-          {% if loop.index < 5 %}
-            <img src="{{ transformedImage.getUrl() }}" alt="{{ feature.imageFile.one().title }}">
-          {% else %}
-            <img class="lazyload" data-src="{{ transformedImage.getUrl() }}" alt="{{ feature.imageFile.one().title }}">
-          {% endif %}
+          <img class="lazyload" data-src="{{ transformedImage.getUrl() }}" src="{{ lqip.getUrl() }}" alt="{{ feature.imageFile.one().title }}">
           {% if feature.portfolioPage %}
           </a>
           {% endif %}

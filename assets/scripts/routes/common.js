@@ -4,6 +4,7 @@ import jQueryBridget from 'jquery-bridget';
 import Masonry from 'masonry-layout';
 import ImagesLoaded from 'imagesloaded';
 import Lazysizes from 'lazysizes';
+import 'lazysizes/plugins/blur-up/ls.blur-up';
 
 import appState from '../util/appState';
 

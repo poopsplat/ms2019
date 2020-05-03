@@ -1,4 +1,4 @@
-dateModified: 1587387065
+dateModified: 1587615229
 dolphiq_sitemap_entries:
   0869b513-a65b-4e37-a42e-39fb8668bff1:
     changefreq: weekly
@@ -1227,6 +1227,26 @@ plugins:
     enabled: true
     schemaVersion: 2.2.1
 sections:
+  3430cf74-87cc-4e7d-b06a-129b736aed91:
+    enableVersioning: true
+    entryTypes:
+      0f14f388-1447-4aa9-9104-6f7d5dceb975:
+        handle: awards
+        hasTitleField: false
+        name: Awards
+        sortOrder: 1
+        titleFormat: '{section.name|raw}'
+        titleLabel: null
+    handle: awards
+    name: Awards
+    propagationMethod: all
+    siteSettings:
+      35815072-acac-4452-9c5d-768772bc4940:
+        enabledByDefault: true
+        hasUrls: true
+        template: awards/index.html
+        uriFormat: awards
+    type: single
   3c179024-6729-4830-9212-395ff84a3aad:
     enableVersioning: true
     entryTypes:

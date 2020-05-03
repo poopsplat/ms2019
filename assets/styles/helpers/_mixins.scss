@@ -18,8 +18,7 @@
     bottom: 0;
     z-index: -1;
     content: '';
-    height: 0.2em;
-    border-radius: 2px;
+    height: 2px;
     position: absolute;
     transform: scaleX(0);
     transform-origin: left;
@@ -49,7 +48,6 @@
     right: -0.05em;
     bottom: 0.18em;
     display: block;
-    border-radius: 4px;
     position: absolute;
     transition: height 0.15s ease-out;
     background-color: color($highlight);

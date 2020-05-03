@@ -5,8 +5,31 @@ body.home {
     .grid-item {
       a {
         cursor: pointer;
+        position: relative;
         &:focus {
           outline: none;
+        }
+        &::before {
+          top: 0;
+          bottom: 0;
+          opacity: 1;
+          z-index: 2;
+          content: '';
+          left: $padding-sm;
+          right: $padding-sm;
+          position: absolute;
+          pointer-events: none;
+          transition: opacity 0.5s ease-out;
+          background: lighten(color('black'), 95%);
+          @include media-md {
+            left: $padding-md;
+            right: $padding-md;
+          }
+        }
+      }
+      &.-loaded {
+        a::before {
+          opacity: 0;
         }
       }
     }
