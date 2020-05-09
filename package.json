@@ -43,6 +43,7 @@
     "js-dom-router": "^1.0",
     "lazysizes": "^5.2.0-beta1",
     "masonry-layout": "^4.2.2",
+    "medium-zoom": "^1.0.5",
     "velocity-animate": "^1.5.2",
     "waypoints": "^4.0.1"
   }

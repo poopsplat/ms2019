@@ -21,13 +21,13 @@
             {% set transformedImage = craft.imager.transformImage(imageFile, { width: imageW }, { filenamePattern: '{basename}_{fullname|shorthash}.{extension}' }) %}
           {% endif %}
           <figure class="grid-item grid-image {{ item.size }}{{ spacingClasses is defined ? ' ' ~ spacingClasses : '' }}{{ loop.index < 4 ? ' not-lazyloaded' : '' }}">
-            <a href="{{ item.imageFile.one().getUrl() }}" target="_blank">
+<!--             <a href="{{ item.imageFile.one().getUrl() }}" target="_blank"> -->
               {% if loop.index < 4 %}
-                <img src="{{ transformedImage.getUrl() }}" alt="{{ item.imageFile.one().title }}">
+                <img src="{{ transformedImage.getUrl() }}" alt="{{ item.imageFile.one().title }}" data-zoomable>
               {% else %}
-                <img class="lazyload" data-src="{{ transformedImage.getUrl() }}" src="{{ lqip.getUrl() }}" width="{{ transformedImage.width }}" height="{{ transformedImage.height }}" alt="{{ item.imageFile.one().title }}">
+                <img class="lazyload" data-src="{{ transformedImage.getUrl() }}" src="{{ lqip.getUrl() }}" width="{{ transformedImage.width }}" height="{{ transformedImage.height }}" alt="{{ item.imageFile.one().title }}" data-zoomable>
               {% endif %}
-            </a>
+            <!-- </a> -->
             {% if imageFile.caption %}
               <figcaption class="field-text"><p>{{ imageFile.caption }}</p></figcaption>
             {% endif %}

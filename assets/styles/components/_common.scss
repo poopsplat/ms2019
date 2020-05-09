@@ -30,6 +30,12 @@
   }
 }
 
+// Zoomed Images
+.medium-zoom--opened .medium-zoom-overlay,
+.medium-zoom-image--opened {
+  z-index: 10;
+}
+
 // Image reveals
 .-reveal {
   opacity: 0;

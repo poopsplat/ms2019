@@ -4,7 +4,7 @@ import jQueryBridget from 'jquery-bridget';
 import Masonry from 'masonry-layout';
 import ImagesLoaded from 'imagesloaded';
 import Lazysizes from 'lazysizes';
-import 'lazysizes/plugins/blur-up/ls.blur-up';
+import mediumZoom from 'medium-zoom';
 
 import appState from '../util/appState';
 
@@ -55,6 +55,7 @@ export default {
     _initMasonry();
     _initToTopButton();
     _initSmileys();
+    _initMediumZoom();
 
     function _initHoverPairs() {
       $(document).on('mouseenter', '[data-hover-pair]', function(e) {
@@ -177,34 +178,40 @@ export default {
       }
 
       $document.on('click', '.new-smiley', killSmiley);
-
-      // Disabling transitions on certain elements on resize
-      function _disableTransitions() {
-        $.each(transitionElements, function() {
-          $(this).css('transition', 'none');
-        });
-      }
-
-      function _enableTransitions() {
-        $.each(transitionElements, function() {
-          $(this).attr('style', '');
-        });
-      }
-
-      function _resize() {
-        // Disable transitions when resizing
-        _disableTransitions();
-
-        // Functions to run on resize end
-        clearTimeout(resizeTimer);
-        resizeTimer = setTimeout(function() {
-          // Re-enable transitions
-          _enableTransitions();
-        }, 250);
-      }
-      $(window).resize(_resize);
-
     }
+
+    function _initMediumZoom() {
+      mediumZoom('[data-zoomable]', {
+        margin: 10
+      });
+    }
+
+    // Disabling transitions on certain elements on resize
+    function _disableTransitions() {
+      $.each(transitionElements, function() {
+        $(this).css('transition', 'none');
+      });
+    }
+
+    function _enableTransitions() {
+      $.each(transitionElements, function() {
+        $(this).attr('style', '');
+      });
+    }
+
+    function _resize() {
+      // Disable transitions when resizing
+      _disableTransitions();
+
+      // Functions to run on resize end
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(function() {
+        // Re-enable transitions
+        _enableTransitions();
+      }, 250);
+    }
+    $(window).resize(_resize);
+
   },
   finalize() {
     // JavaScript to be fired on all pages, after page specific JS is fired
