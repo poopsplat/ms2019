@@ -37,6 +37,19 @@
     <meta property="og:image:type" content="image/jpeg">
     {% endif -%}
 
+    {# Twitter Card -#}
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@poopsplat">
+    <meta name="twitter:creator" content="@poopsplat">
+    <meta name="twitter:title" content="{% if entry is not defined %}404: Page Not Found{% else %}{% if entry.title != 'Homepage' %}{{ entry.title }}{{ entry.section.handle == 'photography' ? ' Photography' : '' }} | Matt Soria{% else %}Matt Soria | {{ tagline.textField }}{% endif %}{% endif %}">
+    {% if entry.seoImage is defined and entry.seoImage | length -%}
+    {% set transformedImage = craft.imager.transformImage(entry.seoImage.one(), { width: 1200, height: 630, mode: 'crop' }) -%}
+    <meta property="twitter:image" content="{{ transformedImage.getUrl() }}">
+    {% elseif seo.seoImage | length -%}
+    {% set transformedImage = craft.imager.transformImage(seo.seoImage.one(), { width: 1200, height: 630, mode: 'crop' }) -%}
+    <meta property="twitter:image" content="{{ transformedImage.getUrl() }}">
+    {% endif %}
+
     <!-- Inject SVGs Defs for SVG icon use -->
     <script>
       var ajax = new XMLHttpRequest();
