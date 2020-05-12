@@ -17,20 +17,18 @@
       {% endif %}
 
       {% if entry.textArea %}
-        {% cache %}
-          <div class="col-md-1-2">
-            <div class="bio field-text">
-              {{ entry.textArea }}
-            </div>
-
-            {% if entry.colophon | length %}
-              <div class="colophon">
-                <h4>Colophon</h5>
-                {{ entry.colophon }}
-              </div>
-            {% endif %}
+        <div class="col-md-1-2">
+          <div class="bio field-text">
+            {{ entry.textArea }}
           </div>
-        {% endcache %}
+
+          {% if entry.colophon | length %}
+            <div class="colophon">
+              <h4>Colophon</h5>
+              {{ entry.colophon }}
+            </div>
+          {% endif %}
+        </div>
       {% endif %}
     </div>
   </div>
