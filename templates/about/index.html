@@ -1,5 +1,4 @@
 {% extends (craft.app.request.isAjax and not craft.app.request.isLivePreview) ? "_ajax-layout" : "_layout" %}
-{% header "Cache-Control: no-cache" %}
 
 {% block content %}
   <div class="sitewrapper">
@@ -18,27 +17,20 @@
       {% endif %}
 
       {% if entry.textArea %}
-        <div class="col-md-1-2">
-          <div class="bio field-text">
-            {{ entry.textArea }}
+        {% cache %}
+          <div class="col-md-1-2">
+            <div class="bio field-text">
+              {{ entry.textArea }}
+            </div>
+
+            {% if entry.colophon | length %}
+              <div class="colophon">
+                <h4>Colophon</h5>
+                {{ entry.colophon }}
+              </div>
+            {% endif %}
           </div>
-
-          {#
-          {% if entry.spotifyPlaylist %}
-            <div class="music">
-              <h4 class="h2">What I've been listening to lately:</h3>
-              <iframe src="https://open.spotify.com/embed/playlist/{{ entry.spotifyPlaylist }}" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-            </div>
-          {% endif %}
-          #}
-
-          {% if entry.colophon | length %}
-            <div class="colophon">
-              <h4>Colophon</h5>
-              {{ entry.colophon }}
-            </div>
-          {% endif %}
-        </div>
+        {% endcache %}
       {% endif %}
     </div>
   </div>

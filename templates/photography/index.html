@@ -1,14 +1,14 @@
 {% extends (craft.app.request.isAjax and not craft.app.request.isLivePreview) ? "_ajax-layout" : "_layout" %}
 
 {% block content %}
+  {% cache %}
+    <div class="sitewrapper">
+      {% include 'partials/_page-blocks' %}
 
-  <div class="sitewrapper">
-    {% include 'partials/_page-blocks' %}
-
-    <div class="align-center">
-      <button id="to-top" class="to-top">back to top ↑</button>
+      <div class="align-center">
+        <button id="to-top" class="to-top">back to top ↑</button>
+      </div>
     </div>
-  </div>
-
+  {% endcache %}
 {% endblock %}
 
