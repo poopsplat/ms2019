@@ -52,6 +52,7 @@ export default {
     // Init Functions
     _initHoverPairs();
     _initMobileNav();
+    _initImagesLoaded();
     _initMasonry();
     _initToTopButton();
     _initSmileys();
@@ -87,6 +88,15 @@ export default {
       $body.removeClass('nav-open');
       $siteNav.removeClass('-active');
       $navToggle.removeClass('-active').html('menu');
+    }
+
+    function _initImagesLoaded() {
+      $('figure.not-lazyloaded').each(function() {
+        var $elem = $(this);
+        $elem.imagesLoaded(function() {
+          $elem.addClass('-loaded');
+        });
+      });
     }
 
     function _initMasonry() {
