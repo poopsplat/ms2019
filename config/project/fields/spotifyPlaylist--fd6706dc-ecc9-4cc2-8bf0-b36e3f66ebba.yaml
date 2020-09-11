@@ -1,0 +1,16 @@
+contentColumnType: text
+fieldGroup: 45500fe4-bfbe-4fc4-8301-d12cb97a632a
+handle: spotifyPlaylist
+instructions: 'Enter the playlist spotify uri to embed a spotify playlist.'
+name: 'Spotify Playlist'
+searchable: false
+settings:
+  charLimit: ''
+  code: ''
+  columnType: text
+  initialRows: '4'
+  multiline: ''
+  placeholder: ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

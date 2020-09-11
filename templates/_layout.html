@@ -10,9 +10,12 @@
     <meta name="p:domain_verify" content="54d124bc9c4618cfe38edde207b08e55">
 
     <link rel="stylesheet" href="{{ rev('/styles/main.css') }}" media="print" onload="this.media='all'; this.onload=null; document.querySelector('body').setAttribute('style', 'opacity:1;');">
-    <link rel="preload" href="/assets/dist/fonts/Degular_Display-Semibold.woff2" as="font" crossorigin="anonymous">
-    <link rel="preload" href="/assets/dist/fonts/Degular_Display-Medium.woff2" as="font" crossorigin="anonymous">
-    <link rel="preload" href="/assets/dist/fonts/Degular_Text-Regular.woff2" as="font" crossorigin="anonymous">
+    <noscript>
+      <link rel="stylesheet" href="{{ rev('/styles/main.css') }}" media="all">
+    </noscript>
+
+    <link rel="stylesheet" href="{{ rev('/styles/fonts.css') }}" media="print" onload="this.media='all'; this.onload=null;">
+
     <link rel="shortcut icon" type="image/ico" href="{{ rev('/images/favicon.png') }}">
 
     <meta name="HandheldFriendly" content="True">
@@ -49,6 +52,12 @@
     {% set transformedImage = craft.imager.transformImage(seo.seoImage.one(), { width: 1200, height: 630, mode: 'crop' }) -%}
     <meta property="twitter:image" content="{{ transformedImage.getUrl() }}">
     {% endif %}
+
+    <script>
+      // Initialize the service worker
+      if (navigator && navigator.serviceWorker)
+      navigator.serviceWorker.register('sw.js');
+    </script>
 
     <!-- Inject SVGs Defs for SVG icon use -->
     <script>

@@ -1,0 +1,26 @@
+contentColumnType: string
+fieldGroup: 47daa049-399a-46d9-913e-fc53ef6bb127
+handle: projectImage
+instructions: ''
+name: 'Project Image'
+searchable: true
+settings:
+  allowedKinds:
+    - image
+  defaultUploadLocationSource: 'volume:ed7a90f0-b4e5-4c4c-b15c-831c22754213'
+  defaultUploadLocationSubpath: ''
+  limit: '1'
+  localizeRelations: false
+  restrictFiles: '1'
+  selectionLabel: 'Choose an image'
+  singleUploadLocationSource: 'volume:ed7a90f0-b4e5-4c4c-b15c-831c22754213'
+  singleUploadLocationSubpath: '{owner.slug}'
+  source: null
+  sources: '*'
+  targetSiteId: null
+  useSingleFolder: '1'
+  validateRelatedElements: ''
+  viewMode: large
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Assets

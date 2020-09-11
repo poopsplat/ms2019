@@ -1,12 +1,13 @@
 // Common
 // components/blocks
 
-// Lazyloaded Images
+// Loading Images
 .grid-image {
   position: relative;
 }
-.grid-image:not(.not-lazyloaded) {
-  &::before {
+.grid-image.imagesloaded {
+  &::before,
+  &::after {
     top: 0;
     left: 0;
     right: 0;
@@ -17,14 +18,18 @@
     position: absolute;
     pointer-events: none;
     transition: opacity 0.5s ease-out;
-    background: lighten(color('black'), 95%);
     @include media-lg {
       left: $padding-md;
       right: $padding-md;
     }
   }
+  &::before {
+    background: lighten(color('black'), 95%);
+  }
+
   &.-loaded {
-    &::before {
+    &::before,
+    &::after {
       opacity: 0;
     }
   }
@@ -67,9 +72,11 @@ figure.single-image {
 
 // Image Overlay
 .image-overlay {
-  display: block;
-  overflow: hidden;
-  position: relative;
+  > .-inner {
+    display: block;
+    overflow: hidden;
+    position: relative;
+  }
 
   img {
     transform: scale(1);

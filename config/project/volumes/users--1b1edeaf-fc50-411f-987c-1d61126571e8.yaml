@@ -1,0 +1,8 @@
+handle: users
+hasUrls: true
+name: Users
+settings:
+  path: uploads/pages/
+sortOrder: 2
+type: craft\volumes\Local
+url: /uploads/pages/

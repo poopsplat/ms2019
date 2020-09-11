@@ -1,0 +1,182 @@
+field: 09d7205f-7433-426c-9841-55969fd31a37
+fieldLayouts:
+  0626d9cb-2dd9-4cfa-90d5-c67c3672e5d9:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 0da5fedc-87b4-49da-9c82-4b81ab09e122
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: cd6404f5-f145-4a24-b1c3-a349c4803ccf
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 92575ff2-cb6c-46c4-a3b0-c07b75d30b09
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  0da5fedc-87b4-49da-9c82-4b81ab09e122:
+    contentColumnType: text
+    fieldGroup: null
+    handle: text
+    instructions: ''
+    name: Text
+    searchable: false
+    settings:
+      availableTransforms: '*'
+      availableVolumes: '*'
+      cleanupHtml: true
+      columnType: text
+      configSelectionMode: choose
+      defaultTransform: ''
+      manualConfig: ''
+      purifierConfig: ''
+      purifyHtml: '1'
+      redactorConfig: Standard.json
+      removeEmptyTags: '1'
+      removeInlineStyles: '1'
+      removeNbsp: '1'
+      showHtmlButtonForNonAdmins: ''
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: true
+      uiMode: enlarged
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\redactor\Field
+  92575ff2-cb6c-46c4-a3b0-c07b75d30b09:
+    contentColumnType: string
+    fieldGroup: null
+    handle: spacing
+    instructions: ''
+    name: Spacing
+    searchable: false
+    settings:
+      multi: true
+      optgroups: true
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - None
+            -
+              - value
+              - none
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Top
+            -
+              - value
+              - spacing-top
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Left
+            -
+              - value
+              - spacing-left
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Right
+            -
+              - value
+              - spacing-right
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Bottom
+            -
+              - value
+              - spacing-bottom
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\MultiSelect
+  cd6404f5-f145-4a24-b1c3-a349c4803ccf:
+    contentColumnType: string
+    fieldGroup: null
+    handle: size
+    instructions: ''
+    name: Size
+    searchable: false
+    settings:
+      optgroups: true
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - Small
+            -
+              - value
+              - small
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Medium
+            -
+              - value
+              - medium
+            -
+              - default
+              - '1'
+        -
+          __assoc__:
+            -
+              - label
+              - Large
+            -
+              - value
+              - large
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+handle: text
+name: Text
+sortOrder: 2

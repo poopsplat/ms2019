@@ -1,0 +1,14 @@
+contentColumnType: string
+fieldGroup: ee44e43d-0e99-4e21-8594-d1e34c71aab6
+handle: featureGrid
+instructions: ''
+name: 'Feature Grid'
+searchable: true
+settings:
+  contentTable: '{{%matrixcontent_featuregrid}}'
+  maxBlocks: ''
+  minBlocks: ''
+  propagationMethod: all
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

@@ -1,0 +1,12 @@
+fieldLayouts:
+  58379f93-ac85-48c2-9cf2-c7662cc38b1a:
+    tabs:
+      -
+        fields:
+          bee29c66-b10e-4ef7-95ee-0cfb3170e104:
+            required: false
+            sortOrder: 1
+        name: Content
+        sortOrder: 1
+handle: tagline
+name: Tagline

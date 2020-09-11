@@ -1,14 +1,5 @@
 // Photography
 
-// Images Loaded
-figure.not-lazyloaded {
-  opacity: 0;
-  transition: opacity 0.5s ease-out;
-  &.-loaded {
-    opacity: 1;
-  }
-}
-
 .project-grid {
   padding-top: 3px;
   margin-top: -3px;
@@ -22,24 +13,26 @@ figure.not-lazyloaded {
     padding: 0;
     margin: 0 0 #{$beat * 2};
 
-    a {
-      display: block;
-      cursor: zoom-in;
-      position: relative;
-      &:focus {
-        outline: 3px solid color('highlight');
-      }
+    img {
+      width: 100%;
+      vertical-align: top;
+    }
 
-      img {
-        width: 100%;
-        vertical-align: top;
+    &:not(.image-overlay) {
+      a {
+        display: block;
+        cursor: zoom-in;
+        position: relative;
+        &:focus {
+          outline: 3px solid color('highlight');
+        }
       }
     }
 
     figcaption {
       p {
         @include p2;
-        margin: $beat 0 0;
+        margin: #{$beat / 2} 0 0;
 
         a {
           cursor: pointer;
@@ -92,7 +85,7 @@ figure.not-lazyloaded {
           margin-top: $beat * 6;
         }
         &-bottom {
-          margin-bottom: $beat * 6;
+          margin-bottom: $beat * 10;
         }
         &-left {
           margin-left: columns(1,3);
@@ -139,7 +132,7 @@ figure.not-lazyloaded {
           margin-top: $beat * 12;
         }
         &-bottom {
-          margin-bottom: $beat * 12;
+          margin-bottom: $beat * 18;
         }
       }
     }

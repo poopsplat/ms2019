@@ -1,0 +1,12 @@
+contentColumnType: string(255)
+fieldGroup: 47daa049-399a-46d9-913e-fc53ef6bb127
+handle: projectUrl
+instructions: ''
+name: 'Project Url'
+searchable: true
+settings:
+  maxLength: '255'
+  placeholder: ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Url

@@ -1,0 +1,245 @@
+field: 943be30c-9a63-45f4-a450-9b102820f873
+fieldLayouts:
+  a0cb9e1d-ff5f-43a8-91af-44e72f9530eb:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 4bd908ba-3788-40bd-8535-a11e46dcc94a
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 0478c881-04be-44d1-8d0b-9033d00291ad
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: e5215fcb-38b4-4031-a5f7-f779f3b114b6
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 50
+          -
+            fieldUid: ae68342a-7414-428b-b943-3d5a60f777c3
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 50
+          -
+            fieldUid: 0e40d611-785c-4a5e-90cd-e9506481e02f
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 50
+          -
+            fieldUid: 9466d8b1-0aa1-464c-98c0-18b15a94f5d7
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 50
+        name: Content
+        sortOrder: 1
+fields:
+  0478c881-04be-44d1-8d0b-9033d00291ad:
+    contentColumnType: text
+    fieldGroup: null
+    handle: citation
+    instructions: ''
+    name: Citation
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  0e40d611-785c-4a5e-90cd-e9506481e02f:
+    contentColumnType: string
+    fieldGroup: null
+    handle: spacing
+    instructions: ''
+    name: Spacing
+    searchable: false
+    settings:
+      optgroups: true
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - None
+            -
+              - value
+              - none
+            -
+              - default
+              - '1'
+        -
+          __assoc__:
+            -
+              - label
+              - 1/3
+            -
+              - value
+              - spacing-1-3
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 2/3
+            -
+              - value
+              - spacing-2-3
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+  4bd908ba-3788-40bd-8535-a11e46dcc94a:
+    contentColumnType: text
+    fieldGroup: null
+    handle: quote
+    instructions: ''
+    name: Quote
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  9466d8b1-0aa1-464c-98c0-18b15a94f5d7:
+    contentColumnType: boolean
+    fieldGroup: null
+    handle: colored
+    instructions: 'Should it be colored, or just black on white?'
+    name: Colored
+    searchable: false
+    settings:
+      default: false
+      offLabel: null
+      onLabel: null
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Lightswitch
+  ae68342a-7414-428b-b943-3d5a60f777c3:
+    contentColumnType: string
+    fieldGroup: null
+    handle: alignment
+    instructions: ''
+    name: Alignment
+    searchable: false
+    settings:
+      optgroups: true
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - Left
+            -
+              - value
+              - left
+            -
+              - default
+              - '1'
+        -
+          __assoc__:
+            -
+              - label
+              - Right
+            -
+              - value
+              - right
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+  e5215fcb-38b4-4031-a5f7-f779f3b114b6:
+    contentColumnType: string
+    fieldGroup: null
+    handle: size
+    instructions: ''
+    name: Size
+    searchable: false
+    settings:
+      optgroups: true
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - Small
+            -
+              - value
+              - small
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Medium
+            -
+              - value
+              - medium
+            -
+              - default
+              - '1'
+        -
+          __assoc__:
+            -
+              - label
+              - Large
+            -
+              - value
+              - large
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+handle: blockquote
+name: Blockquote
+sortOrder: 3

@@ -1,0 +1,35 @@
+field: 3499b21e-9ea5-4d82-a599-e2bea3bf5ee9
+fieldLayouts:
+  4bd1e04c-6e33-4bba-961d-18aba0fc829e:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 6a75f2ba-df7e-4a03-a99a-5134cad49621
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  6a75f2ba-df7e-4a03-a99a-5134cad49621:
+    contentColumnType: boolean
+    fieldGroup: null
+    handle: newGrid
+    instructions: 'End the current grid and start a new one.'
+    name: 'New Grid'
+    searchable: false
+    settings:
+      default: true
+      offLabel: null
+      onLabel: null
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Lightswitch
+handle: gridBreak
+name: 'Grid Break'
+sortOrder: 2

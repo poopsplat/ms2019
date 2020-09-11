@@ -1,0 +1,15 @@
+fieldLayouts:
+  c8078d01-1e0f-4c05-8d79-bdaf83c965d2:
+    tabs:
+      -
+        fields:
+          1bd82085-9793-4d44-bb1b-ffcfdee3a9d6:
+            required: false
+            sortOrder: 2
+          4086522c-dac0-4ff2-9a55-5715fc1c01f4:
+            required: false
+            sortOrder: 1
+        name: Settings
+        sortOrder: 1
+handle: seo
+name: Seo

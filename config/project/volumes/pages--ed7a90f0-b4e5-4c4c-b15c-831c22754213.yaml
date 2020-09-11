@@ -1,0 +1,18 @@
+fieldLayouts:
+  96ee8057-7db6-4362-bd79-0e0b828f58a2:
+    tabs:
+      -
+        fields:
+          040ee604-643e-4f46-a26a-e404f50cc534:
+            required: false
+            sortOrder: 1
+        name: Content
+        sortOrder: 1
+handle: pages
+hasUrls: true
+name: Pages
+settings:
+  path: uploads/pages/
+sortOrder: 1
+type: craft\volumes\Local
+url: /uploads/pages/

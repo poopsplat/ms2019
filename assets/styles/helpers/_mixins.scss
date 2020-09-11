@@ -12,6 +12,7 @@
 // Highlight
 @mixin highlight($highlight: 'highlight', $speed: .2s) {
   position: relative;
+  text-decoration: none;
   &::before {
     left: 0;
     right: 0;
@@ -35,24 +36,19 @@
 
 // Inline Links
 @mixin inline-link($highlight: 'highlight', $speed: .2s) {
+  display: inline;
   font-weight: 700;
+  line-height: 1.45;
   position: relative;
-  display: inline-block;
   text-decoration: none;
-  transition: color 0.15s ease-out;
-  &::before {
-    left: 0;
-    right: 0;
-    bottom: 0;
-    content: '';
-    height: 2px;
-    display: block;
-    position: absolute;
-    background-color: color($highlight);
-  }
+  background: linear-gradient(to left, transparent, transparent 50%, lighten(color('offblack'), 75%) 50%, lighten(color('offblack'), 75%));
+  background-size: 201%;
+  background-position: 100%;
+  box-shadow: 0 2px 0 0 color('offBlack');
+  transition: color 0.15s ease-out, background-position 0.25s ease-out, box-shadow 0.15s ease-out;
   &:hover {
-    // color: color('highlight');
-    background-color: lighten(color('offblack'), 75%);
+    box-shadow: 0 2px 0 0 color('highlight');
+    background-position: 0;
   }
 }
 

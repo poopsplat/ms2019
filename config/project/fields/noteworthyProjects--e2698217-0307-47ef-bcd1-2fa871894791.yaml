@@ -1,0 +1,96 @@
+contentColumnType: text
+fieldGroup: 47daa049-399a-46d9-913e-fc53ef6bb127
+handle: noteworthyProjects
+instructions: 'Other noteworthy projects'
+name: 'Noteworthy Projects'
+searchable: false
+settings:
+  addRowLabel: 'Add a project'
+  columnType: text
+  columns:
+    __assoc__:
+      -
+        - col1
+        -
+          __assoc__:
+            -
+              - heading
+              - 'Project Title'
+            -
+              - handle
+              - projectTitle
+            -
+              - width
+              - ''
+            -
+              - type
+              - singleline
+      -
+        - col2
+        -
+          __assoc__:
+            -
+              - heading
+              - URL
+            -
+              - handle
+              - url
+            -
+              - width
+              - ''
+            -
+              - type
+              - url
+      -
+        - col3
+        -
+          __assoc__:
+            -
+              - heading
+              - Role
+            -
+              - handle
+              - role
+            -
+              - width
+              - ''
+            -
+              - type
+              - singleline
+      -
+        - col4
+        -
+          __assoc__:
+            -
+              - heading
+              - Technology
+            -
+              - handle
+              - technology
+            -
+              - width
+              - ''
+            -
+              - type
+              - singleline
+      -
+        - col5
+        -
+          __assoc__:
+            -
+              - heading
+              - Awards
+            -
+              - handle
+              - awards
+            -
+              - width
+              - ''
+            -
+              - type
+              - singleline
+  maxRows: ''
+  minRows: ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Table

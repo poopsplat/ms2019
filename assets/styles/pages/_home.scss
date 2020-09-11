@@ -1,92 +1,92 @@
-// Home page
+// // Home page
 
-body.home {
-  .project-grid {
-    .grid-item {
-      a {
-        cursor: pointer;
-        position: relative;
-        &:focus {
-          outline: none;
-        }
-        &::before {
-          top: 0;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          opacity: 1;
-          z-index: 2;
-          content: '';
-          position: absolute;
-          pointer-events: none;
-          transition: opacity 0.5s ease-out;
-          background: lighten(color('black'), 95%);
-          @include media-lg {
-            left: $padding-md;
-            right: $padding-md;
-          }
-        }
-      }
-      &.-loaded {
-        a::before {
-          opacity: 0;
-        }
-      }
-    }
+// body.home {
+//   .project-grid {
+//     .grid-item {
+//       a {
+//         cursor: pointer;
+//         position: relative;
+//         &:focus {
+//           outline: none;
+//         }
+//         &::before {
+//           top: 0;
+//           left: 0;
+//           right: 0;
+//           bottom: 0;
+//           opacity: 1;
+//           z-index: 2;
+//           content: '';
+//           position: absolute;
+//           pointer-events: none;
+//           transition: opacity 0.5s ease-out;
+//           background: lighten(color('black'), 95%);
+//           @include media-lg {
+//             left: $padding-md;
+//             right: $padding-md;
+//           }
+//         }
+//       }
+//       &.-loaded {
+//         a::before {
+//           opacity: 0;
+//         }
+//       }
+//     }
 
-    @include media-md {
-      @include clearfix;
+//     @include media-md {
+//       @include clearfix;
 
-      .grid-item {
-        padding: 0;
-        position: relative;
-        &::before,
-        &::after {
-          top: 0;
-          bottom: 0;
-          z-index: 2;
-          content: '';
-          width: $beat * 2;
-          position: absolute;
-          background-color: color('white');
-        }
-        &::before {
-          left: 0;
-        }
-        &::after {
-          right: 0;
-        }
-        &:nth-of-type(4n + 3) {
-          float: right;
-        }
+//       .grid-item {
+//         padding: 0;
+//         position: relative;
+//         &::before,
+//         &::after {
+//           top: 0;
+//           bottom: 0;
+//           z-index: 2;
+//           content: '';
+//           width: $beat * 2;
+//           position: absolute;
+//           background-color: color('white');
+//         }
+//         &::before {
+//           left: 0;
+//         }
+//         &::after {
+//           right: 0;
+//         }
+//         &:nth-of-type(4n + 3) {
+//           float: right;
+//         }
 
-        &.small {
-          width: 33.33%;
-        }
-        &.medium {
-          width: 66.6%;
-        }
-      }
+//         &.small {
+//           width: 33.33%;
+//         }
+//         &.medium {
+//           width: 66.6%;
+//         }
+//       }
 
-      // Alt Layout
-      &.alt-layout {
-        .grid-item {
-          &:nth-of-type(2n + 1) {
-            float: right;
-          }
-          &:nth-of-type(4n + 3) {
-            float: left;
-          }
-        }
-      }
-    }
-    @include media-lg {
-      .grid-item {
-        &::before,
-        &::after {
-          width: $beat * 3;
-        }
-      }
-    }
-  }
-}
+//       // Alt Layout
+//       &.alt-layout {
+//         .grid-item {
+//           &:nth-of-type(2n + 1) {
+//             float: right;
+//           }
+//           &:nth-of-type(4n + 3) {
+//             float: left;
+//           }
+//         }
+//       }
+//     }
+//     @include media-lg {
+//       .grid-item {
+//         &::before,
+//         &::after {
+//           width: $beat * 3;
+//         }
+//       }
+//     }
+//   }
+// }

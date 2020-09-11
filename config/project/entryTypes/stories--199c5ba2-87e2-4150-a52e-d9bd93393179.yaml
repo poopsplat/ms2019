@@ -1,0 +1,53 @@
+fieldLayouts:
+  507941ba-422a-4a1d-8c94-096f39159430:
+    tabs:
+      -
+        elements:
+          -
+            instructions: null
+            label: Title
+            type: craft\fieldlayoutelements\EntryTitleField
+          -
+            fieldUid: 07328aa5-5eca-483f-a3d8-08281657e0e1
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: 272cbcd0-f0c5-4253-a0d7-f363f098d385
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: 7ef221c2-43a8-491a-bae1-83b7e1606a6f
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: 0522957f-ab0d-46b1-a6ab-4657a86b77b0
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+        name: 'Story Settings'
+        sortOrder: 1
+      -
+        elements:
+          -
+            fieldUid: 943be30c-9a63-45f4-a450-9b102820f873
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+        name: Content
+        sortOrder: 2
+      -
+        elements:
+          -
+            fieldUid: 4086522c-dac0-4ff2-9a55-5715fc1c01f4
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: 1bd82085-9793-4d44-bb1b-ffcfdee3a9d6
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+        name: SEO
+        sortOrder: 3
+handle: stories
+hasTitleField: true
+name: Stories
+section: 483a75a4-8455-445d-b2d3-20198be9b8cf
+sortOrder: 1
+titleFormat: ''

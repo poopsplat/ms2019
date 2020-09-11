@@ -1,0 +1,25 @@
+fieldLayouts:
+  899843ce-ddc0-4caf-becf-be65d77ea34a:
+    tabs:
+      -
+        elements:
+          -
+            instructions: null
+            label: Title
+            type: craft\fieldlayoutelements\EntryTitleField
+          -
+            fieldUid: 4086522c-dac0-4ff2-9a55-5715fc1c01f4
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: 1bd82085-9793-4d44-bb1b-ffcfdee3a9d6
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+        name: SEO
+        sortOrder: 1
+handle: storiesLandingPage
+hasTitleField: true
+name: 'Stories Landing Page'
+section: d4e43f82-5626-48d8-a443-05a60ee1b07d
+sortOrder: 1
+titleFormat: '{section.name|raw}'

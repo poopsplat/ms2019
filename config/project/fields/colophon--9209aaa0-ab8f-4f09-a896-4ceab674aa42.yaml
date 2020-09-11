@@ -1,0 +1,22 @@
+contentColumnType: text
+fieldGroup: 45500fe4-bfbe-4fc4-8301-d12cb97a632a
+handle: colophon
+instructions: ''
+name: Colophon
+searchable: true
+settings:
+  availableTransforms: '*'
+  availableVolumes: ''
+  cleanupHtml: true
+  columnType: text
+  purifierConfig: ''
+  purifyHtml: '1'
+  redactorConfig: ''
+  removeEmptyTags: '1'
+  removeInlineStyles: '1'
+  removeNbsp: '1'
+  showUnpermittedFiles: false
+  showUnpermittedVolumes: false
+translationKeyFormat: null
+translationMethod: none
+type: craft\redactor\Field

@@ -1,0 +1,56 @@
+contentColumnType: string
+fieldGroup: e6c2f5c4-186f-4fab-87bc-d11cbe3d0707
+handle: thumbnailSize
+instructions: 'The size of the thumbnail that appears on the stories landing page'
+name: 'Thumbnail Size'
+searchable: true
+settings:
+  optgroups: true
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - Small
+        -
+          - value
+          - small
+        -
+          - default
+          - '1'
+    -
+      __assoc__:
+        -
+          - label
+          - Half
+        -
+          - value
+          - half
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Medium
+        -
+          - value
+          - medium
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Large
+        -
+          - value
+          - large
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

@@ -1,0 +1,196 @@
+field: 943be30c-9a63-45f4-a450-9b102820f873
+fieldLayouts:
+  6c18691e-e08c-423d-b99f-bab1430ca2f9:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: cbf5940e-851c-4a0a-aa1b-7d64af92e9db
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 50
+          -
+            fieldUid: 80394999-db04-401c-9055-16af5aa0b624
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 25
+          -
+            fieldUid: 242c3017-98d5-4068-825a-53f07db11c37
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 25
+        name: Content
+        sortOrder: 1
+fields:
+  242c3017-98d5-4068-825a-53f07db11c37:
+    contentColumnType: string
+    fieldGroup: null
+    handle: spacing
+    instructions: ''
+    name: Spacing
+    searchable: false
+    settings:
+      multi: true
+      optgroups: true
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - None
+            -
+              - value
+              - none
+            -
+              - default
+              - '1'
+        -
+          __assoc__:
+            -
+              - label
+              - Top
+            -
+              - value
+              - spacing-top
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Left
+            -
+              - value
+              - spacing-left
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Right
+            -
+              - value
+              - spacing-right
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Bottom
+            -
+              - value
+              - spacing-bottom
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\MultiSelect
+  80394999-db04-401c-9055-16af5aa0b624:
+    contentColumnType: string
+    fieldGroup: null
+    handle: size
+    instructions: ''
+    name: Size
+    searchable: false
+    settings:
+      optgroups: true
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - Small
+            -
+              - value
+              - small
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Half
+            -
+              - value
+              - half
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Medium
+            -
+              - value
+              - medium
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Large
+            -
+              - value
+              - large
+            -
+              - default
+              - '1'
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+  cbf5940e-851c-4a0a-aa1b-7d64af92e9db:
+    contentColumnType: string
+    fieldGroup: null
+    handle: imageFile
+    instructions: ''
+    name: 'Image File'
+    searchable: false
+    settings:
+      allowSelfRelations: false
+      allowedKinds:
+        - image
+      defaultUploadLocationSource: 'volume:ed7a90f0-b4e5-4c4c-b15c-831c22754213'
+      defaultUploadLocationSubpath: '{owner.slug}'
+      limit: '1'
+      localizeRelations: false
+      restrictFiles: '1'
+      selectionLabel: 'Choose an image'
+      showSiteMenu: true
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      singleUploadLocationSource: 'volume:ed7a90f0-b4e5-4c4c-b15c-831c22754213'
+      singleUploadLocationSubpath: '{owner.slug}'
+      source: null
+      sources: '*'
+      targetSiteId: null
+      useSingleFolder: false
+      validateRelatedElements: false
+      viewMode: large
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Assets
+handle: image
+name: Image
+sortOrder: 1

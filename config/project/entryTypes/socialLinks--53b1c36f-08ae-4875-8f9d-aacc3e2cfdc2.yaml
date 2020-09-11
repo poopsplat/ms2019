@@ -1,0 +1,21 @@
+fieldLayouts:
+  b1ade2e1-de94-4322-8aaf-1af51fc36e94:
+    tabs:
+      -
+        elements:
+          -
+            instructions: null
+            label: Title
+            type: craft\fieldlayoutelements\EntryTitleField
+          -
+            fieldUid: b7cb3c6d-e4db-4db2-85a6-41828f9154a5
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+        name: Settings
+        sortOrder: 1
+handle: socialLinks
+hasTitleField: true
+name: 'Social Links'
+section: d9e7dbcc-e326-4f46-b444-438294139ee4
+sortOrder: 1
+titleFormat: ''

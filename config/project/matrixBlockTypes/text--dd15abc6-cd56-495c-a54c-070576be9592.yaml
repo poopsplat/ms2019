@@ -1,0 +1,182 @@
+field: 943be30c-9a63-45f4-a450-9b102820f873
+fieldLayouts:
+  85217aa5-141e-452f-9b22-8b6d355af1b1:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 62472111-14c5-4a1c-99ca-9af51324e47d
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: e916c6ff-d635-4b8c-8bf9-0cb32e231101
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 50
+          -
+            fieldUid: 20bbd9d4-7a2f-4bf7-9876-5d732f0811c5
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  20bbd9d4-7a2f-4bf7-9876-5d732f0811c5:
+    contentColumnType: string
+    fieldGroup: null
+    handle: spacing
+    instructions: ''
+    name: Spacing
+    searchable: false
+    settings:
+      multi: true
+      optgroups: true
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - None
+            -
+              - value
+              - none
+            -
+              - default
+              - '1'
+        -
+          __assoc__:
+            -
+              - label
+              - Top
+            -
+              - value
+              - spacing-top
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Left
+            -
+              - value
+              - spacing-left
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Right
+            -
+              - value
+              - spacing-right
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Bottom
+            -
+              - value
+              - spacing-bottom
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\MultiSelect
+  62472111-14c5-4a1c-99ca-9af51324e47d:
+    contentColumnType: text
+    fieldGroup: null
+    handle: text
+    instructions: ''
+    name: Text
+    searchable: false
+    settings:
+      availableTransforms: '*'
+      availableVolumes: '*'
+      cleanupHtml: true
+      columnType: text
+      configSelectionMode: choose
+      defaultTransform: ''
+      manualConfig: ''
+      purifierConfig: ''
+      purifyHtml: '1'
+      redactorConfig: Standard.json
+      removeEmptyTags: '1'
+      removeInlineStyles: '1'
+      removeNbsp: '1'
+      showHtmlButtonForNonAdmins: ''
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      uiMode: enlarged
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\redactor\Field
+  e916c6ff-d635-4b8c-8bf9-0cb32e231101:
+    contentColumnType: string
+    fieldGroup: null
+    handle: size
+    instructions: ''
+    name: Size
+    searchable: false
+    settings:
+      optgroups: true
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - Small
+            -
+              - value
+              - small
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Medium
+            -
+              - value
+              - medium
+            -
+              - default
+              - '1'
+        -
+          __assoc__:
+            -
+              - label
+              - Large
+            -
+              - value
+              - large
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+handle: text
+name: Text
+sortOrder: 2

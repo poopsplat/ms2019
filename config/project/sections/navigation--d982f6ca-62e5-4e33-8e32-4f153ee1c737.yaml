@@ -1,0 +1,18 @@
+enableVersioning: true
+handle: navigation
+name: Navigation
+previewTargets:
+  -
+    label: 'Primary entry page'
+    urlFormat: '{url}'
+propagationMethod: all
+siteSettings:
+  35815072-acac-4452-9c5d-768772bc4940:
+    enabledByDefault: true
+    hasUrls: true
+    template: ''
+    uriFormat: 'navigation/{slug}'
+structure:
+  maxLevels: null
+  uid: 0241d9a2-9adb-4911-b5ee-ea9b12b4155b
+type: structure

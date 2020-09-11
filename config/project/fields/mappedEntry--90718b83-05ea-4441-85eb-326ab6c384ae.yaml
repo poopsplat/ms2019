@@ -1,0 +1,18 @@
+contentColumnType: string
+fieldGroup: c7bb62fb-ea25-4155-a3c0-6449c7ef6446
+handle: mappedEntry
+instructions: ''
+name: 'Mapped Entry'
+searchable: false
+settings:
+  limit: '1'
+  localizeRelations: false
+  selectionLabel: 'Choose an entry'
+  source: null
+  sources: '*'
+  targetSiteId: null
+  validateRelatedElements: ''
+  viewMode: null
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Entries

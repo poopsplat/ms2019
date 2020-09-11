@@ -1,0 +1,59 @@
+dateModified: 1599789155
+email:
+  fromEmail: matt.m.soria@gmail.com
+  fromName: mattsoria
+  transportType: craft\mail\transportadapters\Sendmail
+graphql:
+  publicToken:
+    enabled: false
+    expiryDate: null
+plugins:
+  assetrev:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  cp-field-inspect:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  embeddedassets:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  imager:
+    edition: standard
+    enabled: true
+    schemaVersion: 2.0.0
+  matrixtoolbar:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.4
+  redactor:
+    edition: standard
+    enabled: true
+    schemaVersion: 2.3.0
+  sitemap:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.2
+  smith:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  spoon:
+    edition: standard
+    enabled: true
+    licenseKey: 6ZFRN1ZI5IJ14CYC9PF1RXMC
+    schemaVersion: 3.5.0
+system:
+  edition: solo
+  live: true
+  name: mattsoria
+  schemaVersion: 3.5.13
+  timeZone: America/Los_Angeles
+users:
+  allowPublicRegistration: false
+  defaultGroup: null
+  photoSubpath: ''
+  photoVolumeUid: null
+  requireEmailVerification: true

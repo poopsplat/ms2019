@@ -5,45 +5,9 @@
 {% set bodyId = 'home' %}
 
 {% block content %}
-
-  {% set smallFeatures = craft.matrixBlocks.owner(entry).fieldId(10).type('image').size('small').orderBy('RAND()').all() %}
-  {% set medFeatures = craft.matrixBlocks.owner(entry).fieldId(10).type('image').size('medium').orderBy('RAND()').all() %}
-
-  <div class="sitewrapper">
-    <div class="project-grid{{ random(['', ' alt-layout']) }}">
-      {% for feature in 1..10 %}
-        {% if loop.index is not divisible by(2) %}
-          {% set feature = smallFeatures[loop.index] %}
-        {% elseif loop.index is divisible by(2) %}
-          {% set feature = medFeatures[loop.index] %}
-        {% endif %}
-
-        {% set imageFile = feature.imageFile.one() %}
-        {% set imageW = '' %}
-        {% set ratio = '' %}
-        {% set transformedImage = '' %}
-        {% if feature.size == 'small' %}
-          {% set imageW = 900 %}
-          {% set ratio = 4/5 %}
-        {% else %}
-          {% set imageW = 1600 %}
-          {% set ratio = 8/5 %}
-        {% endif %}
-        {% set transformedImage = craft.imager.transformImage(imageFile, { width: imageW }, { ratio: ratio }) %}
-        {% set lqip = craft.imager.transformImage(imageFile, { width: imageW, jpegQuality: 01 }) %}
-        <figure class="grid-item {{ feature.size }}">
-          {% if feature.portfolioPage %}
-          <a href="{{ feature.portfolioPage.one().url }}" class="image-overlay">
-            <div class="overlay"><div class="overlay-text"><span>{{ feature.portfolioPage.one().title|lower }}</span></div></div>
-          {% endif %}
-          <img class="lazyload" data-src="{{ transformedImage.getUrl() }}" src="{{ lqip.getUrl() }}" alt="{{ feature.imageFile.one().title }}">
-          {% if feature.portfolioPage %}
-          </a>
-          {% endif %}
-        </figure>
-
-      {% endfor %}
+  {% cache %}
+    <div class="sitewrapper">
+      {% include 'partials/_page-blocks' %}
     </div>
-  </div>
-
+  {% endcache %}
 {% endblock %}

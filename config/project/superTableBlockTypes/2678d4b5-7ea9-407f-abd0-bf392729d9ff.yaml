@@ -1,0 +1,33 @@
+field: 943be30c-9a63-45f4-a450-9b102820f873
+fieldLayouts:
+  670c2a26-35b6-4dbd-b477-0f77431abfe7:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 09d7205f-7433-426c-9841-55969fd31a37
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  09d7205f-7433-426c-9841-55969fd31a37:
+    contentColumnType: string
+    fieldGroup: null
+    handle: gridSection
+    instructions: ''
+    name: 'Grid Section'
+    searchable: false
+    settings:
+      contentTable: '{{%matrixcontent_gridsection}}'
+      maxBlocks: ''
+      minBlocks: ''
+      propagationMethod: all
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Matrix

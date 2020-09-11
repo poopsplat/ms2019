@@ -1,0 +1,33 @@
+fieldLayouts:
+  f71b1fc1-7215-4a7b-9836-e7c884c24b5b:
+    tabs:
+      -
+        elements:
+          -
+            instructions: null
+            label: Title
+            type: craft\fieldlayoutelements\EntryTitleField
+          -
+            fieldUid: 943be30c-9a63-45f4-a450-9b102820f873
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+        name: 'Project Blocks'
+        sortOrder: 1
+      -
+        elements:
+          -
+            fieldUid: 4086522c-dac0-4ff2-9a55-5715fc1c01f4
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: 1bd82085-9793-4d44-bb1b-ffcfdee3a9d6
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+        name: SEO
+        sortOrder: 2
+handle: photography
+hasTitleField: true
+name: Photography
+section: 3c179024-6729-4830-9212-395ff84a3aad
+sortOrder: 1
+titleFormat: ''

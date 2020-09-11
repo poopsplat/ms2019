@@ -1,0 +1,17 @@
+contentColumnType: string(640)
+fieldGroup: 7e139dfc-df60-4f6a-9017-245e9a410142
+handle: seoDescription
+instructions: ''
+name: 'Seo Description'
+searchable: true
+settings:
+  byteLimit: null
+  charLimit: 160
+  code: ''
+  columnType: null
+  initialRows: '4'
+  multiline: ''
+  placeholder: ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

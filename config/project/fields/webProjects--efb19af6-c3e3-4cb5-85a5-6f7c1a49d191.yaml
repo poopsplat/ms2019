@@ -1,0 +1,14 @@
+contentColumnType: string
+fieldGroup: 47daa049-399a-46d9-913e-fc53ef6bb127
+handle: webProjects
+instructions: ''
+name: 'Web Projects'
+searchable: false
+settings:
+  contentTable: '{{%matrixcontent_webprojects}}'
+  maxBlocks: ''
+  minBlocks: ''
+  propagationMethod: all
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

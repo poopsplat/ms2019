@@ -1,0 +1,16 @@
+contentColumnType: text
+fieldGroup: 5aeab9d2-b4b3-452c-a6d0-7ab33429580e
+handle: textField
+instructions: ''
+name: 'Text Field'
+searchable: true
+settings:
+  charLimit: ''
+  code: ''
+  columnType: text
+  initialRows: '4'
+  multiline: ''
+  placeholder: ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

@@ -1,0 +1,20 @@
+contentColumnType: text
+fieldGroup: 1580f8f2-6784-4fea-874b-8a7c4bf2f147
+handle: caption
+instructions: ''
+name: Caption
+searchable: false
+settings:
+  availableTransforms: '*'
+  availableVolumes: ''
+  cleanupHtml: true
+  columnType: text
+  purifierConfig: ''
+  purifyHtml: ''
+  redactorConfig: Html.json
+  removeEmptyTags: ''
+  removeInlineStyles: ''
+  removeNbsp: ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\redactor\Field

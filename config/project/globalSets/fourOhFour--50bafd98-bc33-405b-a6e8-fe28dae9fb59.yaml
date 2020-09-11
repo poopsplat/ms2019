@@ -1,0 +1,12 @@
+fieldLayouts:
+  1688c09e-46cf-491b-80fb-662e60cf2df4:
+    tabs:
+      -
+        fields:
+          332cdeb7-f268-4fd5-95d3-7503c8e9707e:
+            required: false
+            sortOrder: 1
+        name: Settings
+        sortOrder: 1
+handle: fourOhFour
+name: '404 Page'

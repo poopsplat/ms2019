@@ -1,0 +1,17 @@
+contentColumnType: text
+fieldGroup: e6c2f5c4-186f-4fab-87bc-d11cbe3d0707
+handle: date
+instructions: "The date around which the story occurred, or date of post —\_whichever is more relevant"
+name: Date
+searchable: true
+settings:
+  byteLimit: null
+  charLimit: null
+  code: ''
+  columnType: null
+  initialRows: '4'
+  multiline: ''
+  placeholder: ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

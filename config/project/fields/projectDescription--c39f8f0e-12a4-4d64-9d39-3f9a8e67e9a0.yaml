@@ -1,0 +1,20 @@
+contentColumnType: text
+fieldGroup: 47daa049-399a-46d9-913e-fc53ef6bb127
+handle: projectDescription
+instructions: ''
+name: 'Project Description'
+searchable: true
+settings:
+  availableTransforms: '*'
+  availableVolumes: ''
+  cleanupHtml: true
+  columnType: text
+  purifierConfig: ''
+  purifyHtml: '1'
+  redactorConfig: ''
+  removeEmptyTags: '1'
+  removeInlineStyles: '1'
+  removeNbsp: '1'
+translationKeyFormat: null
+translationMethod: none
+type: craft\redactor\Field

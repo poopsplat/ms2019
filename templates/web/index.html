@@ -1,29 +1,104 @@
 {% extends (craft.app.request.isAjax and not craft.app.request.isLivePreview) ? "_ajax-layout" : "_layout" %}
 
 {% block content %}
-  {% set projects = craft.entries().section('webProjects') %}
+  {% set projects = entry.webProjects %}
   {% if projects|length %}
-    <div class="web-projects grid spaced spaced-lg">
+    <div class="sitewrapper">
+      <h2 class="page-title">Featured Web Work</h2>
+      {% if entry.textArea|length %}
+        <div class="intro-text">{{ entry.textArea }}</div>
+      {% endif %}
+    </div>
+
+    <div class="web-projects sitewrapper">
       {% for project in projects.all() %}
-        <article class="project col-md-1-2">
-          <div class="-inner">
+        <article class="project">
+          <div class="-inner grid spaced">
             {% if project.projectImage|length %}
-              {% set transformedImage = craft.imager.transformImage(project.projectImage.one(), { width: 900 }, { ratio: 16/9 }) %}
-              <a href="{{ project.projectUrl }}" class="image-overlay">
-                <div class="overlay"><div class="overlay-text"><span>visit project</span></div></div>
-                <img src="{{ transformedImage.getUrl() }}" alt="{{ project.projectImage.one().title }}">
-              </a>
-            {% endif %}
-            <h1 class="project-title"><a href="{{ project.projectUrl }}">{{ project.title }}</a></h1>
-            {% if project.projectDescription %}
-              <div class="project-description">
-                {{ project.projectDescription}}
+              <div class="project-visual col-md-1-2{{ loop.index is odd ? ' md-order-1' : '' }}">
+                <h2 class="project-title"><a href="{{ project.projectUrl }}">{{ project.projectTitle }}</a></h2>
+                {% set embeddedAsset = craft.embeddedAssets.get(project.projectImage.one()) %}
+                {% if embeddedAsset %}
+                  <div class="project-video" style="padding-bottom: {{ (embeddedAsset.height / embeddedAsset.width) * 100 }}%; background-image: url('{{ embeddedAsset.image }}');">
+                    <iframe src="https://player.vimeo.com/video/{{ embeddedAsset.getVideoId() }}?controls=0&background=1&autoplay=1&loop=1&byline=0&title=0" width="100%" frameborder="0"></iframe>
+                  </div>
+                {% else %}
+                  {% set transformedImage = craft.imager.transformImage(project.projectImage.one(), { width: 900 }, { ratio: 16/9 }) %}
+                  <img src="{{ transformedImage.getUrl() }}" alt="{{ project.projectImage.one().title }}">
+                {% endif %}
+                {% if project.awards|length or project.role|length or project.technology|length %}
+                  <div class="project-meta">
+                    <div class="grid spaced">
+                      {% if project.role|length %}
+                        <div class="col-md-1-2">
+                          <h4>Role</h4>
+                          <p>{{ project.role }}</p>
+                        </div>
+                      {% endif %}
+                      {% if project.technology|length %}
+                        <div class="col-md-1-2">
+                          <h4>Technology</h4>
+                          <p>{{ project.technology }}</p>
+                        </div>
+                      {% endif %}
+                      {% if project.awards|length %}
+                        <ul class="awards col-md-full">
+                          <h4>Awards + Recognition</h4>
+                          {% for award in project.awards %}
+                            <li>
+                              {% if award.awardUrl|length %}
+                                <a href="{{ award.awardUrl }}" rel="noopener" target="_blank">
+                              {% endif %}
+                              {{ award.awardTitle }}
+                              {% if award.awardUrl|length %}
+                                </a>
+                              {% endif %}
+                            </li>
+                          {% endfor %}
+                        </ul>
+                      {% endif %}
+                    </div>
+                  </div>
+                {% endif %}
               </div>
             {% endif %}
-            <p class="project-link"><a href="{{ project.projectUrl }}" class="button">View Project</a></p>
+            <div class="project-text col-md-1-2{{ loop.index is odd ? ' md-order-0' : '' }}">
+              <h2 class="project-title" aria-hidden="true"><a href="{{ project.projectUrl }}">{{ project.projectTitle }}</a></h2>
+              {% if project.projectDescription %}
+                <div class="project-description">
+                  {{ project.projectDescription}}
+                </div>
+              {% endif %}
+              <p class="project-link"><a href="{{ project.projectUrl }}" class="button" rel="noopener" target="_blank">{{ project.linkLabel|length ? project.linkLabel : 'View Site' }}</a></p>
+            </div>
           </div>
         </article>
       {% endfor %}
+    </div>
+  {% endif %}
+
+  {% if entry.noteworthyProjects %}
+    <div class="noteworthy-projects sitewrapper">
+      <h2>Other noteworthy projects:</h2>
+      <ul class="masonry-grid grid spaced">
+        <div class="grid-sizer"></div>
+        {% for project in entry.noteworthyProjects %}
+          <li class="grid-item">
+            <div class="-inner">
+              <h3><a href="{{ project.url }}" target="_blank" rel="noopener">{{ project.projectTitle }}</a></h3>
+              {% if project.role %}
+                <p><span class="label">Role:</span> {{ project.role }}</p>
+              {% endif %}
+              {% if project.technology %}
+                <p><span class="label">Tech:</span> {{ project.technology }}</p>
+              {% endif %}
+              {% if project.awards %}
+                <p><span class="label">Awards + Recognition:</span> {{ project.awards }}</p>
+              {% endif %}
+            </div>
+          </li>
+        {% endfor %}
+      </ul>
     </div>
   {% endif %}
 {% endblock %}

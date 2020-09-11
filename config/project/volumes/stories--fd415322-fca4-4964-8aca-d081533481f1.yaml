@@ -1,0 +1,8 @@
+handle: stories
+hasUrls: true
+name: Stories
+settings:
+  path: uploads/stories/
+sortOrder: 3
+type: craft\volumes\Local
+url: /uploads/stories/

@@ -1,0 +1,28 @@
+contentColumnType: string
+fieldGroup: e6c2f5c4-186f-4fab-87bc-d11cbe3d0707
+handle: thumbnail
+instructions: 'The image used on the stories landing page'
+name: Thumbnail
+searchable: true
+settings:
+  allowedKinds:
+    - image
+  defaultUploadLocationSource: 'volume:ed7a90f0-b4e5-4c4c-b15c-831c22754213'
+  defaultUploadLocationSubpath: ''
+  limit: '1'
+  localizeRelations: false
+  restrictFiles: '1'
+  selectionLabel: 'Choose an image'
+  showUnpermittedFiles: false
+  showUnpermittedVolumes: false
+  singleUploadLocationSource: 'volume:fd415322-fca4-4964-8aca-d081533481f1'
+  singleUploadLocationSubpath: '{owner.slug}'
+  source: null
+  sources: '*'
+  targetSiteId: null
+  useSingleFolder: true
+  validateRelatedElements: ''
+  viewMode: list
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Assets

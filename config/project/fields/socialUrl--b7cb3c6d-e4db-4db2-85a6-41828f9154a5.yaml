@@ -1,0 +1,12 @@
+contentColumnType: string(255)
+fieldGroup: c7bb62fb-ea25-4155-a3c0-6449c7ef6446
+handle: socialUrl
+instructions: ''
+name: Url
+searchable: false
+settings:
+  maxLength: '255'
+  placeholder: ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Url

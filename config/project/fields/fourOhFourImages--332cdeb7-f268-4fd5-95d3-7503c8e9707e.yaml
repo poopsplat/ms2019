@@ -1,0 +1,27 @@
+contentColumnType: string
+fieldGroup: 7e139dfc-df60-4f6a-9017-245e9a410142
+handle: fourOhFourImages
+instructions: ''
+name: '404 Images'
+searchable: false
+settings:
+  allowedKinds: null
+  defaultUploadLocationSource: 'volume:ed7a90f0-b4e5-4c4c-b15c-831c22754213'
+  defaultUploadLocationSubpath: ''
+  limit: ''
+  localizeRelations: false
+  restrictFiles: ''
+  selectionLabel: 'Add an image'
+  showUnpermittedFiles: false
+  showUnpermittedVolumes: false
+  singleUploadLocationSource: 'volume:ed7a90f0-b4e5-4c4c-b15c-831c22754213'
+  singleUploadLocationSubpath: '404'
+  source: null
+  sources: '*'
+  targetSiteId: null
+  useSingleFolder: true
+  validateRelatedElements: ''
+  viewMode: list
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Assets

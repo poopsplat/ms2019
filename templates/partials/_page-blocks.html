@@ -1,54 +1,63 @@
-{% for gridSection in entry.pageBlocks.all() %}
-  <div class="project-grid masonry-grid">
-    <div class="grid-sizer"></div>
-    {% for item in gridSection.gridSection.all() %}
-      {% switch item.type %}
-        {% case "image" %}
-          {% if item.spacing is defined %}
-            {% set spacingClasses = item.spacing | join(' ') %}
+{% if entry.featureGrid|length %}
+  {% set pageBlocks = entry.featureGrid.all() %}
+{% else %}
+  {% set pageBlocks = entry.pageBlocks.all() %}
+{% endif %}
+
+{% for item in pageBlocks %}
+  {% if loop.first or pageBlocks[loop.index - 2].type == 'gridBreak' %}
+    <div class="project-grid masonry-grid">
+      <div class="grid-sizer"></div>
+  {% endif %}
+  {% switch item.type %}
+    {% case "image" %}
+      {% if item.spacing is defined %}
+        {% set spacingClasses = item.spacing | join(' ') %}
+      {% endif %}
+      {% if item.imageFile | length %}
+        {% set imageFile = item.imageFile.one() %}
+        {% set imageW = '' %}
+        {% if item.size == 'small' %}
+          {% set imageW = 900 %}
+        {% elseif item.size == 'medium' %}
+          {% set imageW = 1600 %}
+        {% else %}
+          {% set imageW = 1800 %}
+        {% endif %}
+        {% set lqip = craft.imager.transformImage(imageFile, { width: imageW, jpegQuality: 01 }) %}
+        {% set transformedImage = craft.imager.transformImage(imageFile, { width: imageW }, { filenamePattern: '{basename}_{fullname|shorthash}.{extension}' }) %}
+      {% endif %}
+      <figure class="grid-item grid-image {{ item.size }}{{ spacingClasses is defined ? ' ' ~ spacingClasses : '' }}{{ loop.index > 4 ? ' imagesloaded' : '' }}{{ item.portfolioPage is defined and item.portfolioPage|length ? ' image-overlay' : '' }}">
+        <div class="-inner">
+          <img src="{{ transformedImage.getUrl() }}" width="{{ transformedImage.width }}" height="{{ transformedImage.height }}" alt="{{ item.imageFile.one().title }}"{{ item.portfolioPage is defined and item.portfolioPage|length ? '' : ' data-zoomable'}}{{ loop.index > 4 ? ' loading="lazy"' : '' }}>
+
+          {% if item.portfolioPage is defined and item.portfolioPage|length %}
+            <a class="overlay" href="{{ item.portfolioPage.one().url }}"><div class="overlay-text"><span>{{ item.portfolioPage.one().title }}</span></div></a>
+          {% elseif imageFile.caption %}
+            <figcaption class="field-text"><p>{{ imageFile.caption }}</p></figcaption>
           {% endif %}
-          {% if item.imageFile | length %}
-            {% set imageFile = item.imageFile.one() %}
-            {% set imageW = '' %}
-            {% if item.size == 'small' %}
-              {% set imageW = 900 %}
-            {% elseif item.size == 'medium' %}
-              {% set imageW = 1600 %}
-            {% else %}
-              {% set imageW = 1800 %}
-            {% endif %}
-            {% set lqip = craft.imager.transformImage(imageFile, { width: imageW, jpegQuality: 01 }) %}
-            {% set transformedImage = craft.imager.transformImage(imageFile, { width: imageW }, { filenamePattern: '{basename}_{fullname|shorthash}.{extension}' }) %}
-          {% endif %}
-          <figure class="grid-item grid-image {{ item.size }}{{ spacingClasses is defined ? ' ' ~ spacingClasses : '' }}{{ loop.index < 4 ? ' not-lazyloaded' : '' }}">
-            {% if loop.index < 4 %}
-              <img src="{{ transformedImage.getUrl() }}" alt="{{ item.imageFile.one().title }}" data-zoomable>
-            {% else %}
-              <img class="lazyload" data-src="{{ transformedImage.getUrl() }}" src="{{ lqip.getUrl() }}" width="{{ transformedImage.width }}" height="{{ transformedImage.height }}" alt="{{ item.imageFile.one().title }}" data-zoomable>
-            {% endif %}
+        </div>
+      </figure>
 
-            {% if imageFile.caption %}
-              <figcaption class="field-text"><p>{{ imageFile.caption }}</p></figcaption>
-            {% endif %}
-          </figure>
+    {% case "text" %}
+      {% if item.spacing is defined %}
+        {% set spacingClasses = item.spacing | join(' ') %}
+      {% endif %}
+      <div class="grid-item text field-text {{ item.size }}{{ spacingClasses is defined ? ' ' ~ spacingClasses : '' }}">
+        {{ item.text }}
+      </div>
 
-        {% case "text" %}
-          {% if item.spacing is defined %}
-            {% set spacingClasses = item.spacing | join(' ') %}
-          {% endif %}
-          <div class="grid-item text field-text {{ item.size }}{{ spacingClasses is defined ? ' ' ~ spacingClasses : '' }}">
-            {{ item.text }}
-          </div>
+    {% case "blockquote" %}
+      <blockquote class="grid-item {{ item.size|length ? item.size : '' }}{{ item.alignment == 'right' ? ' align-right' }}{{ item.spacing != 'none' ? ' ' ~ item.spacing : '' }}{{ item.colored == 1 ? ' colored' : '' }}">
+        <p><span>{{ item.quote }}</span></p>
+        {% if item.citation %}
+          <cite>— {{ item.citation }}</cite>
+        {% endif %}
+      </blockquote>
 
-        {% case "blockquote" %}
-          <blockquote class="grid-item {{ item.size|length ? item.size : '' }}{{ item.alignment == 'right' ? ' align-right' }}{{ item.spacing != 'none' ? ' ' ~ item.spacing : '' }}{{ item.colored == 1 ? ' colored' : '' }}">
-            <p><span>{{ item.quote }}</span></p>
-            {% if item.citation %}
-              <cite>— {{ item.citation }}</cite>
-            {% endif %}
-          </blockquote>
+  {% endswitch %}
 
-      {% endswitch %}
-    {% endfor %}
-  </div>
+  {% if loop.last or item.type == 'gridBreak' %}
+    </div><!-- .project-grid -->
+  {% endif %}
 {% endfor %}
