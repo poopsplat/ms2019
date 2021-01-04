@@ -53,12 +53,6 @@
     <meta property="twitter:image" content="{{ transformedImage.getUrl() }}">
     {% endif %}
 
-    <script>
-      // Initialize the service worker
-      if (navigator && navigator.serviceWorker)
-      navigator.serviceWorker.register('sw.js');
-    </script>
-
     <!-- Inject SVGs Defs for SVG icon use -->
     <script>
       var ajax = new XMLHttpRequest();
