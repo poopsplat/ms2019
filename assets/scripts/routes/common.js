@@ -92,9 +92,16 @@ export default {
     }
 
     function _initMasonry() {
-      if (!$('.masonry-grid').length) {
+      if (!$('.masonry-grid').length && !$('.project-grid'.length)) {
         return;
       }
+
+      $('.project-grid').css('opacity', 0);
+      var $projectGrid = $('.project-grid').masonry(gridOptions);
+      setTimeout(function() {
+        $projectGrid.masonry('layout');
+        $('.project-grid').css('opacity', 1);
+      }, 500);
 
       var $imageGrid = $('.masonry-grid').masonry(gridOptions);
 
