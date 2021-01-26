@@ -5,7 +5,7 @@ env.hosts = ['opal4.opalstack.com']
 env.user = 'soriamatt'
 env.path = '~/Sites/ms2019'
 env.remotepath = '/home/soriamatt/apps/ms2019'
-env.git_branch = 'master'
+env.git_branch = 'main'
 env.warn_only = True
 env.remote_protocol = 'http'
 
