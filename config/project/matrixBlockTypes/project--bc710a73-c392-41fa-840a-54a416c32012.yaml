@@ -59,6 +59,15 @@ fieldLayouts:
             warning: null
             width: 50
           -
+            fieldUid: 60bae2ea-85b2-4f46-a98e-3730053ef4cf
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 50
+          -
             fieldUid: 98574bef-1cb3-4bef-94c7-d11e50f8f661
             instructions: null
             label: null
@@ -66,7 +75,7 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             warning: null
-            width: 25
+            width: 50
           -
             fieldUid: ac29088c-89e1-486b-a715-5aa5d6da86ec
             instructions: null
@@ -75,7 +84,7 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             warning: null
-            width: 75
+            width: 100
         name: Content
         sortOrder: 1
 fields:
@@ -124,6 +133,19 @@ fields:
     translationKeyFormat: null
     translationMethod: site
     type: craft\fields\Assets
+  60bae2ea-85b2-4f46-a98e-3730053ef4cf:
+    contentColumnType: string(255)
+    fieldGroup: null
+    handle: githubRepo
+    instructions: ''
+    name: 'Github Repo'
+    searchable: false
+    settings:
+      maxLength: '255'
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Url
   78c018e9-3290-47f5-a71b-f76513ec7758:
     contentColumnType: text
     fieldGroup: null

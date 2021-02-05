@@ -69,7 +69,7 @@
                   {{ project.projectDescription}}
                 </div>
               {% endif %}
-              <p class="project-link"><a href="{{ project.projectUrl }}" class="button" rel="noopener" target="_blank">{{ project.linkLabel|length ? project.linkLabel : 'View Site' }}</a></p>
+              <p class="project-link"><a href="{{ project.projectUrl }}" class="button" rel="noopener" target="_blank">{{ project.linkLabel|length ? project.linkLabel : 'View Site' }}</a>{% if project.githubRepo | length %} <a href="{{ project.githubRepo }}" class="button" target="_blank" rel="noopener">View Repo</a>{% endif %}</p>
             </div>
           </div>
         </article>
