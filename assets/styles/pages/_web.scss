@@ -12,6 +12,10 @@ body.web-page {
     p {
       @include h2;
       margin: 0;
+
+      + p {
+        margin-top: 1em;
+      }
     }
   }
 
