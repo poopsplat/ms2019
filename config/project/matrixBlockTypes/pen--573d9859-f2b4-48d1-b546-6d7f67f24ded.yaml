@@ -1,0 +1,49 @@
+field: d8038199-6ebf-4559-89fe-1ed2c749551f
+fieldLayouts:
+  5e3f54ff-f129-4b4c-8d73-a9c490bd3980:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 4df982d1-5de1-44a2-a173-5a66e4d29522
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  4df982d1-5de1-44a2-a173-5a66e4d29522:
+    contentColumnType: text
+    fieldGroup: null
+    handle: penEmbed
+    instructions: ''
+    name: 'Pen Embed'
+    searchable: false
+    settings:
+      availableTransforms: '*'
+      availableVolumes: ''
+      cleanupHtml: true
+      columnType: text
+      configSelectionMode: choose
+      defaultTransform: ''
+      manualConfig: ''
+      purifierConfig: ''
+      purifyHtml: ''
+      redactorConfig: ''
+      removeEmptyTags: ''
+      removeInlineStyles: ''
+      removeNbsp: ''
+      showHtmlButtonForNonAdmins: ''
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      uiMode: enlarged
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\redactor\Field
+handle: pen
+name: Pen
+sortOrder: 1

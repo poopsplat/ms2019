@@ -1,12 +1,8 @@
-dateModified: 1612494544
+dateModified: 1613865940
 email:
   fromEmail: matt.m.soria@gmail.com
   fromName: mattsoria
   transportType: craft\mail\transportadapters\Sendmail
-graphql:
-  publicToken:
-    enabled: false
-    expiryDate: null
 plugins:
   assetrev:
     edition: standard
@@ -20,6 +16,13 @@ plugins:
     edition: standard
     enabled: true
     schemaVersion: 1.0.0
+  gatsby-helper:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.1
+    settings:
+      previewServerUrl: ''
+      previewWebhookUrl: $WEBHOOK_URL
   imager:
     edition: standard
     enabled: true
@@ -41,10 +44,10 @@ plugins:
     enabled: true
     schemaVersion: 1.0.0
 system:
-  edition: solo
+  edition: pro
   live: true
   name: mattsoria
-  schemaVersion: 3.5.13
+  schemaVersion: 3.6.4
   timeZone: America/Los_Angeles
 users:
   allowPublicRegistration: false
