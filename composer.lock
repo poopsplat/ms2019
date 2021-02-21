@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "869c7e232ce31fec04c70d936db18012",
+    "content-hash": "f0c0425e135571d60e41d60cedea1b90",
     "packages": [
         {
             "name": "aelvan/imager",
@@ -701,11 +701,11 @@
         },
         {
             "name": "craftcms/plugin-installer",
-            "version": "1.5.6",
+            "version": "1.5.7",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/plugin-installer/zipball/4d24e227a086db3d8784a705f59060c49cf989ad",
-                "reference": "4d24e227a086db3d8784a705f59060c49cf989ad",
+                "url": "https://api.github.com/repos/craftcms/plugin-installer/zipball/23ec472acd4410b70b07d5a02b2b82db9ee3f66b",
+                "reference": "23ec472acd4410b70b07d5a02b2b82db9ee3f66b",
                 "shasum": ""
             },
             "require": {
@@ -733,7 +733,7 @@
                 "installer",
                 "plugin"
             ],
-            "time": "2020-10-26T23:34:21+00:00"
+            "time": "2021-02-18T02:01:38+00:00"
         },
         {
             "name": "craftcms/redactor",
@@ -811,6 +811,55 @@
                 "yii2"
             ],
             "time": "2020-11-04T20:19:11+00:00"
+        },
+        {
+            "name": "craftcms/webhooks",
+            "version": "2.3.2",
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/craftcms/webhooks/zipball/a41b0210ec94ce6d1681bdbb4deee4cd271a5535",
+                "reference": "a41b0210ec94ce6d1681bdbb4deee4cd271a5535",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^3.1.19"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "name": "Webhooks",
+                "handle": "webhooks",
+                "documentationUrl": "https://github.com/craftcms/webhooks/blob/master/README.md"
+            },
+            "autoload": {
+                "psr-4": {
+                    "craft\\webhooks\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Pixel & Tonic",
+                    "homepage": "https://pixelandtonic.com/"
+                }
+            ],
+            "description": "Post webhooks when events are triggered in Craft CMS.",
+            "keywords": [
+                "cms",
+                "craftcms",
+                "html",
+                "webhooks",
+                "yii2"
+            ],
+            "support": {
+                "email": "support@craftcms.com",
+                "issues": "https://github.com/craftcms/webhooks/issues?state=open",
+                "source": "https://github.com/craftcms/webhooks",
+                "docs": "https://github.com/craftcms/webhooks/blob/master/README.md",
+                "rss": "https://github.com/craftcms/webhooks/commits/master.atom"
+            },
+            "time": "2020-06-27T19:47:30+00:00"
         },
         {
             "name": "creocoder/yii2-nested-sets",

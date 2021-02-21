@@ -1,4 +1,4 @@
-dateModified: 1613865940
+dateModified: 1613866654
 email:
   fromEmail: matt.m.soria@gmail.com
   fromName: mattsoria
@@ -43,6 +43,10 @@ plugins:
     edition: standard
     enabled: true
     schemaVersion: 1.0.0
+  webhooks:
+    edition: standard
+    enabled: true
+    schemaVersion: 2.3.0
 system:
   edition: pro
   live: true
